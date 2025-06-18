@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../index.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Tables</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3>Tables</h3>Good website for tables. <a href="https://www.thespreadsheetguru.com/blog/2014/6/20/the-vba-guide-to-listobject-excel-tables">Tables Guru</a>.
+    <ul>
+    Tip! - Use Tables to create  dynamic ComboBox('s) and Drop Down list('s).<br />
+    <br />
+    <h3>Using tables in formula's</h3>
+    <ol>=INDEX(Table1,MATCH([@[Pro'#]],Table1[Pro '#],0)+0,1)<br />
+    <br />
+    Note the "@" sign before[Pro'#] after the Match. This means that the formula is in the same table. If it were not you would need to specify the table like Table1[Pro'#].  "Table" indicates the Table itself and the [ ] brackets indicate the Column in that Table.
+    </ol><br />
+    <h3>Table Commands</h3>
+    <ol><table width="900" id="yui_3_17_2_1_1513983235601_999">
+        <tbody id="yui_3_17_2_1_1513983235601_998">
+          <tr>
+            <th align="left">Select</th>
+            <th align="left">VBA Coding</th>
+          </tr>
+          <tr>
+            <td>Entire Table</td>
+            <td>ActiveSheet.ListObjects("Table1").Range.Select</td>
+          </tr>
+          <tr>
+            <td>Table Header Row</td>
+            <td>ActiveSheet.ListObjects("Table1").HeaderRowRange.Select</td>
+          </tr>
+          <tr>
+            <td>Table Data</td>
+            <td>ActiveSheet.ListObjects("Table1").DataBodyRange.Select</td>
+          </tr>
+          <tr>
+            <td>Third Column</td>
+            <td>ActiveSheet.ListObjects("Table1").ListColumns(3).Range.Select</td>
+          </tr>
+          <tr>
+            <td>Third Column (Data Only)</td>
+            <td>ActiveSheet.ListObjects("Table1").ListColumns(3).DataBodyRange.Select</td>
+          </tr>
+          <tr>
+            <td>Select Row 4 of Table Data</td>
+            <td>ActiveSheet.ListObjects("Table1").ListRows(4).Range.Select</td>
+          </tr>
+          <tr>
+            <td>Select 3rd Heading</td>
+            <td>ActiveSheet.ListObjects("Table1").HeaderRowRange(3).Select</td>
+          </tr>
+          <tr>
+            <td>Select Data point in Row 3, Column 2</td>
+            <td>ActiveSheet.ListObjects("Table1").DataBodyRange(3, 2).Select</td>
+          </tr>
+          <tr>
+            <td>Subtotals</td>
+            <td>ActiveSheet.ListObjects("Table1").TotalsRowRange.Select</td>
+          </tr>
+        </tbody>
+      </table></ol>
+      <h3>Inserting Rows and Columns Into The Table </h3>
+      <ol><table width="899" id="yui_3_17_2_1_1513983235601_1028">
+      <tbody id="yui_3_17_2_1_1513983235601_1027">
+        <tr>
+          <th width="301" align="left">Select</th>
+          <th width="586" align="left">VBA Coding</th>
+        </tr>
+        <tr>
+          <td>Insert A New Column 4</td>
+          <td>ActiveSheet.ListObjects("Table1").ListColumns.Add Position:=4</td>
+        </tr>
+        <tr>
+          <td>Insert Column at End of Table</td>
+          <td>ActiveSheet.ListObjects("Table1").ListColumns.Add</td>
+        </tr>
+        <tr>
+          <td>Insert Row Above Row 5</td>
+          <td>ActiveSheet.ListObjects("Table1").ListRows.Add (5)</td>
+        </tr>
+        <tr>
+          <td>Add Row To Bottom of Table</td>
+          <td>ActiveSheet.ListObjects("Table1").ListRows.Add AlwaysInsert:= True</td>
+        </tr>
+        <tr>
+          <td>Add Totals Row</td>
+          <td>ActiveSheet.ListObjects("Table1").ShowTotals = True</td>
+        </tr>
+      </tbody>
+    </table></ol>
+    <h3>Using Slicer with Tables</h3>
+    <ol>
+      <strong><em>Note! Slicer will not work with data that is filtered. The data <u>must</u> be apart of a &quot;table&quot; or a &quot;pivot table&quot;.<br />
+    <em><strong>Note! You can hide columns in the table and the slicer will still work.  </strong></em>
+      <br />
+    
+      </em></strong><img src="Excel_images/TableSlicer.png" width="936" height="627" /><br />
+    <br />
+    Here is a Macro to hide and unhide columns based on a ComboBox.<br />
+    <br />
+    Sub hidcol()<br />
+    Dim col As Integer<br />
+    col = [List!B1] + 1<br />
+    If Worksheets("List").Range("B1") = 27 Then GoTo Line1<br />
+    <br />
+    Columns(col).EntireColumn.Hidden = True<br />
+    GoTo Line2<br />
+    <br />
+    Line1:<br />
+    Columns("B:AA").EntireColumn.Hidden = True<br />
+    Line2:<br />
+    Worksheets("Home").Shapes("Drop Down 5").OLEFormat.Object.Value = 28<br />
+    End Sub<br />
+    <hr width=450 align="left"/>
+    Sub unhidcol()<br />
+    Dim col As Integer<br />
+    col = [List!b2] + 1<br />
+    <br />
+    If Worksheets("List").Range("B2") = 27 Then GoTo Line1<br />
+    Columns(col).EntireColumn.Hidden = False<br />
+    GoTo Line2<br />
+    <br />
+    Line1:<br />
+    Columns("B:AA").EntireColumn.Hidden = False<br />
+    <br />
+    Line2:<br />
+    Worksheets("Home").Shapes("Drop Down 6").OLEFormat.Object.Value = 28<br />
+    End Sub<br />
+    <br />
+    </ol>
+    <h3>Slicer ... This will Clearing the slicer filter.</h3>
+    <ol>
+    Sub ClearSlicer()<br />
+        <dd>
+        ActiveWorkbook.SlicerCaches("Slicer_Name").ClearManualFilter<br />
+        ActiveWorkbook.SlicerCaches("Slicer_CareGiver").ClearManualFilter<br />
+        ActiveWorkbook.SlicerCaches("Slicer_Weeks").ClearManualFilter<br />
+        ActiveWorkbook.SlicerCaches("Slicer_Month").ClearManualFilter<br />
+        ActiveWorkbook.SlicerCaches("Slicer_Year").ClearManualFilter<br /></dd>
+    End Sub<br />
+    <br /></ol>
+    <h3>Clearing a Table Filters</h3>
+     <ol>
+     Sub TableFilterClear()<br />
+    '<br />
+    ' TableFilterClear Macro<br />
+    '<br />
+        ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=1<br />
+        ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=2<br />
+        ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=3<br />
+        ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=4<br />
+    End Sub<br /><br /> </ol>
+    <h3>Table Filter ... Setting a specific filter in a Field/Column</h3>
+     <ol>
+    ActiveSheet.ListObjects("Table3").Range.AutoFilter Field:=1, Criteria1:= _<br />
+            "David Duncan"<span class="Blue_Text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   'Specifies David Duncan in field/column 1</span><br />
+            <br />
+         ActiveSheet.ListObjects("Table3").Range.AutoFilter Field:=2, Criteria1:= _<br />
+            "39"&nbsp;&nbsp;&nbsp;&nbsp;   <span class="Blue_Text">'Specifies 39 in field/Column 2</span><br />
+     </ol>
+    <h3>Deleting Parts Of A Table</h3>
+    <ol>Sub RemovePartsOfTable()<br>
+      <br>
+      Dim tbl As ListObject<br>
+      <br>
+      Set tbl = ActiveSheet.ListObjects("Table1")<br>
+      <br>
+      'Remove 3rd Column<br>
+        tbl.ListColumns(3).Delete<br>
+      <br>
+      'Remove 4th DataBody Row<br>
+        tbl.ListRows(4).Delete<br>
+      <br>
+      'Remove 3rd through 5th DataBody Rows<br>
+        tbl.Range.Rows("3:5").Delete<br>
+      <br>
+      'Remove Totals Row<br>
+        tbl.TotalsRowRange.Delete<br>
+      <br>
+      End Sub</ol>
+      <h3>Deleting The Entire Table</h3>
+      <ol>Delete all data rows from a table (except the first row)<br>
+    <br>
+    
+    Sub ResetTable()<br>
+      <br>
+      <dd>Dim tbl As ListObject<br>
+      <br>
+      Set tbl = ActiveSheet.ListObjects("Table1")<br>
+      <br>
+      'Delete all table rows except first row<br>
+      With tbl.DataBodyRange<br>
+      If .Rows.Count &gt; 1 Then<br>
+      .Offset(1, 0).Resize(.Rows.Count - 1, .Columns.Count).Rows.Delete<br>
+      End If<br>
+      End With<br>
+      <br>
+      'Clear out data from first table row<br>
+      tbl.DataBodyRange.Rows(1).ClearContents</dd><br>
+      End Sub</ol><br />
+    <h3>Resize a table</h3>
+    <ol>Dim wsO As Worksheet<br />
+    Set wsO = Worksheets("Order")<br />
+    wsO.ListObjects("Table2").Resize Range("A9:D10")<br />
+    </ol>
+    <br />
+    
+      <h3>Dynamic Sum of a column in a Table</h3>
+      <ol>
+      In this example the data is in Table1(CellsA1:D4) or we could name Table1 "ProjectInvoice" <br />
+    <table width="400" border="1" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="21">&nbsp;</td>
+        <td width="62" align="center">A</td>
+        <td width="102" align="center">B</td>
+        <td width="52" align="center">C</td>
+        <td width="141" align="center">D</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Item #</td>
+        <td>Description</td>
+        <td>Qty</td>
+        <td>Price</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+        <td>Socket</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+        <td>$10.00</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+        <td>Plug</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+        <td>$15.00</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Total</td>
+        <td>$25.00</td>
+      </tr>
+    </table><br />
+    <br />
+    In Cell D5 we could write the formula using Table1 or by its name. Here are both versions.<br />
+    Note! that the formula is not in the table because that would cause a circular reference error.<br /><br />
+    
+    =Sum(Table1[Price])<br />
+    =Sum(ProjectInvoice[Price])
+    </ol>
+    </ul>
+        </div>
+    </body>
+</html>
