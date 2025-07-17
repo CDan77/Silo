@@ -1,0 +1,51 @@
+﻿Started: 8/16/2022 7:11 AM
+
+Connected to hdrk.site.
+Excel\Macro.html - Put operation successful
+Excel\macro.css - same - not transferred
+Images\BlueGradiant.png - error occurred - An FTP error occurred - cannot put BlueGradiant.png.  Access denied.  The file may not exist, or there could be a permission problem. 
+Excel\Excel_Image\rept.jpg - same - not transferred
+Excel\Excel_Image\Darts301.jpg - same - not transferred
+Excel\Excel_Image\Darts301_2.jpg - same - not transferred
+Excel\Excel_Image\ConvertString_TwoNumbers.jpg - same - not transferred
+Excel\Excel_Image\Advance_FilterSearch_1.jpg - same - not transferred
+Excel\Excel_Image\AdvancedFilter1.jpg - same - not transferred
+Excel\Excel_Image\Advance_Filter_3.jpg - same - not transferred
+Excel\Excel_Image\AdvancedFilter2.jpg - same - not transferred
+Excel\Excel_Image\FillDownUsingCriteria.jpg - same - not transferred
+Excel\Excel_Image\FourRowsHiLight.jpg - same - not transferred
+Excel\Excel_Image\FilterFontSize.jpg - same - not transferred
+Excel\Excel_Image\Sheet1234.jpg - same - not transferred
+Excel\Excel_Image\DannyBoy.jpg - same - not transferred
+Excel\Excel_Image\TimesTable.jpg - same - not transferred
+Excel\Excel_Image\ConcatCellsABC.jpg - same - not transferred
+Excel\Excel_Image\CenterText_NoMerge.jpg - same - not transferred
+Excel\Excel_Image\CenterText_NoMerge2.jpg - same - not transferred
+Excel\Excel_Image\VBAFunction.jpg - same - not transferred
+Excel\Excel_Image\FunctionCountif.jpg - same - not transferred
+Excel\Excel_Image\Lastrow.jpg - same - not transferred
+Excel\Excel_Image\Find_in_ExpandingRange.jpg - same - not transferred
+Excel\Excel_Image\ExcelConnections.png - same - not transferred
+Excel\Excel_Image\xlSheetVeryHidden.jpg - same - not transferred
+Excel\Excel_Image\TARGET.jpg - same - not transferred
+Excel\Excel_Image\loopSkipCells.jpg - same - not transferred
+Excel\Excel_Image\ColorIndexTable.jpg - same - not transferred
+Excel\Excel_Image\VBA_ColorChange.jpg - same - not transferred
+Excel\Excel_Image\startdate.jpg - same - not transferred
+Excel\Excel_Image\CopyMaster2Target.png - same - not transferred
+Excel\Excel_Image\Scope_Variable.jpg - same - not transferred
+Excel\Excel_Image\jax1.jpg - same - not transferred
+Excel\Excel_Image\FillBlankCells1.jpg - same - not transferred
+Excel\Excel_Image\FillBlankCells2.jpg - same - not transferred
+Excel\Excel_Image\ChangeToValue.jpg - same - not transferred
+Excel\Excel_Image\ME_.jpg - same - not transferred
+Excel\Excel_Image\Arrow_Custom_Format.jpg - same - not transferred
+
+File activity incomplete. 1 file(s) or folder(s) were not completed.
+Files updated: 1
+Files skipped: 37
+
+Files with errors: 1
+Images\BlueGradiant.png
+
+Finished: 8/16/2022 7:11 AM

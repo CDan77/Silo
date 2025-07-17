@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+
+body {
+
+	background-color: #fff;
+
+	margin: 0px;
+
+	padding: 0px;
+
+	font-family: "Times New Roman", Times, serif;
+
+	color: #FFF;
+
+}
+
+
+
+.head {
+	margin: 0px;
+	padding: 0px;
+	height: 342px;
+	width: 100%;
+	border-bottom-width: medium;
+	border-bottom-style: solid;
+	border-bottom-color: #fff;
+	font-family: "Times New Roman", Times, serif;
+
+}
+
+#Name {
+
+	font-family: "Times New Roman", Times, serif;
+
+	font-size: 36px;
+
+	color: #
+	fff;
+
+	margin: 0px;
+
+	height: 36px;
+
+	width: 450px;
+
+	position: relative;
+
+	left: 35px;
+
+	top: 15px;
+
+	font-style: italic;
+
+	text-decoration: underline;
+
+	line-height: normal;
+
+	font-weight: bold;
+
+	padding: 0px;
+
+}
+
+#roadking {
+	background-image: url(images/2025-road-kingblackK.png);
+	margin: 0px;
+	padding: 0px;
+	height: 180px;
+	width: 400px;
+	position: relative;
+	left: 60px;
+	top: 20px;
+	background-repeat: no-repeat;
+
+}
+
+#CTRpic {
+	padding: 0px;
+	height: 677px;
+	width: 1920px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	background-image: url(images/harleyJoshuatree1920_.png);
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #F87E1E;
+	background-repeat: no-repeat;
+
+}
+
+#Menu {
+
+	margin: 0px;
+
+	float: right;
+
+	height: 98px;
+
+	width: 700px;
+
+	position: relative;
+
+	top: 15px;
+
+	padding-top: 0px;
+
+	padding-bottom: 0px;
+
+	padding-left: 0px;
+
+	right: 180px;
+
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	padding-top: 0px;
+	padding-right: 12px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align: left;
+	visibility: visible;
+
+	
+
+}
+
+
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+
+
+
+
+
+
+  color: fff
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  z-index index 1;
+	color: #fff;
+	height: 125px;
+	width: 400px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	visibility: visible;
+
+}
+
+
+
+.dropdown:hover .dropdown-content {
+
+  display: block;
+
+}
+
+a:link {
+
+	color: #000;
+
+}
+
+a:visited {
+
+	color: #000;
+
+}
+
+a:hover {
+
+	color: #000;
+
+}
+
+a:active {
+
+	color: #000;
+
+}

@@ -1,0 +1,4273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Search Stockid</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #4E5869;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this fixed width container surrounds the other divs ~~ */
+.container {
+	width: 1000px;
+	background: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #4E5869;
+	height: 100px;
+	padding-top: 10px;
+}
+
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+
+.content {
+
+	padding: 10px 0;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #CCC49F;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="../images/hbkbjefoomkjfaod.jpg" " alt="Insert Logo Here" name="Insert_logo" width="313" height="87" id="Insert_logo" style="background: #4E5869; display:block;" /><a href="#"></a> 
+    <!-- end .header --></div>
+  <div class="content">
+    <h1>Search Stock ID</h1>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Stock ID</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table width="1000" id="myTable">
+  <tr>
+    <td>1</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61240</td>
+    <td>1000Base-SX SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61248</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>61252</td>
+    <td>10GBase-SR X2</td>
+    <td>850nm 300M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61253</td>
+    <td>10BASE-LR X2</td>
+    <td>1310nm</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61254</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61654</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>61751</td>
+    <td>10GB SFP+ TO SFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>61759</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>61760</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62131</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62252</td>
+    <td>100MBASE-FX SFP 1310NM 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62468</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62495</td>
+    <td>100Base-FX SFP 1310nm 2KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62501</td>
+    <td>10GB SFP+ TO SFP+ 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>62502</td>
+    <td>10GB SFP+ TO SFP+ 5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>62616</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>62835</td>
+    <td>1000Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63098</td>
+    <td>10Gbase-SR XFP 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63144</td>
+    <td>CWDM SFP 1470nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63159</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63220</td>
+    <td>10Gbase-ZR SFP+ 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63230</td>
+    <td>1000Base-EX SFP 1310nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63244</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63257</td>
+    <td>10Gbase-LR XFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63259</td>
+    <td>10Gbase-ER SFP+ 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63282</td>
+    <td>10Gbase-LR XFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63475</td>
+    <td>8GBASE-SW SFP+ FC 850NM</td>
+    <td>150M LC MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63580</td>
+    <td>10/100/1000BASE-T </td>
+    <td>COPPER RJ45</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>63650</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>63826</td>
+    <td>1000Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64068</td>
+    <td>10GB SFP+ TO SFP+ 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>64102</td>
+    <td>1000Base-ZX SFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64105</td>
+    <td>1000Base-SX SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64449</td>
+    <td>1310nm SMF 40km</td>
+    <td>1.25GBPS SFP</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64498</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64499</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64503</td>
+    <td>2.5Gbps SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64531</td>
+    <td>100Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J)Class1</td>
+  </tr>
+  <tr>
+    <td>64638</td>
+    <td>1000Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64639</td>
+    <td>1000Base-SX SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64703</td>
+    <td>10Gbase-ZR XFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64816</td>
+    <td>10GB SFP+ TO SFP+ 7M ACTIVE</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>64857</td>
+    <td>100BASE-EX SFP 1310NM 40KM </td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64882</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64920</td>
+    <td>40GBase-SR4 QSFP+ 850nm 150M</td>
+    <td>MTP/MPO DOM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>64985</td>
+    <td>2.5GBPS OC48-LR2</td>
+    <td>1550nm 80KM SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65058</td>
+    <td>100BASE-FX SFP</td>
+    <td>1310NM 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65068</td>
+    <td>10Gbase-ZR XFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65069</td>
+    <td>10Gbase-ER SFP+ 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65105</td>
+    <td>10GB SFP+ TO SFP+ 10M ACTIVE</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>65160</td>
+    <td>1000Base-BXD DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65161</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65228</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65264</td>
+    <td>1000Base-ZX SFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65378</td>
+    <td>1000Base-SX SFP RGD 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>65454</td>
+    <td>10GB SFP+ TO SFP+ 1.5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>65600</td>
+    <td>10GB SFP+ TO SFP+ .5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>65963</td>
+    <td>40GB QSFP+ TO QSFP+ 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66066</td>
+    <td>100BASE-FX SFP 1310NM 2KM RGD</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66082</td>
+    <td>40GB QSFP+ TO QSFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66089</td>
+    <td>1000Base-LX SFP 1310nm 10KM RGD</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J)Class1</td>
+  </tr>
+  <tr>
+    <td>66109</td>
+    <td>40GB QSFP+ TO 4XSFP+ BO 5M</td>
+    <td>DIRECT ATTACH CABLE BO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66126</td>
+    <td>40GB QSFP TO 4XSFP+ 3M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66131</td>
+    <td>1000BASE-BXU SFP UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66132</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66133</td>
+    <td>10GBase-BXU UPSTREAM IT</td>
+    <td>T1270nm/R1330nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66134</td>
+    <td>10GBase-BXD DOWNSTREAM IT</td>
+    <td>T1330nm/R1270nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66191</td>
+    <td>62125-MD-LCLC-05</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66309</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66392</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66443</td>
+    <td>10Gbase-LR XFP 1310nm IT 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66456</td>
+    <td>1000BASE-BXD CSFP</td>
+    <td>1490/1310 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66460</td>
+    <td>10GBase-BXD DOWNSTREAM IT</td>
+    <td>T1490nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66517</td>
+    <td>1000Base-ZX SFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66518</td>
+    <td>40GB QSFP+ TO QSFP+ 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66525</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66554</td>
+    <td>10G SFP+ AOC 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66561</td>
+    <td>PCIe X8 10G Dual-Port SFP+ ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66585</td>
+    <td>OC-48/STM-16 GBE 1310NM</td>
+    <td>SMF 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66597</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66598</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66601</td>
+    <td>40Gbase-LR QSFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66613</td>
+    <td>QSFP TO QSFP</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66616</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66666</td>
+    <td>40GB QSFP+ TO QSFP+ 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66667</td>
+    <td>40GB QSFP+ TO QSFP+ 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66668</td>
+    <td>40GB QSFP+ TO QSFP+ 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66669</td>
+    <td>10Gbase-ER SFP+ 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66678</td>
+    <td>10GB SFP+ TO SFP+ 3.5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66739</td>
+    <td>40GBase-LX4 QSFP+ 1310nm 2KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66777</td>
+    <td>40GBASE-PLRL4 QSFP+ 1310NM 1.4KM</td>
+    <td>MPO DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66784</td>
+    <td>40GB QSFP+ TO 4XSFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE BO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66797</td>
+    <td>40GB QSFP+ TO 4XSFP+ BO 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66816</td>
+    <td>1000Base-ZX SFP RGD 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66839</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66845</td>
+    <td>1000Base-SX SFP 850nm 2KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66879</td>
+    <td>40GB QSFP+ TO QSFP+ 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66886</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1330nm/R1270nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66931</td>
+    <td>10GB SFP+ TO SFP+ 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66933</td>
+    <td>40GB QSFP+ TO QSFP+ 5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66936</td>
+    <td>10GB SFP+ TO SFP+ 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>66943</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>66979</td>
+    <td>10G SFP+ AOC 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67099</td>
+    <td>40Gbase-BX QSFP+ 832-918nm 150M</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67180</td>
+    <td>10Gbase-SR XFP 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67259</td>
+    <td>1000Base-SX SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67289</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67322</td>
+    <td>SFP+ 16G 850nm 100M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67346</td>
+    <td>1000BASE-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67347</td>
+    <td>1000BASE-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67374</td>
+    <td>1000BASE-BXU35 1310/1550NM</td>
+    <td>10KM SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67375</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67389</td>
+    <td>10G-50125-LCLC-01</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67407</td>
+    <td>100GB QSFP28 TO QSFP28 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67417</td>
+    <td>10Gbase-T SFP+ Copper 30M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67473</td>
+    <td>SM-9125-LCLC-1</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67483</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67501</td>
+    <td>10GBASE-DWDM SFP+ 1558.17nm</td>
+    <td>80KM LC  DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67502</td>
+    <td>10GBASE-DWDM SFP+ C26</td>
+    <td>1556.55nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67506</td>
+    <td>25Gbase-SR SFP28 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67507</td>
+    <td>100GBASE LR4 CFP</td>
+    <td>SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67527</td>
+    <td>40Gbase AOC Breakout 3M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67528</td>
+    <td>100GBase-LR4 QSFP28 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67534</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67539</td>
+    <td>100GB QSFP28 TO QSFP28 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67543</td>
+    <td>40GB QSFP+ TO QSFP+ 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67544</td>
+    <td>40GB QSFP+ TO QSFP+ 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67548</td>
+    <td>40GB QSFP+ TO QSFP+ 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67589</td>
+    <td>10GB SFP+ TO SFP+ 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67590</td>
+    <td>10GB SFP+ TO SFP+ 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67595</td>
+    <td>MMF OM3 LC TO LC 3M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67602</td>
+    <td>40GBase-ER4 QSFP+ 1310NM 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67626</td>
+    <td>40G QSFP+</td>
+    <td>850nm 300M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67627</td>
+    <td>SM-9125-LCLC-03</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67636</td>
+    <td>10GB SFP+ TO SFP+ 9M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67705</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67732</td>
+    <td>40GBase-LX4 QSFP+</td>
+    <td>1310NM 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67753</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67754</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67786</td>
+    <td>4x10GBase-LR QSFP+ 1310nm 10KM</td>
+    <td>MTP/MPO DOM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67809</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67817</td>
+    <td>40GB QSFP+ TO 4XSFP+ BO 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67826</td>
+    <td>QSFP to 4x25G</td>
+    <td>Direct Attach Cable 2M</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67839</td>
+    <td>AMC16GB/67839</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67848</td>
+    <td>DDR4 32GB 2133Mhz LRDIMM</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67852</td>
+    <td>16FP-M4-LCLC-02</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67864</td>
+    <td>40G QSFP+ TO SFP+ Converter</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67875</td>
+    <td>10G SFP+ AOC 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67902</td>
+    <td>100GBase-SR4 QSFP28 850nm 100M</td>
+    <td>MTP/MPO DOM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67914</td>
+    <td>40GB QSFP+ TO QSFP+ 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67932</td>
+    <td>40GBase LR4 QSFP+ 1310NM 2KM</td>
+    <td>MPO DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67933</td>
+    <td>100GBase-LR4 QSFP28 1310nm 10KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67967</td>
+    <td>10GBase-ER XFP 1550NM 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>67977</td>
+    <td>100GB QSFP28 TO QSFP28 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67978</td>
+    <td>100GB QSFP28 TO QSFP28 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>67999</td>
+    <td>16FP-M4-LCLC-03</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68012</td>
+    <td>1000BASE CWDM 1511NM IT</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68020</td>
+    <td>10GB SFP+ TO SFP+ 7M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68025</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1270nm/R1330nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68026</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1330nm/R1270nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68075</td>
+    <td>16FP-M4-LCLC-05</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68088</td>
+    <td>100GBASE-CWDM4 QSFP28 1295-1331NM </td>
+    <td>LC DUPLEX SMF 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68095</td>
+    <td>100BASE-LX SFP 1310NM 10KM FE</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68117</td>
+    <td>10GB SFP+ TO SFP+ 4M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68137</td>
+    <td>100GBase-CWDM4 QSFP28 1271-1331nm 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68149</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68150</td>
+    <td>10GBase-LRM SFP+ 1310nm 220M</td>
+    <td>LC DUPLEX MMF/SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68152</td>
+    <td>1000Base - T SFP Copper 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68153</td>
+    <td>1000Base-SX SFP 850nm 550M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68154</td>
+    <td>1000Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68168</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68173</td>
+    <td>100GBASE-IR4 1310NM 2KM</td>
+    <td>SMF MPO</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68175</td>
+    <td>40GBase-ER4 QSFP+ 1310NM 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68183</td>
+    <td>25Gbase-SR SFP28 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68197</td>
+    <td>40Gbase-LR QSFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68198</td>
+    <td>40Gbase-LR QSFP+ 1310nm 10KM</td>
+    <td>MPO SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68206</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1270nm/R1330nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68208</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1330nm/R1270nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68227</td>
+    <td>LC- TO LC 3M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68236</td>
+    <td>40GB QSFP+ TO QSFP+ 50CM</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68258</td>
+    <td>10/100BASE-T SFP COPPER 100M</td>
+    <td>RJ-45 Connector</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68278</td>
+    <td>25G SFP28 DAC</td>
+    <td>COPPER CABLE 3M</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68283</td>
+    <td>10GB SFP+ TO SFP+ 7M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68291</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68292</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68335</td>
+    <td>1000Base-ZX SFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68346</td>
+    <td>10GB SFP+ TO SFP+ 2.5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68350</td>
+    <td>1000BASE-BXD 1550/1490NM 120KM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68364</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1330nm/R1270nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68365</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1270nm/R1330nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68366</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68398</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68399</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68402</td>
+    <td>16MB FLASH MEMORY</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68403</td>
+    <td>16MB DRAM MEMORY</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68412</td>
+    <td>DWDM SFP+ TUNABLE 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68419</td>
+    <td>10GB SFP+ TO SFP+ 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68420</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68432</td>
+    <td>100GB QSFP28 TO QSFP28 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68438</td>
+    <td>OM3 50/125 PATCH CABLE 10M</td>
+    <td>LC DUPLEX MMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68475</td>
+    <td>100GB QSFP28 TO 4XSFP28 1M</td>
+    <td>DIRECT ATTACH CABLE BO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68481</td>
+    <td>25GB SFP+ TO SFP+ 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68484</td>
+    <td>25GB SFP+ TO SFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68486</td>
+    <td>100GB QSFP28 TO QSFP28 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68494</td>
+    <td>40GB QSFP+ TO QSFP+ .5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68496</td>
+    <td>10Gbase-ER SFP+ 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68529</td>
+    <td>100GBASE-ER4L QSFP28 1310nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68547</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68613</td>
+    <td>40GB QSFP+ TO QSFP+ 30M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68631</td>
+    <td>CWDM SFP 1510nm 100KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68645</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68671</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68722</td>
+    <td>100GBase-LR4 CFP2</td>
+    <td>1295-1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68737</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68823</td>
+    <td>25GB SFP TO SFP 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68824</td>
+    <td>25G SFP28 TO SFP28 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68867</td>
+    <td>PCIe x8 10G SFP+ Dual-port Server Adapter</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68868</td>
+    <td>PCIe x8 10G Quad-port Server Adapter</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68874</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>68899</td>
+    <td>2.5Gbps SFF 850NM MMF 150M</td>
+    <td>DDM ROHS</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68904</td>
+    <td>40G QSFP+ AOC .5M</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>68995</td>
+    <td>PCIe X1 1G SC ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69049</td>
+    <td>1000Base-BXU SFP UPSTREAM IT</td>
+    <td>T1310nm/R1490nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69050</td>
+    <td>1000Base-BXD SFP DOWNSTREAM IT</td>
+    <td>T1490nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69053</td>
+    <td>100GBASE-CWDM4 QSFP28 1295-1331NM </td>
+    <td>LC DUPLEX SMF 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69080</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69119</td>
+    <td>40GB QSFP TO QSFP 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69158</td>
+    <td>25GB SFP28 TO SFP28 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69175</td>
+    <td>40GB QSFP+ TO QSFP+ .5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69266</td>
+    <td>1000Base-LX SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69280</td>
+    <td>40GB QSFP+ TO 4XSFP+ 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69281</td>
+    <td>40GB QSFP+ TO 4XSFP+ 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69282</td>
+    <td>40GB QSFP+ TO 4XSFP+ 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69285</td>
+    <td>MPO TO 4XLC OM4 7M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69290</td>
+    <td>10GB SFP+ TO SFP+ 3M ACTIVE</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69306</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69327</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69333</td>
+    <td>MPO TO MPO OM3 25M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69334</td>
+    <td>MPO TO MPO OM3 10M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69335</td>
+    <td>MPO TO 4XLC OM3 1M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69336</td>
+    <td>MPO TO 4XLC OM3 2M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69366</td>
+    <td>10Gbase-SR SFP+ 850nm 300M</td>
+    <td>LC DUPLEX MMF EXT TEMP</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69371</td>
+    <td>16GFC LWL 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21CFR(J)Class1</td>
+  </tr>
+  <tr>
+    <td>69372</td>
+    <td>40GB QSFP+ TO QSFP+ 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69373</td>
+    <td>40GB QSFP+ TO QSFP+ 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69379</td>
+    <td>10Gbase-ZR SFP+ 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69380</td>
+    <td>DWMD 1554.13nm 80KM DDM</td>
+    <td>21CFR(J)Class0</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69412</td>
+    <td>100GBASE-ER4L QSFP28 1310nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69419</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1470nm/R1570nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69420</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1570nm/R1470nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69421</td>
+    <td>40GB QSFP+ TO QSFP+ 7M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69423</td>
+    <td>GPON 2.4Gbps</td>
+    <td>1490/1310 1310nm</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69424</td>
+    <td>10GB SFP+ TO SFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69426</td>
+    <td>LC- TO LC 1M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69443</td>
+    <td>25G SFP28 DAC COPPER CABLE 3M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69450</td>
+    <td>100GB QSFP28 TO QSFP28 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69497</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69517</td>
+    <td>25GB SFP+ TO SFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69530</td>
+    <td>GPON OLT 40KM</td>
+    <td>T1490nm/R1310nm</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69536</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69537</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69543</td>
+    <td>10GBASE BIDI KIT 10KM</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69595</td>
+    <td>8GB SWL SFP+ 850nm</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69606</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1470nm/R1570nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69607</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1570nm/R1470nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69611</td>
+    <td>10G/1G-SR SFP+850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69668</td>
+    <td>25Gbase-LR SFP28 1310nm 10KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69669</td>
+    <td>40GBase-PLR4 QSFP+ 1310NM 10KM</td>
+    <td>MPO DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69670</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1470nm/R1570nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69671</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1570nm/R1470nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69691</td>
+    <td>10/100/1000Base-T SFP</td>
+    <td>COPPER 100M RJ-45 W/LOS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69692</td>
+    <td>4X25G 1295-1310nm 10KM LC</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69693</td>
+    <td>40GB QSFP+ TO 4XSFP+ 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69720</td>
+    <td>40GB QSFP TO 4XSFP+ 5M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69739</td>
+    <td>SFP 1390nm 24db</td>
+    <td>1.25 CWDM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69740</td>
+    <td>SFP 1410nm 24db</td>
+    <td>1.25 CWDM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69752</td>
+    <td>PCIe X8 10G DP SERVER ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69763</td>
+    <td>PCIE 1.1 SC</td>
+    <td>NETWORK ADAPTER</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69780</td>
+    <td>25G SFP28 DAC COPPER CABLE 1.5M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69782</td>
+    <td>100GBase-CWDM4 QSFP28 1271-1331nm 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69786</td>
+    <td>200GBase-SR8 QSFP-DD</td>
+    <td>MMF, 850nm, 70m, MPO-16</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69806</td>
+    <td>1000Base-LX  ET SFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69808</td>
+    <td>10GBase-BXD DOWNSTREAM XFP</td>
+    <td>T1330nm/R1270nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69809</td>
+    <td>10GBase-BXU UPSTREAM XFP</td>
+    <td>T1270nm/R1330nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69810</td>
+    <td>10GBase-BXU UPSTREAM XFP</td>
+    <td>T1270nm/R1330nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69811</td>
+    <td>10Gbase-LR XFP 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69812</td>
+    <td>10Gbase-ZR XFP 1550nm 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69813</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69814</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69818</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1330nm/R1270nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69819</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1270nm/R1330nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69820</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1330nm/R1270nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69821</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1270nm/R1330nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69822</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69823</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69824</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69825</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69833</td>
+    <td>QSFP28 Passive DAC 5M</td>
+    <td>Class 1.21CFR1040.10</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69849</td>
+    <td>1330Tx/1270Rx 20KM DDM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69850</td>
+    <td>1270Tx/1330Rx 20KM DDM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69851</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1330nm/R1270nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69852</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1270nm/R1330nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69853</td>
+    <td>1550TX/1490RX 80KM DDM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69854</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM DDM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69855</td>
+    <td>200GBASE-SR8 QSFP-DD CDR BYPASS</td>
+    <td>MPO-24 DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69862</td>
+    <td>100GBASE-ER4 CFP2 1295-1310NM </td>
+    <td>LC DUPLEX SMF 40KM</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69863</td>
+    <td>4X25G 1295-1310nm 10KM LC</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69865</td>
+    <td>100GBase-ER4 CFP 1295-1310NM </td>
+    <td>LC DUPLEX SMF 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69866</td>
+    <td>PCIe X1 1G SINGLE-PORT ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69867</td>
+    <td>PCIe X8 25G DUAL-PORT ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69888</td>
+    <td>10Gbase-LR IT SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69912</td>
+    <td>25G SFP28 TO SFP28 5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69913</td>
+    <td>25G SFP28 TO SFP28 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69914</td>
+    <td>40GB QSFP TO 4XSFP+ 1M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69915</td>
+    <td>40GB QSFP TO 4XSFP+ 2M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69916</td>
+    <td>40GB QSFP TO 4XSFP+ 3M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69924</td>
+    <td>2.5GBase-SW 850nm 500M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69926</td>
+    <td>100GBase-ER4 QSFP28 1295-1310NM </td>
+    <td>LC DUPLEX SMF 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69927</td>
+    <td>100GBase-ER4 QSFP28 1295-1310NM </td>
+    <td>LC DUPLEX SMF 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69979</td>
+    <td>40GBASE-CSR QSFP+ 850NM 400M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69987</td>
+    <td>40GBase-ER4 QSFP+ 1310NM 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69988</td>
+    <td>40GB QSFP+ TO 4XSFP+ 2M</td>
+    <td>DIRECT ATTACH CABLE BO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69993</td>
+    <td>MTP TO 4XLC OM4</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>69996</td>
+    <td>10GBASE-DWDM SFP+  1558.98nm</td>
+    <td>80KM LC  DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69997</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>69998</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70003</td>
+    <td>1000BASE DWDM SFP+ 1534.25NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70004</td>
+    <td>10GBASE CWDM SFP+ 1470NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70005</td>
+    <td>10GBASE CWDM SFP+ 1490NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70007</td>
+    <td>10GBASE CWDM SFP+ 1530NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70008</td>
+    <td>10GBASE CWDM SFP+ 1550NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70009</td>
+    <td>10GBASE CWDM SFP+ 1590NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70010</td>
+    <td>10GBASE CWDM SFP+ 1610NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70011</td>
+    <td>10GBASE CWDM SFP+ 1510NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70012</td>
+    <td>4X28G 1295-1310nm 30KM LC</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70022</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1310nm/R1490nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70023</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70036</td>
+    <td>1000BASE-BXU 1310/1490 10KM</td>
+    <td>LC SIMPLEX SMF RGD</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70037</td>
+    <td>1000BASE-BXD 1490/1310 CSFP</td>
+    <td>LC SIMPLEX SMF 10KM</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70038</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70055</td>
+    <td>1000Base-EZX SFP 1550nm 160KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70065</td>
+    <td>25G SFP28 TO SFP28 7M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70108</td>
+    <td>100GB QSFP28 TO QSFP28 .5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70109</td>
+    <td>10Gbase-LR SFP+ 1310nm 10KM</td>
+    <td>LC DUPLEX SMF IT</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70110</td>
+    <td>10Gbase-ER SFP+ 1550nm 40KM</td>
+    <td>LC DUPLEX SMF IT</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70119</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70120</td>
+    <td>100BASE-FX 1310NM SMF 2KM</td>
+    <td>LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70132</td>
+    <td>1000BASE-SX SFP 850NM 500M RGD</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70133</td>
+    <td>1000Base-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1490nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70134</td>
+    <td>1000BASE-CWDM SFP 1570nm 150KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70135</td>
+    <td>1000BASE-CWDM SFP 1550nm 150KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70185</td>
+    <td>40GBASE BIDI RX ONLY</td>
+    <td>850NM 150M </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70193</td>
+    <td>10GBASE-BXD 1330/1270nm 40KM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70194</td>
+    <td>10GBASE-BXU 1270/1330nm 40KM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70195</td>
+    <td>10GBASE-BXU</td>
+    <td>T1270nm/R1330nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70196</td>
+    <td>10GBASE-BXD 1330/1270nm 80KM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70202</td>
+    <td>40GB QSFP TO 4XSFP+ 3M</td>
+    <td>DIRECT ATTACH BO CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70205</td>
+    <td>100GB QSFP28 TO QSFP28 15M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70209</td>
+    <td>40GB QSFP+ TO QSFP+ 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70210</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70220</td>
+    <td>10GBASE CWDM SFP+ 1490NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70221</td>
+    <td>10GBASE CWDM SFP+ 1530NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70249</td>
+    <td>PCIe x1 1G SC SINGLE-PORT ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70256</td>
+    <td>10GB SFP+ TO SFP+ 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70266</td>
+    <td>100GBase-ER4 QSFP28 1295-1310NM </td>
+    <td>LC DUPLEX SMF 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70271</td>
+    <td>1000BASE-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70273</td>
+    <td>1000BASE-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 40KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70275</td>
+    <td>1000BASE-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70276</td>
+    <td>1000BASE-BXU SFP UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70278</td>
+    <td>1000BASE DWDM SFP+ 1560.61NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70279</td>
+    <td>1000BASE DWDM SFP+ 1559.79NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70280</td>
+    <td>1000BASE DWDM SFP+ 1557.36NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70281</td>
+    <td>1000BASE DWDM SFP+ 1556.55NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70282</td>
+    <td>1000BASE DWDM SFP+ 1555.75NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70283</td>
+    <td>1000BASE DWDM SFP+ 1554.94NM</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70284</td>
+    <td>40GB QSFP+ TO 4XSFP+ 9M</td>
+    <td>ACTIVE OPTICAL CABLE BO</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70304</td>
+    <td>100GBASE-CWDM4 QSFP28 1295-1331NM </td>
+    <td>LC DUPLEX SMF 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70305</td>
+    <td>100GBase-LR4 QSFP28 1310nm 10KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70341</td>
+    <td>7M CABLE</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70342</td>
+    <td>15M CABLE</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70345</td>
+    <td>400GB QSFP-DD TO QSFP-DD 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70348</td>
+    <td>100GBASE-LR4 CFP2 1310NM SMF </td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70349</td>
+    <td>10GB SFP+ TO SFP+ 5M ACTIVE</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70374</td>
+    <td>10GBASE-BXD 1550/1310NM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70375</td>
+    <td>10GBASE-BXU 1310/1550NM</td>
+    <td>LC SIMPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70376</td>
+    <td>10GBASE-DWDM CH21</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70377</td>
+    <td>10GBASE-DWDM CH22</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70378</td>
+    <td>10GBASE-DWDM CH23</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70379</td>
+    <td>10GBASE-DWDM CH24</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70380</td>
+    <td>10GBASE-DWDM CH30</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70381</td>
+    <td>10GBASE-DWDM CH31</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70382</td>
+    <td>10GBASE-DWDM CH21</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70383</td>
+    <td>10GBASE-DWDM CH22</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70384</td>
+    <td>10GBASE-DWDM CH23</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70385</td>
+    <td>10GBASE-DWDM CH24</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70391</td>
+    <td>LC TO LC OM4 7M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70392</td>
+    <td>LC TO LC OM4 10M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70393</td>
+    <td>LC TO LC OM4 15M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70397</td>
+    <td>40GB QSFP+ TO QSFP+ 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70405</td>
+    <td>FLSH-4GU8G</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70406</td>
+    <td>4GB DDR3 1600</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70467</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70475</td>
+    <td>40GBASE-IR4 QSFP+ 1310NM 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70483</td>
+    <td>1000BASE CWDM 1470NM IT</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70501</td>
+    <td>Patch Cable</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70502</td>
+    <td>Patch Cable</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70503</td>
+    <td>Patch Cable</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70505</td>
+    <td>Patch Cable</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70506</td>
+    <td>Patch Cable</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70543</td>
+    <td>SM-9125-LCLC-10</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70559</td>
+    <td>100GBASE-ER4 CFP2 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70581</td>
+    <td>40GBase-IR4 QSFP+ 1310nm 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70622</td>
+    <td>40GB QSFP+ TO QSFP+ 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70625</td>
+    <td>10GBASE CWDM SFP+ 1550NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70627</td>
+    <td>100GBASE-ZR4 1296/1300/1305/1309NM</td>
+    <td>80KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70631</td>
+    <td>DWDM XFP ONS TUNABLE 80KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70636</td>
+    <td>10/25Gbase-SR SFP28 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70637</td>
+    <td>100GBASE-PSM4 QSFP28 1310NM 500M</td>
+    <td>MPO  DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70666</td>
+    <td>PCIe X1 100M SFP Single Port Adapter</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70670</td>
+    <td>40GB QSFP+ TO QSFP+ 30M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70676</td>
+    <td>SM-9125-LCLC-07</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70713</td>
+    <td>1000BASE-LX SFP</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70716</td>
+    <td>1000BASE-SX SFP</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70719</td>
+    <td>25GBASE DWDM SFP28 CH21</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70720</td>
+    <td>25GBASE DWDM SFP28 CH27</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70721</td>
+    <td>25GBASE DWDM SFP28 CH31</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70722</td>
+    <td>25GBASE DWDM SFP28 CH36</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70723</td>
+    <td>25GBASE DWDM SFP28 CH45</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70724</td>
+    <td>25GBASE DWDM SFP28 CH51</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70725</td>
+    <td>25GBASE DWDM SFP28 CH55</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70726</td>
+    <td>25GBASE DWDM SFP28 CH60</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70727</td>
+    <td>25GBASE DWDM SFP28 CH22</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70728</td>
+    <td>25GBASE DWDM SFP28 CH23</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70729</td>
+    <td>25GBASE DWDM SFP28 CH24</td>
+    <td>10KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70730</td>
+    <td>DWDM-SFP10G-CH22-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70731</td>
+    <td>DWDM-SFP10G-CH25-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70733</td>
+    <td>DWDM-SFP10G-CH30-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70734</td>
+    <td>DWDM-SFP10G-CH35-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70735</td>
+    <td>DWDM-SFP10G-CH46-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70736</td>
+    <td>DWDM-SFP10G-CH49-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70738</td>
+    <td>DWDM-SFP10G-CH54-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70739</td>
+    <td>DWDM-SFP10G-CH59-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70740</td>
+    <td>DWDM-SFP10G-CH59-40-PL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70741</td>
+    <td>DWDM-SFP10G-CH60-40-PL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70742</td>
+    <td>DWDM-SFP10G-CH21-80-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70743</td>
+    <td>DWDM-SFP10G-CH22-80-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70745</td>
+    <td>DWDM-SFP10G-CH23-80-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70746</td>
+    <td>DWDM-SFP10G-CH24-80-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70747</td>
+    <td>DWDM-SFP10G-CH21-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70748</td>
+    <td>DWDM-SFP10G-CH23-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70749</td>
+    <td>DWDM-SFP10G-CH24-40-AL</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70769</td>
+    <td>DWDM-SFP10G-80-CH37</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70770</td>
+    <td>DWDM-SFP10G-80-CH39</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70771</td>
+    <td>DWDM-SFP10G-80-CH41</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70773</td>
+    <td>DWDM-SFP10G-80-CH43</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70774</td>
+    <td>DWDM-SFP10G-80-CH38</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70775</td>
+    <td>DWDM-SFP10G-80-CH40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70777</td>
+    <td>DWDM-SFP10G-80-CH42</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70779</td>
+    <td>DWDM-SFP10G-80-CH44</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70780</td>
+    <td>DWDM-SFP10G-80-CH25</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70781</td>
+    <td>DWDM-SFP10G-80-CH27</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70782</td>
+    <td>DWDM-SFP10G-80-CH29</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70783</td>
+    <td>DWDM-SFP10G-80-CH31</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70784</td>
+    <td>DWDM-SFP10G-80-CH33</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70785</td>
+    <td>DWDM-SFP10G-80-CH26</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70786</td>
+    <td>DWDM-SFP10G-80-CH28</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70787</td>
+    <td>DWDM-SFP10G-80-CH30</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70788</td>
+    <td>DWDM-SFP10G-80-CH32</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70789</td>
+    <td>DWDM-SFP10G-80-CH34</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70790</td>
+    <td>DWDM-SFP10G-40-CH25</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70791</td>
+    <td>DWDM-SFP10G-40-CH26</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70792</td>
+    <td>DWDM-SFP10G-40-CH27</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70793</td>
+    <td>DWDM-SFP10G-40-CH28</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70794</td>
+    <td>100GBASE-ER4L QSFP28 1310nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70795</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1310nm/R1550nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70796</td>
+    <td>200GB QSFP28-DD 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70797</td>
+    <td>QSFP28-DD TO 8XSFP28 DAC</td>
+    <td>BREAKOUT 3M</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70798</td>
+    <td>40Gbase-BX QSFP+ </td>
+    <td>832-912NM 1550M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70800</td>
+    <td>CWDM-SFP-1270</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70801</td>
+    <td>CWDM-SFP-1290</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70802</td>
+    <td>CWDM-SFP-1310</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70803</td>
+    <td>CWDM-SFP-1330</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70804</td>
+    <td>CWDM-SFP-1350</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70805</td>
+    <td>CWDM-SFP-1370</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70806</td>
+    <td>CWDM-SFP-1390</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70807</td>
+    <td>CWDM-SFP-1410</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70808</td>
+    <td>CWDM-SFP-1430</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70809</td>
+    <td>CWDM-SFP-1450</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70810</td>
+    <td>CWDM-SFP-1470</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70811</td>
+    <td>CWDM-SFP-1490</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70812</td>
+    <td>CWDM-SFP-1510</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70813</td>
+    <td>CWDM-SFP-1530</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70814</td>
+    <td>CWDM-SFP-1550</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70815</td>
+    <td>CWDM-SFP-1570</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70816</td>
+    <td>CWDM-SFP-1590</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70817</td>
+    <td>CWDM-SFP-1610</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70835</td>
+    <td>MPO TO 4XLC OM4 3M CABLE</td>
+    <td>LSZH TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70846</td>
+    <td>10GBASE DWDM SFP+ CH25 DELL</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70847</td>
+    <td>10GBASE DWDM SFP+ CH26 DELL</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70848</td>
+    <td>1000BASE-BXU SFP UPSTREAM</td>
+    <td>T1310nm/R1550nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70849</td>
+    <td>1000BASE-BXD SFP DOWNSTREAM</td>
+    <td>T1550nm/R1310nm 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70850</td>
+    <td>10GBASE DWDM SFP+ CH25</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70851</td>
+    <td>10GBASE DWDM SFP+ CH26</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70852</td>
+    <td>10GBASE DWDM SFP+ CH27</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70853</td>
+    <td>10GBASE DWDM SFP+ CH28</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70854</td>
+    <td>10GBASE DWDM SFP+ CH29</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70855</td>
+    <td>10GBASE DWDM SFP+ CH30</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70856</td>
+    <td>10GBASE DWDM SFP+ CH31</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70857</td>
+    <td>10GBASE DWDM SFP+ CH32</td>
+    <td>40KM LC DUPLEX</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70873</td>
+    <td>LC- TO LC 2M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70875</td>
+    <td>GIGABIT ETHERNET STM-1/OC3</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70884</td>
+    <td>LC- TO LC 2M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70892</td>
+    <td>100GBase-SWDM4 QSFP28</td>
+    <td>MMF LC 850NM 100M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70895</td>
+    <td>9125-MTP-4XLC-5M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70915</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70916</td>
+    <td>10Gbase-SR XFP 850nm 300M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70920</td>
+    <td>DDR4 32GB/2933/ER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70937</td>
+    <td>100GBASE-LR4 CFP2 1310NM SMF </td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70949</td>
+    <td>1000BASE-BXU SFP UPSTREAM SC</td>
+    <td>T1310nm/R1550nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70950</td>
+    <td>1000BASE-BXD SFP DOWNSTREAM SC</td>
+    <td>T1550nm/R1310nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70957</td>
+    <td>100GBase-SR4 QSFP28 850nm 100M</td>
+    <td>MTP/MPO DOM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70958</td>
+    <td>100GBase-SR4 QSFP28 850nm 100M</td>
+    <td>MTP/MPO DOM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>70960</td>
+    <td>100G QSFP28 AOC6.5M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70961</td>
+    <td>PCIe X1 1G SFP SINGLE-PORT ADAPTER</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70962</td>
+    <td>DWDM-SFP10G-CH25-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70963</td>
+    <td>DWDM-SFP10G-CH26-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70964</td>
+    <td>DWDM-SFP10G-CH27-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70965</td>
+    <td>DWDM-SFP10G-CH28-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70966</td>
+    <td>DWDM-SFP10G-CH35-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70967</td>
+    <td>DWDM-SFP10G-CH36-40</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70968</td>
+    <td>DWDM-SFP1G-80KM-C23</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70969</td>
+    <td>DWDM-SFP1G-80KM-24</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70974</td>
+    <td>SM-9125-LCLC-02-AMC</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70975</td>
+    <td>SM-9125-LCLC-02</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70983</td>
+    <td>DWDM-SFP-CH25-40-CIS</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70984</td>
+    <td>DWDM-SFP-CH26-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>70994</td>
+    <td>100BASE-FX SFP 1310NM 2KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71008</td>
+    <td>DWDM-SFP10G-CH21-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71009</td>
+    <td>DWDM-SFP10G-CH27-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71010</td>
+    <td>DWDM-SFP10G-CH28-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71011</td>
+    <td>DWDM-SFP10G-CH29-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71012</td>
+    <td>DWDM-SFP10G-CH32-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71013</td>
+    <td>DWDM-SFP10G-CH48-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71014</td>
+    <td>DWDM-SFP10G-CH25-80-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71015</td>
+    <td>DWDM-SFP10G-CH28-80-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71016</td>
+    <td>DWDM-SFP10G-CH32-80-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71017</td>
+    <td>DWDM-SFP10G-CH59-80</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71018</td>
+    <td>DWDM-SFP10G-CH59-80</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71019</td>
+    <td>DWDM-SFP-CH25-40-CIS</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71020</td>
+    <td>DWDM-SFP-CH26-40-BRO</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71031</td>
+    <td>SFP-10G-AOC3M-BRO-PLA</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71032</td>
+    <td>QSFP-100G-AOC1M-ALU</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71036</td>
+    <td>100GBASE-LR4 CFP4 1310NM 10KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71049</td>
+    <td>10GB SFP+ TO SFP+ 15M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71050</td>
+    <td>100GBASE-ER4L QSFP28 1310nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71052</td>
+    <td>10GB SFP+ TO SFP+ 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71053</td>
+    <td>MPO TO MPO OM4 2M CABLE</td>
+    <td>TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71054</td>
+    <td>MPO TO MPO OM4 5M CABLE</td>
+    <td>TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71055</td>
+    <td>MPO TO MPO OM4 10M CABLE</td>
+    <td>TYPE B</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71088</td>
+    <td>25GB SFP28 TO SFP28 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71096</td>
+    <td>100GB QSFP28 TO QSFP28 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71102</td>
+    <td>1GB CWDM SMF 80KM 1310</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71103</td>
+    <td>1GB CWDM SMF 80KM 1470</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71104</td>
+    <td>1GB CWDM SMF 80KM 1490</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71105</td>
+    <td>1GB CWDM SMF 80KM 1510</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71106</td>
+    <td>1GB CWDM SMF 80KM 1530</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71107</td>
+    <td>1GB CWDM SMF 80KM 1550</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71108</td>
+    <td>1GB CWDM SMF 80KM 1570</td>
+    <td>LC DUPLEX SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71118</td>
+    <td>40GB QSFP+ TO QSFP+ 15M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71136</td>
+    <td>10Gbase-ER XFP 1550nm 40KM</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71186</td>
+    <td>SM-9125-LCLC-05</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71187</td>
+    <td>25G SFP28 TO SFP28 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71209</td>
+    <td>10GB SFP+ TO SFP+ 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71210</td>
+    <td>40GB QSFP+ TO QSFP+ .5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71227</td>
+    <td>10GB SFP+ TO SFP+ 1.5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71242</td>
+    <td>CFP 100GB LR4 1310NM 10KM</td>
+    <td>SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71250</td>
+    <td>OM4-MPOMPO-2M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71285</td>
+    <td>100GBASE-CWDM4 QSFP28 1295-1331NM </td>
+    <td>LC DUPLEX SMF 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71288</td>
+    <td>2M CABLE</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71305</td>
+    <td>100G QSFP28 LR1 1310NM 10KM</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71306</td>
+    <td>100G QSFP28 FR1 1310NM 2KM</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71307</td>
+    <td>100G QSFP28 DR1 1310NM 500 M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71312</td>
+    <td>16GFC SWL SFP+ 850NM 100M</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71343</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71345</td>
+    <td>50125 MTP TO 4XLC 5M</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71357</td>
+    <td>100MB-FX SFP 1310NM 2KM</td>
+    <td>MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71371</td>
+    <td>10GB SFP+ TO SFP+ 0.5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71374</td>
+    <td>10GB SFP+ TO SFP+ 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71376</td>
+    <td>10GB SFP+ TO SFP+ 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71378</td>
+    <td>40GB QSFP+ TO QSFP+ 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71383</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71398</td>
+    <td>100GB QSFP28 TO QSFP28 8M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71402</td>
+    <td>40GB QSFP+ TO QSFP+ 9M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71404</td>
+    <td>100GB QSFP28 TO QSFP28 9M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71406</td>
+    <td>100GB QSFP28 TO QSFP28 11M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71409</td>
+    <td>40GB QSFP+ TO 4XSFP+ BO 9M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71422</td>
+    <td>SM-9125-LCLC-04</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71423</td>
+    <td>SM-9125-LCLC-06</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71425</td>
+    <td>SM-9125-LCLC-08</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71426</td>
+    <td>SM-9125-LCLC-09</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71429</td>
+    <td>QSFP-DD 400G-FR4</td>
+    <td>CWDM 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71430</td>
+    <td>400GBASE-DR4 QSFP-DD PAM4 1310NM</td>
+    <td>500M MPO SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71431</td>
+    <td>100GBASE-DR1 QSFP28 1310NM 500M</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71432</td>
+    <td>400GBASE-DR4 QSFP-DD PAM4 1310NM</td>
+    <td>500M MPO SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71433</td>
+    <td>100GBASE-DR1 QSFP28 1310NM 500M</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71434</td>
+    <td>400GBASE-DR4 QSFP-DD PAM4 1310NM</td>
+    <td>500M MPO SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71435</td>
+    <td>100GBASE-DR1 QSFP28 1310NM 500M</td>
+    <td>LC DUPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71436</td>
+    <td>QSFP-DD 400G-FR4</td>
+    <td>CWDM 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71531</td>
+    <td>25GB SFP28 TO SFP28 .5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71538</td>
+    <td>MD-62125-LCLC-01</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71553</td>
+    <td>10Gbase-ZR SFP+ 1550nm 120KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71564</td>
+    <td>10GBASE-BXU XFP</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71565</td>
+    <td>10GBASE-BXD XFP</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71577</td>
+    <td>100GB QSFP28 TO QSFP28 .5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71578</td>
+    <td>100GB QSFP28 TO QSFP28 2M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71579</td>
+    <td>100GB QSFP28 TO QSFP28 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71580</td>
+    <td>100GB QSFP28 TO QSFP28 5M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71597</td>
+    <td>10GBase-BXD DOWNSTREAM </td>
+    <td>T1330nm/R1270nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71598</td>
+    <td>10GBase-BXU UPSTREAM </td>
+    <td>T1270nm/R1330nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71618</td>
+    <td>40GB QSFP+ TO QSFP+ 19M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71623</td>
+    <td>SFP+ Combo PON D2 OLT</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71639</td>
+    <td>10G-50125-LCLC-02</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71650</td>
+    <td>100GBASE-BIDI QSFP28</td>
+    <td>100M MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71651</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 20KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71659</td>
+    <td>32GBASE-SW 850nm</td>
+    <td>150M LC MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71668</td>
+    <td>400GBASE-FR4 QSFP-DD</td>
+    <td>CWDM4 2KM SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71677</td>
+    <td>1000Base-BXD SFP DOWNSTREAM</td>
+    <td>T1490nm/R1310nm 60KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71716</td>
+    <td>PCIe x8 10G Quad-port Server Adapter</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71728</td>
+    <td>40Gbase-BX QSFP+ 832-918nm 150M</td>
+    <td>LC SIMPLEX SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71729</td>
+    <td>100GBASE-BIDI QSFP28</td>
+    <td>LC MMF 70M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71763</td>
+    <td>100GB To 4x25GB</td>
+    <td>Direct Attach Cable 4M</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71764</td>
+    <td>1000BASE-EZX SFP 1550mn</td>
+    <td>120KM LC SMF </td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71765</td>
+    <td>1000BASE-ZX SFP 1550nm</td>
+    <td>80KM Duplex LC SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71780</td>
+    <td>GPON-OLT-CLASS B+</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71795</td>
+    <td>100GBASE-BXU QSFP28</td>
+    <td>1271/1331 10KM SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71796</td>
+    <td>100GBASE-BXD QSFP28</td>
+    <td>1331/1271 10KM SMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71816</td>
+    <td>400GBase-DR4 QSFP-DD </td>
+    <td>1310nm 500M SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71824</td>
+    <td>1550TX/1490RX 80KM DDM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71825</td>
+    <td>1490TX/1550RX 80KM DDM</td>
+    <td></td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71851</td>
+    <td>2.4GBS/1.2GBS-B+ SFP</td>
+    <td>1490/1310 20KM SC</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71865</td>
+    <td>10GBASE-DWDM SFP+ C36</td>
+    <td>1548.51nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71866</td>
+    <td>10GBASE-DWDM SFP+ C44</td>
+    <td>1542.14nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71873</td>
+    <td>10GBASE-CWDM SFP+</td>
+    <td>1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71874</td>
+    <td>10GBASE-CWDM SFP+</td>
+    <td>1510nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71875</td>
+    <td>10GBASE-CWDM SFP+</td>
+    <td>1530nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71876</td>
+    <td>10GBASE-CWDM SFP+</td>
+    <td>1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71890</td>
+    <td>10GBase-BXD DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71954</td>
+    <td>XGSPON&amp;GPON</td>
+    <td>OLT-N2/C+</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>71979</td>
+    <td>100GB QSFP28 TO QSFP28 .5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>71981</td>
+    <td>100GB QSFP28 TO QSFP28 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72051</td>
+    <td>100GB QSFP28 TO QSFP28 1M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72052</td>
+    <td>100GB QSFP28 TO QSFP28 5M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72081</td>
+    <td>40GB TO 4X10GB ACTIVE OPTICAL</td>
+    <td>CABLE 9 METER</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72084</td>
+    <td>10GBASE-BXU SFP+ UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72085</td>
+    <td>10GBASE-BXD SFP+ DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72086</td>
+    <td>10GBASE-BXU XFP UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72087</td>
+    <td>10GBASE-BXD XFP DOWNSTREAM</td>
+    <td>T1550nm/R1490nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72091</td>
+    <td>XGS-PON SFP+1-G/10G CLASS N1</td>
+    <td>1577/1270nn 20KM</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72128</td>
+    <td>400GB QSFPDD TO QSFPDD 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72133</td>
+    <td>OC-48-SR SFP </td>
+    <td>1310NM SMF 2KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72165</td>
+    <td>100GBase-LR4 QSFP28 1310nm 10KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72173</td>
+    <td>10GBase-BXU UPSTREAM</td>
+    <td>T1490nm/R1550nm 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72221</td>
+    <td>40/100GBASE-BIDI</td>
+    <td>MMF LC 100M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72230</td>
+    <td>40GB QSFP+ TO QSFP+ 10M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72231</td>
+    <td>40GB QSFP+ TO QSFP+ 25M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72238</td>
+    <td>CFP 100GBase-LR4 LC 10KM</td>
+    <td>1310nm SMF</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72249</td>
+    <td>2.5GBASE-SX SFP</td>
+    <td>850NM MMF 550M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72250</td>
+    <td>2.5GBASE-LX SFP</td>
+    <td>1310NM SMF 10KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72274</td>
+    <td>10Gbase-ZR SFP+ 1550nm 120KM</td>
+    <td>LC DUPLEX MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72299</td>
+    <td>200GB QSFP56 TO QSFP56 3M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72300</td>
+    <td>200GB QSFP56 TO QSFP56 2M</td>
+    <td>DIRECT ATTACH CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72315</td>
+    <td>10GBASE-SR XFP </td>
+    <td>850nm MMF 300M</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72336</td>
+    <td>100GBASE-BIDI QSFP28</td>
+    <td>300M OM4 MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72338</td>
+    <td>100GBASE-SWDM4 QSFP28</td>
+    <td>100M OM4 MMF</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72357</td>
+    <td>40GB QSFP+ TO QSFP+ 1M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72358</td>
+    <td>40GB QSFP+ TO QSFP+ 3M</td>
+    <td>ACTIVE OPTICAL CABLE</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>72359</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1470NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72360</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1490NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72361</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1550NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72362</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1570NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72363</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1590NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  <tr>
+    <td>72364</td>
+    <td>10GBASE SFP+ CWDM</td>
+    <td>1610NM SMF 80KM</td>
+    <td>21 CFR(J) Class1</td>
+  </tr>
+  </table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+    <!-- end .content --></div>
+  <div class="footer">
+    <p>&nbsp;</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

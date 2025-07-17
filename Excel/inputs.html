@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imput</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ mark { 
+  background-color: Blue;
+  color: white;
+}
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 225px; position: relative; top: 10px; left: 40px;">Inputs / Msg / Controls</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3>InputBox</h3>
+    <ul>
+        <strong>Syntax of InputBox in VBA:</strong><br />
+        <br />
+        InputBox(prompt[, title] [, default] [, xpos] [, ypos] [, helpfile, context] )<br />
+        ‘prompt’ refers to the message that is displayed to the user.<br />
+        <br />
+        ‘title’ is an optional argument. It refers to the heading on the input dialog window. If it is omitted then a default title “Microsoft Excel” is shown.<br />
+        <table width="775" border="1" cellspacing="0" cellpadding="1">
+          <tr>
+            <td width="406" valign="top"><h3>Using the Title</h3>Fname = InputBox("Enter file name to save", "Save as PDF")</td>
+            <td width="359"><img src="Excel_Image/savePDF.jpg" width="359" height="152" /></td>
+          </tr>
+        </table>
+          <pre></pre>
+          ‘default’ it is an optional argument. It refers to the value that will appear in the textbox when the InputBox is initially displayed. If this argument is omitted, the textbox is left empty.<br />
+          <br />
+          ‘xpos’ is an optional argument. It refers to the positional coordinate of the input dialog window on X-axis.<br />
+          <br />
+          ‘ypos’ is also an optional argument. It refers to the positional coordinate of the input dialog window on Y-axis.<br />
+          <br />
+          ‘helpfile’ it is the location of help file that should be used with the InputBox. This is an optional parameter but it becomes a mandatory argument when ‘context’ argument is passed.<br />
+          ‘context’ represents the HelpContextId in the referenced ‘helpfile’. It is an optional paramete<br /><br />
+          <strong>Example:</strong><br />
+        
+          <ol>Sub addproductnameandprice()<br />
+            Dim pro As Variant ' <span style="color: #00F; text-align: right;">Notice pro is a &quot;Variant&quot; so that we can use a decimal rather than whole numbers only.</span><br />
+            Dim cst As Integer<br />
+            Dim r As Integer<br />
+            pro = InputBox("What is the product Descripiton/Name?")<br />
+            cst = InputBox("Enter Cost of item.")<br />
+            r = Worksheets("List").Cells(2, 4)<br />
+            <br />
+            Cells(r, 2).Select<br />
+            ActiveCell = pro<br />
+            ActiveCell.Offset(0, 1) = cst<br />
+            ActiveCell.Offset(0, 6).Select<br />
+            Selection.FillDown<br />
+            <br />
+            End Sub<br />
+          </ol>
+   	</ul>
+  <h3>Control box</h3>
+    <ul><h3>Reset a Control Box using a macro.</h3>
+          <ol>
+            Worksheets("Sheet1").Shapes("Drop Down 1").OLEFormat.Object.Value = 1
+          </ol>
+          <br />
+          <strong>Example:</strong><br />
+          <ul>Sub chooseinventorychart()<br />
+          <ol>If Worksheets("List").Range("Y6") = "2" Then Call OpenInventoryChart<br />
+          If Worksheets("List").Range("Y6") = "3" Then Call CloseInventoryChart<br />
+          Worksheets("Dash").Shapes("Drop Down 6").OLEFormat.Object.Value = 1<br />
+          </ol>
+          End Sub<br /><br />   
+    </ul>
+    <strong>Open and Close the chart from above example?</strong><br />
+    <ol>ActiveSheet.ChartObjects("Chart 1").Activate<br />
+        ActiveSheet.Shapes.Range(Array("Chart 1")).Visible = msoFalse <em><strong style="color: #00F">' This will Close Chart 1</strong></em><br />
+        <br />
+    ActiveSheet.ChartObjects("Chart 1").Activate<br />
+        ActiveSheet.Shapes.Range(Array("Chart 1")).Visible = msoTrue<span style="color: #00F"> <em><strong>' This will Open Chart 1</strong></em>
+    
+        </span>
+    </ol><br /><br /></ul>
+    <h3>Check box with &quot;If Statement&quot; Checked = 1 Unchecked = xlOff</h3>
+    <ol>Sub ticlow()<br />
+      <br />
+    <dd>If ActiveSheet.Shapes("Check Box 1").ControlFormat.Value = 1 Then<br />
+        Range("J1") = "Tic Low"<br />
+    End If<br />
+    <br />
+    If ActiveSheet.Shapes("Check Box 1").ControlFormat.Value = xlOff Then<br />
+        Range("J1").ClearContents<br />
+    End If</dd>
+    End Sub<br />
+    </ol>
+    <br /><br />
+    
+    <h3>Combo Box calls multiple List Boxes</h3><ul>
+    <ol>Sub ComboBoxCalls_MultipleListsBoxs()<br />
+    Dim a As String, b As String, c As String, d As String, x As String<br />
+    a = "=Fruits"<br />
+    b = "=Woods"<br />
+    c = "=Sandwiches"<br />
+    d = "=Knifes"<br />
+    <br />
+    If [B1] = 2 Then x = a<br />
+    If [B1] = 3 Then x = b<br />
+    If [B1] = 4 Then x = c<br />
+    If [B1] = 5 Then x = d<br />
+    <br />
+    With Range("J1").Validation<br />
+        <dd>.Delete<br />
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _<br />
+        xlBetween, Formula1:=x</dd><br />
+    End With<br />
+    <br />
+    End Sub<br /><br />
+    <span class="blueText">What we see here is that in cell J1 there is a drop down validation list of Sandwiches called by combo box in H1<br />
+    Choose Fruits in H1combo box would cause the validation list in J1 to change to validation list Fruits.
+    </span><br />
+    <img src="Excel_Image/ComboBoxCalls_MultipleListBoxes.jpg" width="804" height="159" />
+    </ol>
+    </ul>
+    <h3>Checkboxes, Check and unCheck 1 or all checkboxes</h3>
+        <ol>
+          <dd>ActiveSheet.CheckBoxes.Value = False <span class="Blue_Text">' This will clear all checkboxes (&quot;True&quot; would check all boxes)</span><br />
+    <br />
+    ActiveSheet.Checkboxes("Check Box 1").Value = True <span class="Blue_Text">' This will Check a particular checkbox</span><br />
+    <br />
+    ActiveSheet.Checkboxes("Check Box 1").Value = False <span class="Blue_Text">' This will Clear a particular checkbox </span></dd></ol><br />
+    
+    <h3> Reset a ListBox using a macro.</h3>
+    <ol>
+    Worksheets("Sheet1").Shapes("Drop Down 1").OLEFormat.Object.Value = 1
+    </ol>
+    <h3>Searchable Dropdown ListBox using ActiveX combobox</h3>
+    <ol>See example file: "ActiveSearchDropdownList.xlsm<br />
+      Instruction on the web at: <a href="https://trumpexcel.com/excel-drop-down-list-with-search-suggestions/">Click Here.</a> What the video.
+    </ol><br /><br />
+    <br />
+    <h3>Msgbox - - - - 
+      <span style="font-size: 16px">MsgBox(prompt[,buttons][,title][,helpfile,context])</span></h3>
+    <ol>
+    MsgBox "Any messsage you want to display here"&nbsp;&nbsp; <span style="color: #03F">' this will have the standard Microsoft title</span><br /><br />
+    
+    MsgBox "Welcome " & Application.UserName & "!", 1, "Title"
+    <br /><br />
+    MsgBox "Sorry no room in play list!", , "Play Limit Reached"<br />
+    
+        GoTo Line1<br /><br />
+        <img src="Excel_Image/MSGBOX.jpg" width="909" height="352" /> <br /><br />
+    
+    
+      <a href="https://www.tutorialspoint.com/vba/vba_message_box.htm">MsgBox Link to tutorpoint</a><br />
+    <br />
+    <h3>Msgbox with Yes NO</h3>
+      <dd>
+          Sub msg()<br />
+     Dim answer As Integer<br />
+     answer = MsgBox("Would you like to place a one in H1", vbYesNo)<br />
+     <br />
+     
+        If answer = vbYes Then<br />
+        [H1] = 1<br />
+        Else<br />
+        [H1] = 2<br />
+        End If<br />
+    End Sub<br />
+    <br />
+    <h3>Msgbox with Yes NO</h3>
+    <dd>
+      <p>Msgbox("Prompt",Button style,"Title") ... This is the basic format. Above and Below are examples.<br>
+        <br>
+        
+      Sub Macro name()<br>
+        Dim answer As Integer<br>
+        answer = MsgBox("Part is Coded as Juniper?",<mark>4</mark>, "Coded as Juniper or Non juniper") <br>
+        If answer = vbYes Then<br>
+        Call Juniper_All<br>
+        End If<br>
+        If answer = vbNo Then<br>
+        Call chooznonjuniper<br>
+        End If<br>
+  <br>
+        End Sub<br><br>
+        <strong>Here are the button styles</strong><br>
+        0 vbOKOnly - Displays OK button only.<br>
+  <br>
+        1 vbOKCancel - Displays OK and Cancel buttons.<br>
+  <br>
+        2 vbAbortRetryIgnore - Displays Abort, Retry, and Ignore buttons.<br>
+  <br>
+        3 vbYesNoCancel - Displays Yes, No, and Cancel buttons.<br>
+  <br>
+       <mark>4</mark> vbYesNo - Displays Yes and No buttons.<br>
+  <br>
+        5 vbRetryCancel - Displays Retry and Cancel buttons.<br>
+  <br>
+        16 vbCritical - Displays Critical Message icon.<br>
+  <br>
+        32 vbQuestion - Displays Warning Query icon.<br>
+  <br>
+        48 vbExclamation - Displays Warning Message icon.<br>
+  <br>
+        64 vbInformation - Displays Information Message icon.<br>
+  <br>
+        0 vbDefaultButton1 - First button is default.<br>
+  <br>
+        256 vbDefaultButton2 - Second button is default.<br>
+  <br>
+        512 vbDefaultButton3 - Third button is default.<br>
+  <br>
+        768 vbDefaultButton4 - Fourth button is default.<br>
+  <br>
+        0 vbApplicationModal Application modal - The current application will not work until the user responds to the message box.<br>
+  <br>
+        4096 vbSystemModal System modal - All applications will not work until the user responds to the message box.<br><br>
+      </p>
+</dd>
+          
+        </dd>
+    </ol><br /><br />
+        </div>
+    </body>
+</html>

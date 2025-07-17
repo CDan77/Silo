@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background-image: url(images/UFO_Tree.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background: teal;*/
+	position: relative;
+}
+
+.Header {
+	color: #FFF;
+	width: 100%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-style: normal;
+	text-align: center;
+	vertical-align: bottom;
+	padding-top: 200px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	
+}
+.ufo {
+	background-image: url(images/UFO.png);
+	position: fixed;
+	left: 1500px;
+	top: 75px;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 80px;
+	margin: 0px;
+	padding: 0px;
+}
+.DD{
+Color:FFF
+	
+}

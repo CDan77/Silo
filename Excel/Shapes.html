@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Shapes</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+              
+<h3>Working with shapes</h3>
+  <ol>
+      <strong>Shapes_Working_withShapes.xlsm</strong><br />
+
+    Ctrl + D will copy a shape ..................Use the Arrow in the quick access tool bar to select a shape or many shapes.<br /><br /></ol>
+    <h3>Hidding shapes and pictures using VBA</h3>
+    <ol> ActiveSheet.Shapes("Picture 2").Visible = True<br />
+    ActiveSheet.Shapes("Picture 2").Visible = False<br />
+    ActiveSheet.Shapes("Rectangle: Rounded Corners 3").Visible = True<br />
+        ActiveSheet.Shapes("Rectangle: Rounded Corners 3").Visible = False<br />
+  </ol>
+<h3>Buttons created using shapes</h3>
+  <ol>
+    Turning on and off a button or set of buttons using VBA. If all shapes are on sheet 1 then you can use the &quot;With&quot; command else you need to call out the sheet name each time.<br />
+    <br />Worksheets("Sheet1").Shapes.Range(Array(&quot;GeneralBlue&quot;)).Visible = msoTrue<br />
+    Worksheets("Sheet1").Shapes.Range(Array(&quot;GeneralBlue&quot;)).Visible = msoFalse<br /><br />
+    or you could say:<br />
+    <br />
+    Sub ShapeName()<br />
+    With Sheet1<br />
+    <dd>
+    .Shapes.Range(Array(&quot;GeneralBlue&quot;)).Visible = msoTrue ' Visable<br />
+    .Shapes.Range(Array(&quot;GeneralBlue&quot;)).Visible = msoFalse ' not Visable
+    </dd>
+    end with<br />
+    end sub<br /><br /><br />
+    <strong>Examples:</strong><br />
+  <ol>
+  <img src="Excel_Image/Buttonshapes.jpg" width="540" height="274" />  <br />
+  <H3>Here is the macro:</H3>
+<code>
+<strong>Sub ShapeGeneral()</strong><br />
+With Sheet1<br />
+<dd>.Shapes.Range(Array("GeneralBlue")).Visible = msoFalse<br />
+.Shapes.Range(Array("SalesBlue")).Visible = msoTrue<br />
+.Shapes.Range(Array("ProductBlue")).Visible = msoTrue</dd>
+End With<br />
+<strong>End Sub</strong><br /><br /><br />
+<strong>Sub ShapeSales()</strong><br />
+With Sheet1<br />
+<dd>.Shapes.Range(Array("SalesBlue")).Visible = msoFalse<br />
+.Shapes.Range(Array("GeneralBlue")).Visible = msoTrue<br />
+.Shapes.Range(Array("ProductBlue")).Visible = msoTrue</dd>
+ End With<br />
+ <strong>End Sub</strong><br /><br /><br />
+<strong>Sub ShapeProduct()</strong><br />
+<dd>With Sheet1<br />
+.Shapes.Range(Array("ProductBlue")).Visible = msoFalse<br />
+.Shapes.Range(Array("GeneralBlue")).Visible = msoTrue<br />
+.Shapes.Range(Array("SalesBlue")).Visible = msoTrue</dd>
+ End With<br />
+<br />
+<strong>End Sub</strong><br /><br />
+</code>
+</ol><br /><br />
+ <h3> Adding shapes to the worksheet. . . <a href="https://docs.microsoft.com/en-us/office/vba/api/Excel.Shapes.AddShape">Shapes.AddShape Method (Excel)</a>
+  </p>
+</h3>
+</ol>
+<ol>Syntax
+  
+  expression. AddShape( _Type_ , _Left_ , _Top_ , _Width_ , _Height_ )<br />
+<br />
+Sub addshape()<br /><br />   
+   ' ActiveSheet.Shapes.AddShape(msoShapeRectangle, 300, 30, 30, 30).Select<br />
+   ' ActiveSheet.Shapes.AddShape(1, 10, 10, 50, 50).Select<br />
+     ' Note OK to use shape Number or shape Name: AddShape(1, (is the same as) AddShape(msoShapeRectangle,<br />
+   <br />
+   ' ActiveSheet.Shapes.AddShape(msoShapeIsoscelesTriangle, 333, 32.25, 23.25, 42).Select<br />
+   ' ActiveSheet.Shapes.AddShape(msoShapeOval, 10, 50, 146.5, 146.5).Select<br />
+   <br />
+End Sub<br />
+<a href="https://docs.microsoft.com/en-us/office/vba/api/office.msoautoshapetype">Complete list of shape Numbers and Names</a><br /><br />
+To move a rectangle one Column to the right use 49.  To move a rectangle down one Row use 12.75<br />
+ActiveSheet.Shapes.AddShape(1, 49, 12.75, 50, 50).Select ' would place the rectangles top left corner at cell B2<br />
+
+</ol>
+        </div>
+    </body>
+</html>

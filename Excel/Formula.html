@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Formula's</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3>Formula's</h3>
+    <ul>
+    <h3>Adds zero's to beginning of text. I used this to create SN for crystal</h3>
+    <ol>
+      We will need a total of 9 digits.  Zeros will be put infront of what ever number is in the cell.<br />
+    Cell H20 contain the number 121. The goal will be to create a text of 000000121 which is  a total of 9 numbers/text.<br /><br />
+    
+    =rept(0,9-len(A1))&A1<br />
+    <br />
+    <img src="Excel_Image/leadingZeros.jpg" width="539" height="552" /><br /><br /></ol>
+    <br />
+    <h3>Count 2 number in an array</h3>
+    <ul>
+      <img src="Excel_Image/Occurance.jpg" width="542" height="233" />
+    </ul>
+    
+    <h3>=DGET(Database,Field,Criteria)<br />
+    <li>"Database" is all the data that you will pull from</li>
+    <li>"Field" is the data that will be returned. Field is represented by the column number from left to right or header name can be used in "Quotes"</li>
+    <li>"Criteria" is the criteria that you want to search for. Criteria can not have duplicate data in the same column.</li>
+      <br />
+    Advantages: Can be used like Vlookup and it can lookup to the left of the key column. Has the  ability to use multiple criteria.<br /><br />
+    Disadvantages - If there are any duplicates you will get the error #NUM. You can not drag the formula down. <br />
+    Filters or Filter in VBA may be a better choice if the you need to show multiple results. </h3>
+    <img src="Excel_Image/DGET.jpg" width="1052" height="484" /> <br />
+    
+    <h3>ExcelJet (<a href="https://exceljet.net/">website</a>)</h3>
+    <ol>
+      <li><a href="https://exceljet.net/formulas">Formula's</a></li>
+      <li><a href="https://exceljet.net/excel-functions">Functions</a></li>
+        <li><a href="https://exceljet.net/keyboard-shortcuts">Key Board Short Cuts</a></li>
+    </ol>
+    
+    <h3>The Order of Operator Precedence in Excel Formulas</h3>
+    <ol>
+      Question:	&nbsp;&nbsp;&nbsp;=(82-32)/5+8*2<br />
+    Answer 26<br />
+    82-32 = 50 Now divide 50 by 5 = 10<br />
+    Plus 8*2 = 16 Which is 10 + 16 = 26<br /><br />
+    <strong>Simple Hierarchy:</strong><br />
+    <ol><li>( &nbsp;&nbsp;)</li>
+    <li>* & /</li>
+    <li>+ & -</li>
+    </ol>
+    <br />
+    Operations that are equal in precedence are performed left to right.
+    </ol>
+    <br /><br />
+    <h3>Sum a list of number but some contain a letter</h3>
+    <ol>
+      <img src="Excel_Image/Sumwithtext.jpg" width="640" height="212" /><br />
+    <br />
+    
+    </ol>
+    <h3>Find all Characters Left or Right of the comma ,</h3>
+    <ol>
+      <dd><strong> =Left(A18,Find(",",A18)-1)<br>
+     =Right(A18,Len(A18)-Find(",",A18)</strong>)<br />
+     <img src="Excel_Image/FindLeftRightofComma.jpg" width="495" height="117" /></dd>
+    </ol>
+    <h3>=Find</h3>
+    <ol>
+      <img src="Excel_Image/FIND.jpg" width="772" height="321" /><br />
+    <br />
+    <img src="Excel_Image/FIND1.jpg" width="547" height="147" /> <br />
+    Anything beside A,B,C,D would result in an error thus making the cell "".<br />
+    <br />
+    </ol>
+    <h3><strong>=Sumproduct</strong> with text criteria (<a href="https://www.youtube.com/watch?v=lzjc_eEISe8&amp;t=333s">Link to Leila explanation of SumProduct</a>)</h3>
+    <ol>
+    Sumproduct
+    works by multipling two numbers in two different columns on the same row then adds the sum of the next two cells on the next row and so on. Lets look at two examples.<br /><br />
+    <strong>Example 1</strong><br /><br />
+    <dd><img src="Excel_Image/Sumproduct1.jpg" width="634" height="211" /><br />
+    We will sum Column "D" if Column "A" = Cell "H1" (21 + 23 + 22) = 66<br />
+    <li>Note in the formula: (Product_A=H1) is rapped with parenthesis. This is a must do.</li> 
+    <li>Note the multiplier ( * ) is used between arguments instead of ( , )comma. This is because sumproduct recognized text as either True or False and multipling would cause an error. </li>
+    </dd>
+    <br /><br />
+    <strong>Example 2</strong><br /><br />
+    <dd><img src="Excel_Image/Sumproduct2.jpg" width="638" height="214" /><br /><br />
+    We will sum Column "C" * "D" and then add the next data that meets the criteria. <br />
+    "C2" = 2 * 21 "D2" = 42 + <br />
+    "C3" = 2 * 23 "D3" = 46 + <br />
+    "C7" = 2 * 22 "D7" = 44 = 132
+    <br /><br />
+    Note this formula uses ( -- ) instead of using ( * ). This formula could have also been written like this:<br />
+    <strong>=SumProduct((Product_A=H1)*C2:C7*D2:D7)</strong><br />
+    One is no more correct than the other. <br />
+    <br />
+    <strong>Lets use the &quot;AND&quot; &amp; &quot;OR&quot; operators with =SumProduct </strong><br />
+    When talking out the formula use <strong>+</strong> as the word ( or )<br />
+    When talking out the formula use <strong>*</strong> as the word ( and )<br />
+    (See: <a href="https://www.youtube.com/watch?v=lzjc_eEISe8&amp;t=333s"> Leila explanation of SumProduct "AND & "OR" operators and how to use them.</a>) <br /><br />
+    <img src="Excel_Image/SumproductAndOr4.jpg" width="1059" height="262" /></dd> 
+    <br /><br />
+    </ol>
+    <h3>=SumProduct - How many Fridays are in the list in column "A" ?</h3>
+    <ol>
+      <strong>The dates in column &quot;A&quot; are formated as dates.</strong><br />
+      In Cell C2&nbsp;&nbsp;&nbsp;	=SUMPRODUCT(--(TEXT(A2:A23,"dddd")=C1))<br />
+    In Cell D2&nbsp;&nbsp;&nbsp;	=SUMPRODUCT(--(TEXT(A2:A23,"dddd")=D1))<br />
+    <br />
+      <img src="Excel_Image/how_many_Fridays_in_Dates.jpg" width="483" height="429" />
+    </ol>
+    <h3>=MOD</h3>
+    <ol>
+    MOD  is the remainder of two number. Thus  
+    <ol>14 MOD 4 = 2</ol><ol>8 MOD 5 = 3</ol>
+    14 divide by 4 or (4 * 3 =12) with a remainder of 2 <br />
+    &nbsp;&nbsp;8 divide by 5 or (5 * 1 = &nbsp;5) with a remainder of 3
+    </ol>
+    <br /><br />
+    <h3>=Countif</h3>
+    <ol>=COUNTIF(A1:A10,100) <span class="blueText">'// count cells equal to 100</span><br />
+    =COUNTIF(A1:A10,">32") <span class="blueText">'// count cells greater than 32</span><br />
+    =COUNTIF(A1:A10,"jim") <span class="blueText">'// count cells equal to "jim"</span><br />
+    =COUNTIF(A1:A10,"<"&B1) <span class="blueText">'// count cells less than value in B1</span><br /><br /></ol>
+    <h3>=Code</h3>
+    <ol>
+      <img src="Excel_Image/EqualsCODE.jpg" width="586" height="660" /><br />
+      <img src="Excel_Image/EqualsCODEexample.jpg" width="884" height="376" /><br /><br />
+    <strong>Here is another example using &quot;Code&quot;</strong>
+    <dd><img src="Excel_Image/LookCode2.jpg" width="735" height="235" /></dd>
+    </ol>
+    <br /><br />
+    <h3>=Choose (<a href="https://exceljet.net/excel-functions/excel-choose-function">see Choose Function</a>)</h3>
+    <ol>
+      The value of "B5" could be a formula which would changed the output color. Looking at the picture if the value of B5 was 4 you would get an error because<br />
+      there is no 4th color. So the value of &quot;B5&quot; is restricted to 3 out comes. Maximum # of Values is 254.<br /><br />
+    <img src="Excel_Image/ChooseFunction.jpg" width="703" height="403" />
+    </ol><br /><br />
+    <h3>=Concatenate and (Flash Fill: (Ctrl + E) )</h3>
+    <ol>
+    <table width="1229" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top"><strong>Start with:</strong><br />
+          <img src="Excel_Image/FlashFill1.jpg" width="613" height="103" /></td>
+        <td valign="top"><strong>Finish with:<br />
+          <img src="Excel_Image/FlashFill2.jpg" width="616" height="124" /></strong></td>
+      </tr>
+    </table>
+    <dd>
+    <li>There are a list of names in column "A". Manually type Daniel in "B1" and Patrick in "C1" and Carpenter in D1.</li> 
+    <li>Click on Cell "B1" and click on "Flash Fill" from the Data tab or Ctrl + E.</li> 
+    <li>All the first names will be auto filled down. Do the same for "C1" and "D1"</li>
+    <br />
+    Note! - "F1" concatenates them back into one cell. Notice there are no spaces. You can add spaces like this.<br />
+    =CONCATENATE($E$1,K1,$F$1,K1,$G$1) With this method you will need to add a space to cell K1<br />
+    =CONCATENATE($E$1&" ",$F$1&" ",$G$1)</dd>
+    </ol>
+    <br />
+    <br />
+    <h3>{=Frequency(data,intervals)}</h3>
+    <ol>
+      <img src="Excel_Image/Frequency.jpg" width="584" height="381" /><br /><strong></strong><br />
+    <strong>Key Examples:</strong> <span class="Blue_Text">Note! that =Frequency counts the number of time there is a number equal to or less than the targeted number in an array.</span><br />
+    <br />
+     =FREQUENCY(B2:B10,D2)<br />
+    Result: 2 ......<span class="Blue_Text">So the target is D2 or 59 there are only 2 numbers in the array that are equal to or less than 59<br />
+    </span><br />
+    <a href="https://best-excel-tutorial.com/58-excel-functions/133-frequency-function">More info on Frequency can be found here.</a><br />
+    </ol>
+    <br /><br />
+    <h3>=VLOOKUP (<a href="../The Ultimate Guide To VLOOKUP.pdf">vlookup guide</a>)- - - - =HLOOKUP works the same way but horizontally</h3>
+    <ol>
+    =vlookup(Look up what),(in what array),(in what column of the array is the answer), (&quot;True&quot;or &quot;1&quot; = exactmatch or closest lower number)(&quot;False&quot; or &quot;0&quot; = Exact match only)<br />
+    <br />
+    =vlookup(E1,A1:C1,3,0) <span class="blueText">' In this example F1 would be Mobile. If I drag the formula &quot;as is&quot; to Cell G1 the formula would error.  Here is a better way to write it.</span><br />
+    =vlookup($E$1,$A1:C$1,COLUMN(C$1),False)
+     ' In this example cell E1 stays the same plus the Array and Column &quot;D&quot; if dragged to column &quot;G&quot; are updated. Note! there are no &quot;$&quot; signs before the &quot;C&quot;'s<br />
+    <br />
+    <table width="1100" border="1" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="34" align="center">&nbsp;</td>
+        <td width="79" align="center">A</td>
+        <td width="130" align="center">B</td>
+        <td width="93" align="center">C</td>
+        <td width="107" align="center">D</td>
+        <td width="116" align="center">E</td>
+        <td width="107" align="center">F</td>
+        <td width="118" align="center">G</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Dan</td>
+        <td>949-633-9951</td>
+        <td>Home</td>
+        <td><p>New 1</p></td>
+        <td>Amanda</td>
+        <td>=vlookup(E1,A1:C1,3,0)
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Edith</td>
+        <td>949-633-9952</td>
+        <td>Cell</td>
+        <td>Who knew</td>
+        <td>&nbsp;</td>
+        <td>=vlookup($E$1,$A1:C$1,COLUMN(C$1),False)</td>
+        <td>=vlookup($E$1,$A1:D$1,COLUMN(D$1),False)</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Amanda</td>
+        <td>949-633-9953</td>
+        <td>Mobile</td>
+        <td>So what</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Patrick</td>
+        <td>949-633-9954</td>
+        <td>Land Line</td>
+        <td>I care</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Bella</td>
+        <td>949-633-9955</td>
+        <td>Twilight Zone</td>
+        <td>I dont</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    
+    </ol>
+    <br />
+    <br />
+    
+    <h3>=Vlookup that adds a prefix to what is being looked up.  In this example we will look up a phone number and include the text "Phone:".</h3>
+    <ol>
+      <p>="Phone: " &Vlookup(C1,A1:B5,2,False)
+      - - - This formula is in Cell D1</p>
+      <table width="464" border="1" cellspacing="0" cellpadding="1">
+        <tr>
+          <td width="9">&nbsp;</td>
+          <td width="55" align="center">A</td>
+          <td width="101" align="center">B</td>
+          <td width="100" align="center">C</td>
+          <td width="144" align="center">D</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Dan</td>
+          <td>949-633-9951</td>
+          <td>Edith</td>
+          <td>Phone: 949-633-3448</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Edith</td>
+          <td>949-633-9952</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Amanda</td>
+          <td>949-633-9953</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Patrick</td>
+          <td>949-633-9954</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Bells</td>
+          <td>949-633-9955</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+     </ol>
+     <h3>=Index (<a href="https://exceljet.net/index-and-match">Index and Match</a>)</h3>
+    <ol>Using Index to find data in a row and column.<br />
+      {=index(AD:AH,Match(AO1,AD:AD,0)+4,5)}  <br />
+      Other examples: <br />
+      {=index(Table1,Match(A1,Table1[Name],0)+Rows,Columns )}<br />
+      <br />
+    {=INDEX(G1:J5,MATCH(M2&N2,G1:G5&H1:H5,0)+0,4)
+      } Here we are matching 2 criteria M2 and N2 from the index range G1:J15.<br />
+      We could say that the index range is G5:J5 and that we need to match M2 in G1:G5 and N2 in H1:H5 once found offset 0 rows and 4 columns. <br />
+    <br />
+    
+      <img src="Excel_Image/Indexfunction.jpg" width="849" height="566" />
+    </ol>
+    <h3>=Sum</h3>
+    <ol>
+    =sum(Cell+Cell) <span class="blueText">' or other operators between cell and cell ( /, *, -, +)</span><br />
+    =sumif(range,criteria, sum range)<br /><br />
+    =sumifs(sum range, criteria_range1,criteria1, criteria_range2, criteria2)<br />
+    </ol>
+    <br />
+    <br />
+    <h3>Sum 2d range with multiple criteria</h3>
+    <ol>
+      <strong>Generic formula</strong><br />
+    =SUMPRODUCT(data*(range1=criteria1)*(range2=criteria2))<br /><br />
+    <strong>Explanation</strong><br />
+    To lookup and sum values in a 2D range with multiple criteria, you can use the SUMPRODUCT function. In the example shown, the formula in J6 is:<br />
+    <br />
+    =SUMPRODUCT(data*(codes=J4)*(days=J5))<br />
+    using <strong>named ranges</strong> as shown in the image.<br />
+    <img src="Excel_Image/2DProductSum.jpg" width="698" height="403" />
+    </ol>
+    <br />
+    <br />
+    
+    
+    
+    <h3>IF Statements</h3>
+    <ol><ol><strong>Font is color then</strong><br />
+    <ol>
+    if range("a1").Font.Color = RGB(255, 255, 255) then<br />
+    or<br />
+    if range("a1").Font.Color = vbred then<br />
+      ' your code<br />
+    end if<br /></ol></ol></ol>
+    <h3>Clean up text in a cell</h3>
+    <ol>
+      <table width="800" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="22">&nbsp;</td>
+          <td width="305" align="center">A</td>
+          <td width="248" align="center">B</td>
+          <td width="215" align="center">C</td>
+          </tr>
+        <tr>
+          <td>1</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; This line has spaces in front and at the end&nbsp;&nbsp;&nbsp;</td>
+          <td>=Trim(A1) fixes the spaces</td>
+          <td>=Trim(Clean(A1))</td>
+          </tr>
+        <tr>
+          <td>2</td>
+          <td>This line has spaces in front and <br />
+            <br />
+            a line break</td>
+          <td>=Clean(A1) fixes the line break</td>
+          <td valign="top">will fix both of these problems. </td>
+          </tr>
+        <tr>
+          <td>3</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          </tr>
+    </table>
+    </ol>
+    <h3>=Len</h3>
+    <ol>Len will count the Lenght. <a href="https://exceljet.net/excel-functions/excel-len-function">Here are more examples</a>
+    </ol><br /><br />
+    <h3>=Left, Right, Mid</h3>
+    <ol>Finding data in a string. - - - <a href="https://www.ablebits.com/office-addins-blog/2017/11/15/excel-substring-functions-extract-text/">Ablebits.com</a><br /><br />
+    <code>
+    =MID(A3, SEARCH("Lot",A3) +4, SEARCH("Lot",A3,SEARCH("Lot",A3)+1) - SEARCH("Lot",A3) - 4)
+    </code><br />
+    This searches from "Lot" to Lot" and return what ever is in between these two words.<br />
+    
+    <img src="Excel_Image/MiddleString_to_String.jpg" width="679" height="234" /><br />
+    <img src="Excel_Image/Data_InsideCell.jpg" width="758" height="669" />
+    </ol>
+    <h3>=Replace</h3>
+    <ol>In this example "A2" is the original text. <br />
+    17 is the number of spaces from the left where we will start inputing text. <br />
+    4 is the number of spaces that will get replaced. Since guys is 4 character we use 4<br />
+    "Gym" is what will be added to the old text.<br />
+    <img src="Excel_Image/ReplaceTExt.jpg" width="435" height="137" /><br />
+    If you add a space so "Gym" now is "Gym " and change 4 to 0 your results will be: <br />
+    "This is the old Gym guys house"<br /><br /></ol>
+    <h3>=Rank (<a href="https://support.office.com/en-us/article/rank-function-6a2fc49d-1831-4a03-9d8c-c279cf99f723?NS=EXCEL&amp;Version=16&amp;SysLcid=1033&amp;UiLcid=1033&amp;AppVer=ZXL160&amp;HelpId=xlmain11.chm60264&amp;ui=en-US&amp;rs=en-US&amp;ad=US">See Rank Function</a>)</h3>
+    <ol>Example of Ranking students and grading there scors<br />
+    <br />
+    <img src="Excel_Image/RankandGradeScores.jpg" width="650" height="350" />
+    </ol>
+    <h3>=Substitute</h3>
+    <ol>=SUBSTITUTE(A1,9,8,4)<br />
+    This says substitute 9 in cell A1 with 8 in the fouth instance of 9.<br />
+    <br />
+    <img src="Excel_Image/substitute.jpg" width="515" height="118" /><br /></ol><br /><br />
+    <h3>=Transpose & (Transpose Live({=TRANSPOSE(A1:B7)}))</h3>
+    <ol>
+      <p>Transpose a range. Highlight a  range and copy. Right click on another cell and paste Transpose.</p>
+      <p>We want the numbers in Row 10 (the transposed numbers) to change if the number in column B1:B7  change.<br />
+      <dd>  <li>Highlight the range ("A9:G10").</li>
+          <li>Type: =Transpose("A1:B7")</li>
+            <li>Press: Shift+Ctrl+Enter</li>	<br />
+    
+      </dd>
+      Now should a number in Range("B1:B7") change, the corresponding number in row 10 will change as well.
+        </p><br />
+        <br />
+    
+        <img src="Excel_Image/TransposeLive.jpg" width="480" height="206" />
+    </ol>
+    <h3>Exact</h3>
+      <dd>
+          
+        Hi all,
+        
+        One of the lesser known (but useful) functions in Excel is the EXACT function. EXACT has just one purpose: compare text values exactly, taking into account upper and lower case:<br />
+        <br />
+        =EXACT("abc","abc") // returns TRUE<br />
+        =EXACT("abc","ABC") // returns FALSE<br />
+        =EXACT("abc","Abc") // returns FALSE<br />
+        <br />
+        How can the EXACT function be useful in the real world?<br />
+        <br />
+        One example is a case-sensitive count. Normally to count text, the COUNTIF or COUNTIFS functions are good options. However, because these functions aren't case-sensitive, they won't work in this situation.<br />
+        <br />
+        The trick is to use the EXACT function to compare the text, and the SUMPRODUCT function to count the results, as seen in the screen below:<br /><br />
+        <img src="Excel_Image/Exact.jpg" width="530" height="403" /> </dd>
+    </ul>
+        <pre>
+          
+        </pre>
+
+        </div>
+    </body>
+</html>

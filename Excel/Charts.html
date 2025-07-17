@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 225px; position: relative; top: 10px; left: 40px;">Charts and Printing</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3>Link Chart Title to cell.</h3>
+    <img src="Excel_Image/chart_titl_exl2016.png" width="948" height="491" />
+<br />
+    <h3>Position a Chart<br /></h3>
+    <ol>
+    <strong>The position will only be set accurately when the active window is not zoomed in or out. So make sure that ActiveWindow.Zoom = 100 before you set the .Left and .Top-properties.</strong><br /><br />
+    Sub PositionChart()<br />
+    <ul>ActiveWindow.zoom = 100<br />
+    With ActiveSheet.Shapes("Chart 1")<br />
+    <ul>.Left = Range("D1").Left ' this will choose the column "D"<br />
+    .Top = Range("B2").Top  ' will choose the row "2"<br />
+    .Height = 216 &nbsp;&nbsp;&nbsp;&nbsp;<span class="blueText">&nbsp;' Note one (1) inch = 72 so 3 inches = 216</span><br />
+    .Width = 360 &nbsp;&nbsp;&nbsp;&nbsp;<span class="blueText">&nbsp;' Note one (1) inch = 72 so 5 inches = 360</span><br /></ul>
+    End With<br /></ul>
+    End Sub</ol>
+    <br />
+    <h3>Move a Chart from one sheet to another</h3>
+    <ol>
+    Sub MoveChart()<br />
+        ActiveSheet.ChartObjects("Chart 1").Activate<br />
+        ActiveChart.Location Where:=xlLocationAsObject, Name:="Sheet2"<br />
+    End Sub<br />
+    </ol>
+    <br />
+    <h3>Move Chart with Inputbox</h3>
+    <ol>
+    Sub PositionChart()<br />
+    Dim c As String<br />
+    Dim r As Integer<br />
+    Dim h As Variant<br />
+    Dim w As Variant<br />
+    <br />
+    On Error GoTo Line1<br />
+    c = InputBox("Enter Column Letter A - Z Only")<br />
+    c = Left(c, 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'This will confirm "C" is the first letter should the user type in for example G1, "C" will be "G"<br />
+    <br />
+    r = InputBox("Enter Row Number")<br />
+           <br />
+    h = InputBox("Enter Height in Inches")<br />
+       <ul> If Not IsNumeric(h) Then<br />
+            MsgBox "Height Must be a number, Please try again"<br />
+            GoTo Line1<br />
+        End If<br /></ul>
+    <br />
+    w = InputBox("Enter Width in inches")<br />
+     <ul>If Not IsNumeric(w) Then<br />
+            MsgBox "Width Must be a number, Please try again"<br />
+            GoTo Line1<br />
+        End If<br /></ul>
+    <br />
+    ActiveWindow.zoom = 100<br />
+    With ActiveSheet.Shapes("Chart 1")<br />
+    .Left = Range(c & 1).Left ' this will choose the column "D"<br />
+    .Top = Range(c & r).Top  ' will choose the row "2"<br />
+    .Height = h * 72 &nbsp;&nbsp;&nbsp;<span class="blueText">&nbsp;' 72 = one inch</span><br />
+    .Width = w * 72<br />
+    End With<br />
+    <br />
+    Line1:<br />
+    <br />
+     End Sub
+      <br />
+    </ol>
+   
+    <h3>StandardChartSize and Position on same sheet</h3>
+    <ol>
+    Sub StandardChartSize()<br />
+    Dim q As String<br />
+    Dim c As String<br />
+    Dim r As Integer<br />
+    Dim h As Variant<br />
+    Dim w As Variant<br />
+    <br />
+    On Error GoTo Line1<br />
+    <br />
+    c = InputBox("Enter Column Letter A - Z Only")<br />
+    c = Left(c, 1)<br />
+    r = InputBox("Enter Row Number")<br />
+    <br />
+    q = InputBox("Enter 1 for 2 x 2." & vbCrLf & "Enter 2 for 3 x 5" & vbCrLf & "Enter 3 for 5 x 6 1/2", "Standard Sizes")<br />
+    <br />
+    If q = 1 Then<br />
+     h = 2<br />
+     w = 2<br />
+    End If<br />
+    <br />
+    If q = 2 Then<br />
+     h = 3<br />
+     w = 5<br />
+    End If<br />
+    <br />
+    If q = 3 Then<br />
+     h = 5<br />
+     w = 6.5<br />
+    End If<br />
+    ActiveWindow.zoom = 100<br />
+    With ActiveSheet.Shapes("Chart 1")<br />
+    .Left = Range(c & 1).Left ' this will choose the column "D"<br />
+    .Top = Range(c & r).Top  ' will choose the row "2"<br />
+    .Height = h * 72 &nbsp;&nbsp;&nbsp;&nbsp;<span class="blueText">' 72 = one inch</span><br />
+    .Width = w * 72<br />
+    End With<br />
+    <br />
+    Line1:<br />
+    <br />
+     End Sub<br />
+    </ol>
+    <br /><h2>Print</h2>
+    <h3>Choose a printer before printing</h3>
+    <ul>
+      Dim rng as range<br />
+      set rng = Range("A1:G6")<br />
+      <br />
+        ' This line allows you to choose the printer before it prints<br />
+      <span class="Blue_Text">Application.Dialogs(xlDialogPrinterSetup).Show</span><br /><br />
+    
+       rng.PrintOut &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' This will print<br />
+      'rng.printpreview &nbsp;&nbsp;'This will preview and then you can print<br />
+    
+        
+    </ul>
+    <h3>Print a filtered table and print only what can be seen (<a href="https://www.exceltip.com/excel-printing/printing-a-filtered-list.html">WebLink</a>)</h3>
+    <dd>
+      <img src="Excel_Image/PrintFilteredDataTable.jpg" width="654" height="547" /> </dd>
+    <h3>Print a range of cells</h3>
+    <ol>
+    Sub PrintYourPlays()<br />'<br />
+        Dim rng as Range<br />
+        set rng = Range
+        ("G18:L50")<br />
+        rng.PrintOut Copies:=1, Collate:=True<br />
+        ActiveSheet.DisplayPageBreaks = False<br />
+    End Sub<br />
+    
+    </ol>
+    <h3>Print a range of cells <U>without the cell color</U></h3>
+    <ol>Sub PrintYourPlays()<br />
+    PrintYourPlays Macro<br />
+    <br />
+        Range("G18:L50").Select<br />
+        With Sheets("Home").Cells.Interior<br />
+            <dd>.Pattern = xlNone<br />
+            .TintAndShade = 0<br />
+            .PatternTintAndShade = 0<br /></dd>
+        End With<br />
+        Selection.PrintOut Copies:=1, Collate:=True<br />
+        ActiveSheet.DisplayPageBreaks = False<br />
+        Range("F17").Select<br />
+    End Sub<br /></ol>
+    <h3>Print Region of cells</h3>
+    <ol>Sub PrintRegion()<br />
+    <br />
+    PrintRegion Macro<br />
+    <br />
+        Range("F17").CurrentRegion.Select<br />
+        Selection.PrintOut Copies:=1, Collate:=True<br />
+        ActiveSheet.DisplayPageBreaks = False ' This line Kills or Deletes the print lines on the sheet (Dotted Lines).<br />
+        Range("F17").Select<br />
+    End Sub<br />
+    </ol>
+    <br />
+        <a name="export" id="export"></a>
+        
+    <h3>Export Sheet2 as PDF - How to print a worksheet as a pdf</h3>
+    <ol>
+    Sub printws2As_PDF()<br />
+    <br />
+    Dim ws1 As Worksheet<br />
+    Dim ws2 As Worksheet<br />
+    Dim sPath As String<br />
+    Dim Fname As String<br />
+    <br />
+    Set ws1 = Worksheets("Sheet1")<br />
+    Set ws2 = Worksheets("Sheet2")<br />
+    sPath = ActiveWorkbook.Path<br />
+    Fname = ws1.[B1]<br />
+    <br />
+    ws2.Activate<br />
+      <br />
+    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:= _<br />
+            sPath & "\" & Fname & ".PDF", Quality:=xlQualityStandard, _<br />
+            IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:= _<br />
+            False<br />
+        
+    End Sub<br />
+    <br /></ol>
+    <h3>How to combine multiple PDF files into one.</h3>
+    <ol><li>Open the PDF file('s) and Print to PDF Creator</li>
+    <li>PDF Creator will open and you can Press Merge files</li>
+    <img src="Excel_Image/PDFCreator1.png" /><br />
+    <img src="Excel_Image/PDFCreator2.png" width="800" height="600" /><br />
+    <img src="Excel_Image/PDFCreator3.png" width="800" height="600" /><br />
+    </ol>
+    <br /><br />
+    
+    <h3>Export as PDF</h3>
+    <ol>
+    Sub Save2PDF_AllPages()<br />
+          <br />
+    <dd>
+      Dim Fname As String<br />
+    Fname = InputBox("Enter file name")<br />
+    ActiveWorkbook.Save<br />
+    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _<br />
+            Filename:=Fname, _<br />
+            Quality:=xlQualityStandard, IncludeDocProperties:=True, _<br />
+            IgnorePrintAreas:=False, <br />OpenAfterPublish:=False</dd><br />
+    End Sub<br /><br />
+      
+    Sub Save2PDF_Selected_Pages()<br />
+    <br />
+    <dd>Dim Fname As String<br />
+    Dim frompage As Integer<br />
+    Dim topage As Integer<br />
+    <br />
+    Fname = InputBox("Enter file name")<br />
+    frmpage = InputBox("Enter page number of first page to export")<br />
+    topage = InputBox("Enter last page number to export")<br />
+    ActiveWorkbook.Save<br />
+    <br />
+    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _<br />
+            Filename:=Fname, _<br />
+            Quality:=xlQualityStandard, _<br />
+            IncludeDocProperties:=True, _<br />
+            IgnorePrintAreas:=False, _<br />
+            From:=frmpage, _<br />
+            To:=topage, _<br />
+            OpenAfterPublish:=False</dd><br />
+    End Sub<br />
+    <strong>Print to PDF</strong><br />
+    
+    <a href="https://www.pdfforge.org/pdfcreator/download">PDF Creator download https://www.pdfforge.org/pdfcreator/download<br /><br /></a>
+    VBA code to print excel to PDF and give PDF a password.<br /><br />
+    Sub PDF_Print ()<br />
+    ActiveSheet.Printout ActivePrinter:="PDFCreator"<br />
+    End Sub
+    <hr />
+    <a href="http://www.contextures.com">www.contextures.com</a><br />
+      </div>
+    </body>
+</html>

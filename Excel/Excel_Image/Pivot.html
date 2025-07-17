@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pivot</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../index.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Pivot</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+              
+<h3>Excel Dashboard Data-card</h3>
+<ol>Watch: <a href="https://www.youtube.com/watch?v=oVTMfSD8YzU">https://www.youtube.com/watch?v=oVTMfSD8YzU</a><br />
+Read: <a href="https://www.howtoexcel.org/charts/kpi-data-cards/">https://www.howtoexcel.org/charts/kpi-data-cards/</a><br />
+<a href="pdf/PivotTableDashCard.pdf">Read Local PDF</a><br />
+<br />
+
+  <img src="Excel_Image/dashCard.jpg" width="276" height="194" />
+</ol>
+<h3>Pivot Tables &amp; DashBoards</h3>
+<ul>
+<h3>Refresh a Pivot Table via VBA</h3>
+<ol>ActiveSheet.PivotTables("PivotTable1").PivotCache.Refresh<br />
+	 ActiveWorkbook.RefreshAll<br />
+
+</ol>
+
+<br />
+<h3>Fill all empty cells in a table with a value or a string</h3>
+<ul>
+	Sub zeroo()<br />
+    <dl>
+      <dd> Range("A1").CurrentRegion.SpecialCells(xlCellTypeBlanks).Value = "Blank"</dd>
+    </dl>
+    <br />
+    or try<br /><br />
+ Sub zeroo()<br />
+   <dd> Range("A1").CurrentRegion.SpecialCells(xlCellTypeBlanks).Value = 0</dd>
+   <br />
+End Sub
+
+</ul>
+<h3>Dashboards</h3> 
+  <ol>
+    Create a pivot tables for each item you want to show in the dashboard. Name each pivot table so you will know it later when you add slicers. Make pivot charts. They can be Copied or Cut and pasted to your dashboard. Then format your dash to look nice.
+  </ol>
+<br />
+<h3>Remove old filter names</h3>
+  <table width="450" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="Excel_Image/PivotFilterRemoval1.jpg" width="268" height="398" />&nbsp;</td>
+      <td valign="top"><img src="Excel_Image/PivotFilterRemoval.jpg" width="453" height="267" />&nbsp;</td>
+    </tr>
+  </table>
+
+<h3>The Pivot Chart</h3>
+  <ol>
+    Now you can add a text boxes to the pivot chart. With the text box you can create dynamic labels. Click on the edge of the text box, then click in the formula bar and enter a cell address like  =A1. Maybe you want to concatinate your label like =A1 & &quot;Hello world?&quot;  
+  </ol>
+<h3>The source data must not have any blank cells. If it does you can fix it like this.</h3>
+  <ol>Goto the source data. Filters must be on. Filter the column for blanks<br /><br />
+    <li>Highlight the blank cells</li>
+    <li>Press: &nbsp;<strong>Alt + ;</strong></li>
+    <li>In the top most cell enter text to replace blanks</li>
+    <li>Press: &nbsp; <strong>Ctrl + Enter</strong></li>
+    <li>Go back to the pivot table and click on any cell then press: Alt + F5 to refresh pivot table.</li><br /></ol>
+    <h3>Connecting the slicer to many pivot tables</h3>
+  <ol>
+Right click on a Slicer (one at a time)<br />
+Choose: <strong>Report Connections</strong><br />
+Check all pivot table that apply to your goal.<br />
+Now when you choose an item from the slicer all charts on the dash will update.</ol>
+<h3>Choose your slicer</h3>
+<ol>From the pivot table you can right click on an item and choose slicers</ol>
+<br />
+
+<h3>Coping pivot tables </h3>
+  <ol>
+    Once you have the table created copy the sheet by Left click on the sheet tab then hold the Ctrl button and drag the sheet over and release mouse button. Now you quickly work on you next pivot table. This is important so that all charts on the dashboard are using the same data set. Rename the tab.
+  </ol>
+<h3>In the pivot table your data you  want to see is in dates but you want to see months and years</h3>
+  <ol>
+    Try Grouping the date in Months and Years. Right click and Group
+  </ol>
+<br />
+<h3>My Online Training Hub</h3>
+  <ol>
+    <a href="../Excel_Tips&amp;Tricks_e-BookV1.1.pdf">Tips and Tricks (This is a hw to PDF file)</a>
+  </ol>
+<h3>Pivot Table Diagram</h3>
+  <ol>
+    <img src="Excel_Image/PivotTableDiagram.jpg" width="1011" height="543" />
+  </ol>
+</ul>  
+        </div>
+ </body>
+</html>

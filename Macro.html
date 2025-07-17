@@ -1,0 +1,6505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Macro</title>
+
+    <link rel="stylesheet" href="macro.css">
+
+    <style>
+
+ 
+
+    </style>
+
+</head>
+
+<body>
+
+  <div id="header">
+
+      <div style="position: relative; top: 8px;">
+
+        <a class="one" href="../indexOLD.html">Home</a>
+
+      </div>
+
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Macro's</div>
+
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+
+        <div class="dropdown" style="float:left;">
+
+          <button class="dropbtn">Resources</button>
+
+          <div class="dropdown-content" style="left:0;">
+
+            <a href="AHK.html">Auto Hot Key</a>
+
+            <a href="Macro.html">Macro</a>
+
+            <a href="inputs.html">Input,Msg,Controls</a>
+
+            <a href="data_validate.html">Data Validation</a>
+
+            <a href="dropDownList.html">Drop Down List</a>
+
+            <a href="Formula.html">Formula's</a>
+
+            <a href="Tables.html">Tables</a>
+
+            <a href="Pivot.html">Pivot Tables</a>
+
+            <a href="Charts.html">Charts/Printing</a>
+
+            <a href="Shapes.html">Shapes</a>
+
+            <a href="Misc.html">Misc.</a>
+
+            <a href="WebStuff.html">Web Stuff</a>
+
+            <a href="Ubuntu.html">Ubuntu</a>
+
+            <a href="../RC/RC.html">RC</a>
+
+            </div>
+
+        </div>
+
+      </div>
+
+  </div>
+
+<!--End of header-->
+
+  <div id="col1">
+
+    <table width="1100" border="0" cellspacing="4" cellpadding="0">
+
+      <tr>
+
+        <td width="26">&nbsp;</td>              
+
+        <td width="366"><strong>Commands</strong></td>
+
+        <td width="692"><strong>Description</strong></td>
+
+      </tr>
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td>ActiveCell.CurrentRegion.Select</td>
+
+        <td>Select a  range or block of data (Cells). Keep columns to the left and right clear of data so that they  are not apart of the block.</td>
+
+      </tr>             
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td>Selection.End(xlDown).Select<br /></td>
+
+        <td>End down </td>
+
+      </tr>
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td>ActiveCell.Offset(1, 0).Select</td>
+
+        <td>offset (Row, Col) </td>
+
+      </tr>
+
+      <tr>
+
+         <td>&nbsp;</td>
+
+         <td>ActiveSheet.DisplayPageBreaks = False</td>
+
+         <td>Removes dotted print lines</td>
+
+      </tr>
+
+      <tr>
+
+        <td>&nbsp;</td>
+
+        <td>Application.DisplayAlerts = False</td>
+
+        <td>Turn alert alerts On (=True) or Off (=False) <a href="#displayalerts">example</a></td>
+
+      </tr>
+
+      <tr>
+
+         <td>&nbsp;</td>
+
+         <td>Application.ScreenUpdating  = False</td>
+
+         <td>This is used so that you do not see the macro run. 
+
+              It makes the macro go faster.<br />
+
+              <strong>Note </strong>if you use this the cursor will not follow you to the new  cell.</td>
+
+      </tr>
+
+      <tr>
+
+         <td>&nbsp;</td>
+
+         <td>Application.CutCopyMode  = False</td>
+
+         <td>This is like pressing “Esc” to get rid of the rubber band  box.  
+
+             Use  this after you have pasted your data.</td>
+
+      </tr>
+
+      <tr>
+
+          <td>&nbsp;</td>
+
+          <td>ActiveWorkbook.Save</td>
+
+          <td>This will save the workbook</td>
+
+      </tr>
+
+      <tr>
+
+          <td>&nbsp;</td>
+
+          <td>ActiveCell.EntireColumn.AutoFit </td>
+
+          <td>Adjust current column width</td>
+
+      </tr>
+
+      <tr>
+
+          <td>&nbsp;</td>
+
+          <td>ActiveCell.EntireColumn.Copy</td>
+
+          <td>copy active column</td>
+
+      </tr>
+
+      <tr>
+
+          <td>&nbsp;</td>
+
+          <td>Sheets("Sheet3").Select</td>              
+
+          <td>Go to sheet 3</td>
+
+      </tr>
+
+      <tr>
+
+          <td>&nbsp;</td>
+
+          <td>[a1].Select </td>
+
+          <td>Go to a Cell location - If using screen updating the cursor will not follow to active cell</td>
+
+      </tr>
+
+      <tr>
+
+           <td>&nbsp;</td>
+
+           <td>Range(&quot;A1:D20&quot;).Select </td>
+
+           <td>Select  a Range of cells</td>
+
+      </tr>
+
+      <tr>
+
+           <td>&nbsp;</td>
+
+           <td>Selection.Copy </td>
+
+           <td>Copy  Active Selection </td>
+
+      </tr>
+
+      <tr>
+
+           <td>&nbsp;</td>
+
+           <td>ActiveSheet.Paste </td>
+
+           <td>Paste  data to ActiveCell</td>
+
+      </tr>
+
+      <tr>
+
+           <td>&nbsp;</td>
+
+           <td align="left">vbCrLf replace with VBNEWLINE  <br></td>
+
+           <td valign="top"> This will add a Carrage Return in VBA used to start a new line of data<br>
+
+                              MsgBox = &quot;First Line & vbCrLf & Second Line&quot;</td>
+
+      </tr>
+
+      <tr>
+
+           <td>&nbsp;</td>
+
+           <td>Turn on and off the caluculation function</td>
+
+           <td>Application.Calculation = xlManual<br>Application.Calculation = xlAutomatic</td>
+
+      </tr>
+
+      <tr>
+
+            <td>&nbsp;</td>
+
+            <td valign="top"><strong>Minus Minus</strong> in front of a formula.<br />
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=IsNumber( )&nbsp;' would result in either True or False<br />
+
+                        <br />
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=--IsNumber( )&nbsp;' would result in either 0 or 1</td>
+
+            <td valign="top"><strong>	=ISNUMBER(IFERROR(SEARCH($B$3,E3,1),""))</strong><br />
+
+                        <ul>Above would result in either True or False<br />
+
+                            Below would result in either 0 or 1</ul><br />
+
+                            <strong>=--ISNUMBER(IFERROR(SEARCH($B$3,E3,1),""))</strong><br /><br /></td>
+
+      </tr>
+
+      <tr>
+
+             <td>&nbsp;</td>
+
+             <td valign="top">How to add a Key Stroke to activate a macro.</td>
+
+             <td valign="top">Click Developer tab / click on Macros / click Options</td>
+
+      </tr>
+
+    </table><br />
+
+    <h3>Find Next Tx</h3>
+
+    <ul>Sub FindnextTx()<br />
+
+<br />
+
+X = 2<br />
+
+'You can do a (for  loop) or a (Do until loop)<br />
+
+For i = 1 To X<br />
+
+<br />
+
+ 'Set the column range to search<br />
+
+    Set columnRange = Range("B:B")<br />
+
+    <br />
+
+    'Get the cell value to find<br />
+
+    cellToFind = "Tx"<br />
+
+    'Find the cell in the column range<br />
+
+    <br />
+
+    Set foundCell = columnRange.Find(what:=cellToFind, LookIn:=xlValues, LookAt:=xlWhole, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:=False, searchformat:=False)<br />
+
+    <br />
+
+    'If the cell was found, go to that cell address<br />
+
+    If Not foundCell Is Nothing Then<br />
+
+    foundCell.Activate<br />
+
+    End If<br />
+
+    <br />
+
+    AR = ActiveCell.Row<br />
+
+    ActiveCell = "Txx"<br />
+
+    Next i<br />
+
+    <br />
+
+  End Sub<br />
+
+</ul>
+
+ <h3>Find Cell by color</h3>
+
+ <ul>
+
+
+
+This will go to each cell and check the color, if it is equal to 65535 (Yellow)<br>
+
+ it will print the value in the immediate window. You could amend the code to put <br>
+
+the values elsewhere. Hope this helps.<br>
+
+<br>
+
+
+
+Range("O3").Select<br>
+
+Do While ActiveCell.Value <> ""<br>
+
+    If ActiveCell.Interior.Color = 65535 Then<br>
+
+        Debug.Print ActiveCell.Value<br>
+
+    End If<br>
+
+    ActiveCell.Offset(1, 0).Select<br>
+
+Loop<br>
+
+</ul>
+
+ <h3>Password Protect a Button</h3>
+
+    <ul>
+
+      Add this to the top of your macro<br>
+
+      Dim MyPassword As String<br>
+
+      MyPassword = "zebra"<br>
+
+      If InputBox("Please enter password to continue.", "Enter Password") <> MyPassword Then<br>
+
+      MsgBox ("Wrong Password. Try Again")<br>
+
+      Exit Sub<br>
+
+      End if
+
+    </ul>
+
+              
+
+ <h3>=REPT(0,8-len(A1))&A1</h3>
+
+    <ul><img src="Excel_Image/rept.jpg" width="492" height="114" /></ul>
+
+ <h3>While loop</h3>
+
+       <ul>
+
+           '-Places Data in Finish Cells Column B --------------------<br />
+
+       [E1].Select<br />
+
+       Do<br />
+
+       While Cells(x, 2) = ""<br />
+
+tiveCell.Offset(1).Select<br />
+
+  If ActiveCell = t Then<br />
+
+      Cells(x, 2) = ActiveCell.Offset(-1, 1)<br />
+
+      x = x + 4<br />
+
+                   t = t + 1<br />
+
+               End If<br />
+
+         If ActiveCell = "" Then Cells(x, 2) = ActiveCell.Offset(-1, 1)<br />
+
+         If ActiveCell = "" Then Exit Do<br />
+
+        <br />
+
+        Wend<br />
+
+       x = x + 1<br />
+
+       Loop<br /><ul>
+
+       
+
+   <a href="5. Loops.pdf"><strong>Here is more information on loops</strong></a><br />
+
+   <strong>Another example:</strong><br />
+
+   'St = Starting Row number<br />
+
+           <ul>Do Until ActiveCell = "SN"<br />
+
+               ActiveCell.Offset(-1).Select</ul><br />
+
+           Loop<br />
+
+           ActiveCell.Offset(1).Select<br />
+
+           St = ActiveCell.Row<br />
+
+               <br />
+
+       'Ed = Ending Row number<br />
+
+          Do Until ActiveCell = "JDAN"<br />
+
+               ActiveCell.Offset(1).Select<br />
+
+           Loop<br />
+
+           ActiveCell.Offset(-1).Select<br />
+
+           Ed = ActiveCell.Row<br /></ul>
+
+   <br />
+
+   
+
+       </ul>
+
+   <h3>Copy and paste End(xldown)</h3>
+
+       <ul>
+
+           Dim r As Long<br />
+
+   Dim rng As Range<br />
+
+   Set rng = Range("D:D")<br />
+
+   r = Application.WorksheetFunction.CountA(rng)<br />
+
+   <br />
+
+   <span class="Blue_Text">'Write formula for E</span><br />
+
+       Cells(1, 5).Formula = "=right(D1,4)"<br />
+
+       Range("E1").Select<br />
+
+       Selection.AutoFill Destination:=Range("E1:E" & r)<br />
+
+       </ul><br />
+
+       <h3>Copy and Paste a range</h3>
+
+       <ul>
+
+         <p>Sub copy1()<br />
+
+           <span class="Blue_Text">'This copies To "A" From "C"</Span><br />
+
+   
+
+       Dim LRow As Integer<br />
+
+       Dim RNG As Range<br />
+
+       Set RNG = Range("C1:C50000")<br />
+
+       LRow = Application.WorksheetFunction.CountA(RNG)<br />
+
+       Range("A1:A" & LRow).Value = Range("C1:C" & LRow).Value<br />
+
+       <br />
+
+   End Sub
+
+         <br />
+
+        <hr width="400" align="left"/>
+
+    
+
+         </p>
+
+         Sub <span class="Blue_Text">copy2()<br />
+
+       'This copies To "A" From "C"</span><br />
+
+       Dim LRow As Integer<br />
+
+       Dim RNG As Range<br />
+
+       Set RNG = Range("C1:C50000")<br />
+
+       LRow = Application.WorksheetFunction.CountA(RNG)<br />
+
+       Range("G1:I" & LRow).Value = Range("A1:C" & LRow).Value<br />
+
+       <br />
+
+   End Sub
+
+       </ul>
+
+   <h3>How to stop a running macro</h3>
+
+   <ul>
+
+   Press ESC repeatedly<br />
+
+   Press Ctrl Break <br />
+
+   or<br />
+
+   It may happen that, both Escape or Ctrl+Break button may not work for you. As your Macro may have “Application.EnableCancelKey = xlDisabled”<br />
+
+   command line which may not allow you to interrupt the ongoing Macro command. In such a case, you can simply remove this line of an item and add a new command line – “Application.EnableCancelKey = xlInterrupt”<br />
+
+   It will allow you to interrupt the ongoing Macro command
+
+   </ul>
+
+   <h3>BarCodes for Excel</h3>
+
+       <ul>
+
+           <a href="https://www.idautomation.com/free-barcode-products/code39-font/#Download_Free_Barcode_Font">Download and install</a><br />
+
+   <br />
+
+   Cell A1 contains the data for the barcode<br />
+
+   Cell B1 will contain the formula: ="("&A1&")"<br />
+
+   Cell B1 select, and change font to "IdAutomationHC39M Free Ver"
+
+       </ul>
+
+   <h3>After Enter Move to cell (Up, Down, Left, Right</h3>
+
+    '*****CODE FOR SHEET1*****<br />
+
+   Option Explicit <br />
+
+   Private Sub Worksheet_Activate() <br />
+
+       <ul>Application.MoveAfterReturnDirection = xlToRight <br />
+
+       Application.MoveAfterReturnDirection = xlToLeft<br />
+
+    Application.MoveAfterReturnDirection = xlUp<br />
+
+       Application.MoveAfterReturnDirection = xlDown </ul><br />
+
+   End Sub <br />
+
+    '*************************<br /><br />
+
+   <h3>Confirm the active cell is in column "A:A"</h3>
+
+   <ul>
+
+   Sub NotInColA()<br />
+
+       <br />
+
+       <ul>If Intersect(ActiveCell, Columns("A:A")) Is Nothing Then<br />
+
+           [A1].End(xlDown).Offset(1).Select<br />
+
+       End If</ul>
+
+     
+
+   End Sub<br /></ul>
+
+   <h3>Intersect in a specific Range</h3>
+
+       <ul><img src="Excel_Image/Darts301.jpg" width="829" height="300" />
+
+           <ul>
+
+               <li>This is controlled using the "SelectionChange" Event on the sheet not in a module.</li>
+
+               <li>There is an "OFF" and "ON" so that players names can be chanaged. Off & On turn off and on the event handler.</li>
+
+               <li>Winner is aConditional Format</li>
+
+           </ul>
+
+       <img src="Excel_Image/Darts301_2.jpg" width="697" height="466" /> <br />
+
+       <br />
+
+   Private Sub Worksheet_SelectionChange(ByVal Target As Range)<br />
+
+   On Error GoTo Line1<br />
+
+   Dim x As Integer<br />
+
+   x = ActiveCell.Value<br />
+
+   '-----------------------------------P1<br />
+
+   If Not Intersect(ActiveCell, Range("C3:F9")) Is Nothing Then<br />
+
+       [g2] = [g2] - x<br />
+
+   End If<br />
+
+   <br />
+
+   If [g2] < 0 Then<br />
+
+       [g2] = [g2] + x<br />
+
+    End If<br />
+
+   '-----------------------------------P2<br />
+
+   If Not Intersect(ActiveCell, Range("J3:M9")) Is Nothing Then<br />
+
+       [i2] = [i2] - x<br />
+
+   End If<br />
+
+   <br />
+
+   If [i2] < 0 Then<br />
+
+      [i2] = [i2] + x<br />
+
+   End If<br />
+
+   <br />
+
+   Line1:<br />
+
+    [h1].Select<br />
+
+   End Sub<br />
+
+   <br /><br />
+
+   </ul>
+
+   
+
+   <h3>Convert existing text that looks like a number to a number</h3>
+
+   <ul>Sub ConvertString2Numbers<br />
+
+   Dim myVar As Variant<br />
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myVar = [B1] ' or Cells(R,C)<br />
+
+   Dim FinalNumber as integer<br />
+
+   <ul>if Isnumber(myVar) then<br />
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finalNumber = CInt(myVar)<br />
+
+   Else<br />
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finalnumber = 0<br />
+
+   End if<br /> [C1] = finalNumber  &nbsp;&nbsp;<span class="Blue_Text">'This will place the String in cell B1 to C1 as a number.</span></ul>
+
+   End Sub</ul>
+
+   <h3>Convert the String "ABCD1234" in Cell A1 to only the numbers "1234" in B1</h3>
+
+   <ul>Dim cntA, rw, i, x As Integer<br />
+
+   Dim rng As Range<br /><br />
+
+   Set rng = Range("A:A")
+
+   <br />
+
+   cntA = Application.WorksheetFunction.CountA(rng)<br />
+
+   rw = 1<br />
+
+   x = InputBox("Enter Number of numbers")<br />
+
+   <br />
+
+   <span class="Blue_Text">' This writes the formula =Right(A1,x) where x is a input variable<br />
+
+   ' Also note that the output is a number and not a String like in the example above.</span><br />
+
+   <br />
+
+    For i = 1 To cntA<br />
+
+       <ul>Cells(rw, 2) = Right(Cells(rw, 1), x)<br />
+
+       rw = rw + 1</ul>
+
+   Next i<br />
+
+   'Note this will copy down from B1 to CountA of column &quot;A&quot;<br />
+
+   <img src="Excel_Image/ConvertString_TwoNumbers.jpg" width="221" height="87" />
+
+   </ul>
+
+   <h3>VLookup in VBA</h3>
+
+   <ul>Need to use a helper cell K1 in this case.<br />
+
+   
+
+   <ul><ul>Dim rng As Range<br />
+
+   Set rng = Range("A:B")<br />
+
+   x = Application.WorksheetFunction.VLookup([k1], rng, 0, False)</ul>
+
+   </ul>
+
+   </ul>
+
+   <h3>Using Match to find the row number of an item </h3>
+
+   
+
+   <ul>Notice you will need to use a helper cell [Z1].
+
+       <ul>r = Application.WorksheetFunction.Match([Z1], rng, 0)</ul>
+
+   </ul>
+
+   <h3>Force Upper Lower and Proper case when using a Inputbox.</h3>
+
+   <ul>
+
+   
+
+   Sub Uppercase()<br />
+
+   <br />
+
+   Dim a, b As String<br />
+
+   a = InputBox("Enter Your name")<br />
+
+   b = UCase(a)<br />
+
+   <br />
+
+   MsgBox b<br />
+
+   <br />
+
+   End Sub<br />
+
+   <hr width="300" align="Left" />
+
+   
+
+   Sub Proper()<br />
+
+   <br />
+
+   Dim a, b As String<br />
+
+   a = InputBox("Enter Your name")<br />
+
+   b = Application.WorksheetFunction.Proper(a)<br />
+
+   <br />
+
+   MsgBox b<br />
+
+   <br />
+
+   End Sub<br />
+
+   <hr width="300" align="Left"/>
+
+   
+
+   Sub Lowercase()<br />
+
+   <br />
+
+   Dim a, b As String<br />
+
+   a = InputBox("Enter Your name")<br />
+
+   b = LCase(a)<br />
+
+   <br />
+
+   MsgBox b<br />
+
+   <br />
+
+   End Sub>
+
+   </ul>
+
+   <h3>Delete the active row using vba</h3>
+
+   <ul>Rows(ActiveCell.Row).EntireRow.Delete</ul>
+
+   <h3>Place a formula in a cell</h3>
+
+   <ul>	[A1].Formula = "=Hex2Dec((A3))"<br /><br /><br />
+
+           Sub EntrFormulaInCellC1()<br />
+
+       <span class="Blue_Text">'In this example the Formula is entered in Cell C1</span><br />
+
+   Cells(1, 3).ClearContents<br />
+
+   [C1].Formula = "=sum(A1+B1)"<br />
+
+   <br />
+
+   End Sub<br /><br />
+
+   Sub EntrResultInCellC1()<br />
+
+   <span class="Blue_Text">'In this example the Result is entered in Cell C1</span><br />
+
+   <br />
+
+   Cells(1, 3).ClearContents<br />
+
+   <br />
+
+   Dim a, b, c As Integer<br />
+
+   a = Cells(1, 1)<br />
+
+   b = Cells(1, 2)<br />
+
+   c = a + b<br />
+
+   <br />
+
+   Cells(1, 3) = c<br />
+
+   <br />
+
+   End Sub<br />
+
+   
+
+   </ul>
+
+   <h3>Copy a folders content to another folder</h3>
+
+   <ul>(Source: <a href="http://vba-tutorial.com/copy-a-folder-and-all-of-its-contents/">http://vba-tutorial.com/copy-a-folder-and-all-of-its-contents/</a>)<br />
+
+   
+
+   Sub chnge1()<br />
+
+       Dim path0, path1, path2, Path3 As String<br />
+
+       Dim Oldd As Variant<br />
+
+       Dim neww As Variant<br />
+
+       Dim cnt, i, r As Integer<br />
+
+       Dim rng As Range<br />
+
+          <br />
+
+       Set rng = Range("A:A")<br />
+
+       r = 1<br />
+
+       cnt = Application.WorksheetFunction.CountA(rng)<br />
+
+       Oldd = Cells(r, 1)<br />
+
+       neww = Cells(r, 2) & ".png"<br />
+
+     path0 = "E:\AA_Change\Humm"<br />
+
+     path1 = "E:\AA_Change\Dude"<br />
+
+     <span class="Blue_Text">' Copy Humm to Dude</span><br />
+
+      Dim objFSO As Object<br />
+
+        Set objFSO = CreateObject("Scripting.FileSystemObject")<br />
+
+        objFSO.copyFolder path0, path1<br />
+
+     <br />
+
+     <span class="Blue_Text">' Change file names from old to new</span><br />
+
+     For i = 1 To cnt<br />
+
+       path2 = "E:\AA_Change\Dude" & "\" & Oldd<br />
+
+       Path3 = "E:\AA_Change\Dude" & "\" & neww<br />
+
+       <br />
+
+      Name path2 As Path3<br />
+
+       <br />
+
+       r = r + 1<br />
+
+       <br />
+
+       Oldd = Cells(r, 1)<br />
+
+       neww = Cells(r, 2) & ".png"<br />
+
+       <br />
+
+     Next i<br />
+
+       <br />
+
+   End Sub<br />
+
+   </ul>
+
+   <h3>Advanced Filters in a macro 1</h3>
+
+   
+
+   <ul><p>Sub autoStockID()</p>
+
+   <p>' This will search and sort by Stock  ID<br />
+
+     On Error GoTo Line1</p>
+
+   <p>Dim x As Double<br />
+
+     Dim rng As Range<br />
+
+     Set rng = Range(&quot;A:E&quot;)<br />
+
+     x = InputBox(&quot;Enter Product ID 5 Digit Number&quot;)<br />
+
+     rng.autofilter Field:=2 ' This clears Field 2<br />
+
+     rng.autofilter Field:=1, Criteria1:=x ' This filters the field to &quot;x&quot;</p>
+
+   <p>Columns(rng).AutoFit<br />
+
+     Line1:<br />
+
+     End Sub</p>
+
+   <br />
+
+   
+
+   <img src="Excel_Image/Advance_FilterSearch_1.jpg" width="478" height="407" /> <br /></ul><br />
+
+   <h3>Advanced Filters in a macro 2</h3>
+
+   <ul>
+
+   Sub advancedTablefilter()<br />
+
+       <ul>Range("K1:N50").Clear<br />
+
+       Range("Table1[#All]").Select<br />
+
+       Range("Table1[#All]").AdvancedFilter Action:=xlFilterCopy, CriteriaRange:= _<br />
+
+           Range("F1:I2"), CopyToRange:=Range("K1"), Unique:=False<br />
+
+       Range("F2:I2").Clear<br />
+
+       Range("J1").Select</ul>
+
+       
+
+   End Sub<br /><br />
+
+   <img src="Excel_Image/AdvancedFilter1.jpg" width="962" height="296" /><br />
+
+   Rather than copying this code to your new macro I would record the macro and then clean it up.<br /><br />
+
+   <table width="650" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td width="384" align="center"><img src="Excel_Image/Advance_Filter_3.jpg" width="359" height="124" />&nbsp;</td>
+
+       <td width="266"><img src="Excel_Image/AdvancedFilter2.jpg" width="228" height="236" /></td>
+
+     </tr>
+
+     <tr>
+
+       <td>On the &quot;Data tab&quot; you will find Advanced button.</td>
+
+       <td>For this set up use &quot;Copy to another location&quot;.</td>
+
+     </tr>
+
+     
+
+   </table><br />
+
+   While recording the macro you can have the database on sheet1 and the Criteria on another sheet however the results must reside on the same sheet as the database.<br />
+
+    <U>A work around would be to hide the database columns &quot;A:D&quot;</U><br />
+
+   <br />
+
+   
+
+   </ul>
+
+   <h3>Halt an Event. <br />
+
+     The event macro below (UnProtect and Re-Protect) needed to be temporary halted to run another macro. We can temporary halt the event like this</h3>
+
+   <ul>Application.EnableEvents = False <span class="Blue_Text">' This turns the events off</span><br />
+
+   Application.EnableEvents = True<br />
+
+   </ul>
+
+   <h3>Temporary Unprotect and Re-Protect the Sheet   </h3>
+
+   <ul>
+
+   <strong>In this macro we halted the running of the Private sub to autofit the rows. Then we turn back on the event.</strong>
+
+   <br />
+
+   <br />
+
+   Private Sub Worksheet_SelectionChange(ByVal Target As Range)<br />
+
+       Application.ScreenUpdating = False<br />
+
+       ActiveCell.Copy<br />
+
+       Worksheets("List").Range("G8").PasteSpecial Paste:=xlPasteValues<br />
+
+       <br />
+
+       ActiveSheet.Unprotect <span class="Blue_Text">' Here we unprotect the sheet</span><br />
+
+          Rows("3:51").EntireRow.AutoFit<br />
+
+       ActiveSheet.protect DrawingObjects:=True, Contents:=True, Scenarios:=True . <span class="Blue_Text">'Here were re-protect the sheet</span><br />
+
+      <br />
+
+       Application.CutCopyMode = False<br />
+
+       <br />
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <h3>Hide Columns with a macro XFD is the last column in Excel 2106</h3>
+
+   <ul>
+
+   Sub HidColumns()<br />
+
+   
+
+   <ul>Columns("D:XFD").EntireColumn.Hidden = False<br />
+
+   'Columns("D:XFD").EntireColumn.Hidden = True<br />
+
+   Columns("A:I").EntireColumn.Hidden = False<br />
+
+   'Columns("A:I").EntireColumn.Hidden = True<br /><br /></ul>
+
+   End Sub<br /></ul>
+
+   <h3>Hide rows with a macro</h3>
+
+   <ul>Sub HidRowsYes()<br />
+
+   <ul>
+
+     <p>Dim lrow, x As Long<br />
+
+       Dim rng As Range<br />
+
+       lrow = Cells(Rows.Count, &quot;A&quot;).Row<br />
+
+       Set r = Range(&quot;A1:A&quot; &amp; lrow)<br />
+
+       x = Application.WorksheetFunction.CountA(rng) + 1</p>
+
+     Range(Cells(x, 1), Cells(lrow, 1)).Rows.EntireRow.Hidden = False<br />
+
+       ' Range(Cells(x, 1), Cells(lrow, 1)).Rows.EntireRow.Hidden = True
+
+    </ul>
+
+   End Sub<br /></ul>
+
+   <h3>UnHide rows with a macro</h3>
+
+   <ul>Sub HidRowsNo()<br />
+
+   <ul>Dim lrow, x As Long<br />
+
+   Dim r As Range<br />
+
+   Set r = Range("A1:A1048576")<br />
+
+   lrow = Cells(Rows.Count, "AA").Row<br />
+
+   x = Application.WorksheetFunction.CountA(r) + 1<br />
+
+   <br />
+
+   Range(Cells(x, 1), Cells(lrow, 1)).Rows.EntireRow.Hidden = False<br />
+
+   ' Range(Cells(x, 1), Cells(lrow, 1)).Rows.EntireRow.Hidden = True<br /></ul>
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <h3>Highlighting a range that meet specific criteria using vba from activecell to an other cell</h3>
+
+   <ul>
+
+     In this example will will skip all cells with 0 zero. and fill cells interior color in range using Select Case as qualifier.<br />
+
+   <br />
+
+   Sub rowsautofit()<br />
+
+    Dim r, c As Integer<br />
+
+   Dim x As String<br />
+
+   <br />
+
+   r = 3<br />
+
+   c = 31 <span class="Blue_Text">' change this to what ever the starting column number is</span><br />
+
+   <br />
+
+   Range("S3:U51").Select <span class="Blue_Text">' This will clear the range of interior colors before resetting them.</span><br />
+
+   With Selection.Interior<br />
+
+          <ul> .Pattern = xlNone<br />
+
+           .TintAndShade = 0<br />
+
+           .PatternTintAndShade = 0<br /></ul>
+
+       End With<br />
+
+       <br />
+
+   Cells(r, c).Select<br />
+
+   x = ActiveCell<br />
+
+   <br />
+
+   Do Until IsEmpty(ActiveCell)<br />
+
+   If x = "0" Then<br />
+
+       <ul>ActiveCell.Offset(1).Select<br />
+
+       x = ActiveCell<br />
+
+   Else<br />
+
+       Select Case x <span class="Blue_Text">' I am using Case instead of if statements</span><br />
+
+       <br />
+
+       Case "Facial"<span class="Blue_Text"> ' This says if the case = &quot;Facial&quot; the select activecell and 4 rows same column will be highlighted color 20</span><br />
+
+           Range(ActiveCell, ActiveCell.Offset(4)).Interior.ColorIndex = 20<br />
+
+           ActiveCell.Offset(5).Select <span class="Blue_Text">' this will then offset by 5 and the macro will continue to search until the activecell is empty.</span><br />
+
+           x = ActiveCell <br />
+
+           <br />
+
+       Case "Eye Lashes"<br />
+
+           Range(ActiveCell, ActiveCell.Offset(2)).Interior.ColorIndex = 37 <span class="Blue_Text">' This line is will select the activecell thru the activecell.offset(R1,C1)</span><br />
+
+           ActiveCell.Offset(3).Select<br />
+
+           x = ActiveCel</ul>l<br />
+
+       End Select<br />
+
+   End If<br />
+
+   <br />
+
+   Loop<br />
+
+   End Sub<br />
+
+   This macro finds the word &quot;Facial&quot; and &quot;Eye Lashes&quot; and then fill color based on criteria.<br />
+
+   
+
+   <img src="Excel_Image/FillDownUsingCriteria.jpg" width="227" height="316" /><br />
+
+   </ul>
+
+   <a name="displayalerts" id="displayalerts"></a>
+
+   <h3>Deleting sheets with VBA</h3>
+
+   <ul>
+
+   Sub DeletingA_NamedSheet ()<br />
+
+   <ul><mark>Application.DisplayAlerts = False</mark><br />
+
+   Worksheets("Sheet1").Delete<br />
+
+   Application.DisplayAlerts = True<br /></ul>
+
+   End Sub
+
+   </ul>
+
+   <h3>Delete the last sheet</h3>
+
+   <ul>Sub DeleteLastSheet()
+
+   <ul>Application.DisplayAlerts = False<br />
+
+   Sheets(Sheets.Count).Delete<br />
+
+   Application.DisplayAlerts = True<br /></ul>
+
+   End Sub
+
+   </ul>
+
+   <h3><a href="#copypaste">Copy and paste</a></h3>
+
+   <h3>Intelli Scense</h3>
+
+   <ul>
+
+   Use ( Ctrl + Spacebar ) to open intelli scense at any time
+
+   </ul>
+
+   
+
+   <h3>Hi-Lite 4 rows - (<a href="../Excel_Video/FourRowHiLite/FourRowsHiLite.html">Click here for video</a>)<br />
+
+     <br />
+
+   <img src="Excel_Image/FourRowsHiLight.jpg" width="876" height="491" /></h3>
+
+   <ul>Sub hilite4rows()<br />
+
+   Application.ScreenUpdating = False<br />
+
+       Dim r As Integer<br />
+
+       Dim rw As Integer<br />
+
+       Dim x As Integer<br />
+
+       r = ActiveCell.Row()<br />
+
+       rw = r - 3<br />
+
+   <br />
+
+       Columns("A:Z").ClearFormats<br />
+
+       If r <= 4 Then<br />
+
+           Range("A1:Z" & r).Style = "Note"<br />
+
+           Exit Sub<br />
+
+       Else<br />
+
+           Range("A" & rw, "Z" & r).Style = "Note"<br />
+
+           Exit Sub<br />
+
+       End If<br />
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <h3>Filter by Font Size</h3>
+
+   <ul>
+
+   <img src="Excel_Image/FilterFontSize.jpg" width="406" height="408" /> <br /><br />
+
+   Sub filtrbysize()<br />
+
+   Dim n As Integer<br />
+
+   Dim x As Integer<br />
+
+   Dim i As Integer<br />
+
+   [A1].Select<br />
+
+   n = Application.WorksheetFunction.CountA(Columns(1)) <span class="Blue_Text">'n is a column</span><br />
+
+   'n = Application.WorksheetFunction.CountA(Range("A1:A100")) <span class="Blue_Text">' n is a range</span><br />
+
+   x = ActiveCell.Font.Size<br />
+
+   For i = 1 To n<br />
+
+       ActiveCell.Offset(0, 1).Value = x<br />
+
+       ActiveCell.Offset(1).Select<br />
+
+       x = ActiveCell.Font.Size<br />
+
+   Next i<br />
+
+   Columns("A:B").Select<br />
+
+       ActiveWorkbook.Worksheets("Sheet1").Sort.SortFields.Clear<br />
+
+       ActiveWorkbook.Worksheets("Sheet1").Sort.SortFields.Add2 Key:=Range("B1:B" & n) _<br />
+
+           , SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:=xlSortNormal<br />
+
+       With ActiveWorkbook.Worksheets("Sheet1").Sort<br />
+
+           .SetRange Range("A1:B" & n)<br />
+
+           .Header = xlGuess<br />
+
+           .MatchCase = False<br />
+
+           .Orientation = xlTopToBottom<br />
+
+           .SortMethod = xlPinYin<br />
+
+           .Apply<br />
+
+       End With<br />
+
+       Columns("B:B").ClearContents<br />
+
+       [A1].Select<br />
+
+   End Sub<br />
+
+   </ul>
+
+   <h3><a href="https://www.excelfunctions.net/vba-ubound-function.html">UBound Function (Click here for two-dimensional array)</a></h3>
+
+   <ul> Return the highest subscript of a one-dimensional array.<br />
+
+   Dim prices(0 to 10) As Double<br />
+
+   Dim pricesUB As Integer<br />
+
+   pricesUB = UBound( prices )<br />
+
+   ' Now the integer pricesUB has the value 10.</ul><br />
+
+   <h3>Move to next Tab and call a macro. (These 2 macros work together)<br /></h3>
+
+   <ul>
+
+   Sub nextst()<br />
+
+   Dim x As Integer<br />
+
+   Dim book As Integer<br />
+
+   x = Application.Worksheets.Count - 1 <span class="Blue_Text">' This line counts the number of tabs in the workbook less one for the original page</span><br />
+
+   For book = 1 To x<br />
+
+       <ul>Worksheets(ActiveSheet.Index + 1).Select <span class="Blue_Text">' This moves to the next tab</span><br />
+
+       Call threepercent <span class="Blue_Text">' This calls the macro below for the new tab</span></ul>
+
+   Next book<br />
+
+   Worksheets("Summary").Select<br />
+
+   ActiveWorkbook.Save<br />
+
+   MsgBox "Done!"<br /><br />
+
+   <hr width="250" align="Left"/>
+
+   
+
+   End Sub<br />
+
+   Sub threepercent()<br />
+
+   Dim tms As Integer<br />
+
+   Dim r As Integer<br />
+
+   Dim c As Integer<br />
+
+   Dim i As Integer<br />
+
+   Dim prcnt As Double<br />
+
+   tms = 17<br />
+
+   r = 8<br />
+
+   c = 2<br />
+
+   Application.ScreenUpdating = False<br />
+
+   Range("B8:B25").Copy Destination:=Range("AA8") <span class="Blue_Text">' Copies current data to new location</span><br />
+
+   Range("B8:B25").ClearContents<br />
+
+   [AA8].Select<br />
+
+   prcnt = Application.WorksheetFunction.Sum(ActiveCell * 0.03) + ActiveCell <span class="Blue_Text">' Adds 3 percent and copies back to original location</span><br />
+
+   Cells(r, c).Value = prcnt<br />
+
+   For i = 1 To tms<br />
+
+       <ul>ActiveCell.Offset(1).Select<br />
+
+       r = r + 1<br />
+
+       prcnt = Application.WorksheetFunction.Sum(ActiveCell * 0.03) + ActiveCell<br />
+
+       Cells(r, c).Value = prcnt</ul>
+
+   Next i<br />
+
+   Range("AA8:AA25").Clear<br />
+
+   [A7].Select<br />
+
+   End Sub<br />
+
+   
+
+   </ul>
+
+   <h3>Worksheets and Sheets</h3>
+
+   <ul>Worksheet("Sheet1").select
+
+       <ul>This selects the exact sheet named "Sheet1"</ul><br />
+
+   Worksheet(2).select
+
+   <ul>This would error as there is no  &quot;Sheet2"</ul><br />
+
+   Sheets(2).select
+
+   <ul>This refers to the second sheet from the left regardless of the sheet name. In this case Sheet(2) = Dan</ul>
+
+   <br />
+
+   <img src="Excel_Image/Sheet1234.jpg" width="414" height="349" /><br />
+
+   <br />
+
+   
+
+   <img src="Excel_Image/DannyBoy.jpg" width="1115" height="592" />
+
+   
+
+   </ul><br />
+
+   <br />
+
+   
+
+   <h3>Using a simple Math function without using a Function Statement</h3>
+
+   <table width="1000" border="0" cellspacing="0" cellpadding="1">
+
+     <tr>
+
+       <td width="547"><ul>Sub timetable()<br />
+
+   Dim Startnumber As Integer<br />
+
+   Dim Endnumber As Integer<br />
+
+   Dim answer As Long<br />
+
+   Dim Timestable As Integer<br />
+
+   <br />
+
+   Endnumber = 10<br />
+
+   Timestable = 10<br />
+
+   <br />
+
+   For Startnumber = 1 To Endnumber<br />
+
+       answer = Startnumber * Endnumber <span class="Blue_Text">' Note answer is a math function</span><br />
+
+       Cells(Startnumber, 1).Value = Startnumber & " Times " & Timestable & " = "<br />
+
+       Cells(Startnumber, 1).Offset(, 1).Value = answer<br />
+
+       <br />
+
+       Next Startnumber<br />
+
+       <br />
+
+   End Sub</ul></td>
+
+       <td width="449" valign="top"><img src="Excel_Image/TimesTable.jpg" width="214" height="210" /></td>
+
+     </tr>
+
+   </table>
+
+   
+
+   <h3>Scroll the Activecell to the &quot;A1&quot; Position</h3>
+
+   <ul>Dim r As Long<br />
+
+   r = ActiveCell.Row()<br />
+
+   ActiveWindow.ScrollRow = r<br />
+
+   or<br />
+
+   ActiveWindow.ScrollColumn = r </ul>
+
+   <h3>Convert Date to Text and Concatenate</h3>
+
+   <ul>
+
+   Sub convert2Text_AND_Concatenate()<br />
+
+   <ul>Dim str1 As String<br />
+
+   Dim a As String<br />
+
+   Dim d As Date<br />
+
+   d = Date<br />
+
+   a = "Dan"<br />
+
+   str1 = Str(d) <span class="Blue_Text">' Using &quot;Str&quot;, the date is now a string. Note it may need =trim</span><br />
+
+   [c7] = str1 <span class="Blue_Text">' C7 now displays the date as Text</span><br />
+
+   <span class="Blue_Text">' [c7] = "Today's Date is:" & str1 (Note - this can concantenate because both the text and the date are Text)</span></ul>
+
+   End Sub<br />
+
+   </ul>
+
+   <h3>Concatenate cells W/ VBA</h3>
+
+   <ul>Sub concat()<br />
+
+       <br />
+
+       Dim a As Variant, b As Variant, c As Variant, x As Variant<br />
+
+       a = [a1]<br />
+
+       b = [b1]<br />
+
+       c = [c1]<br />
+
+       x = a & b & c<br />
+
+       <br />
+
+       [E1].Value = x<br />
+
+       
+
+   End Sub<br />
+
+   <img src="Excel_Image/ConcatCellsABC.jpg" width="233" height="79" />
+
+   </ul>
+
+   <h3>=EoMonth</h3>
+
+   <ul>Sub ConcatMonthYear2()<br />
+
+   <ul>Dim t As Date<br />
+
+   Dim x As Date<br />
+
+   t = Date
+
+   <br />
+
+   x = WorksheetFunction.EoMonth(t, 1)<br />
+
+   [A1] = x<br />
+
+   [A1].NumberFormat = "mmm yyyy"</ul><br />
+
+    End Sub<br /></ul>
+
+   <h3>Center Text with out using [Merge&amp;Center]</h3>
+
+   <ul>
+
+   <table width="1060" border="0" cellspacing="0" cellpadding="1">
+
+     <tr>
+
+       <td width="549"><img src="Excel_Image/CenterText_NoMerge.jpg" width="541" height="345" /></td>
+
+       <td width="347" valign="top"><strong>Sub CenterAcrossColumns()<br />
+
+       With Selection<br />
+
+           </strong>
+
+         <ul><strong>.HorizontalAlignment = xlCenterAcrossSelection<br />
+
+           .MergeCells = False</strong></ul>
+
+         <strong>    End With<br />
+
+   End Sub</strong><br />
+
+   <hr width="350" />
+
+   This acts like Merge and Center but does not merge the cells.<br />
+
+   <img src="Excel_Image/CenterText_NoMerge2.jpg" width="495" height="188" /></td>
+
+     </tr>
+
+   </table>
+
+   
+
+     
+
+   </ul>
+
+   <h3>Working with Worksheet Functions ...... <a href="https://docs.microsoft.com/en-us/office/vba/api/Excel.WorksheetFunction">List of Functions that can be used in Macro's</a></h3>
+
+   <h3><a href="http://www.homeandlearn.org/excel_vba_functions.html">More info on Macro Functions</a></h3>
+
+   <h3>Function and Sub - - - Adding Cells "A1" + "B1"</h3>
+
+   <ul>
+
+     <img src="Excel_Image/VBAFunction.jpg" width="612" height="459" />
+
+   </ul>
+
+   <h3>In this function we are determining if the activecell contains a Number or Not a Number, thus (a Letter) using a Function</h3>
+
+   <ul>
+
+   <table width="1000" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td width="369">Function CheckCell(CellValue) As Boolean<br />
+
+       If IsNumeric(CellValue) Then<br />
+
+           CheckCell = True<br />
+
+       Else<br />
+
+           CheckCell = False<br />
+
+        End If<br />
+
+   End Function<br />
+
+   <hr width="350" align="left" />
+
+   
+
+   Sub izNumber()<br />
+
+   Dim ReturnValue As Boolean<br />
+
+   <br />
+
+   ReturnValue = CheckCell(ActiveCell.Value)<br />
+
+   If ReturnValue = False Then<br />
+
+    MsgBox ("Activecell is Not a number - Exit sub")<br />
+
+   Else<br />
+
+   MsgBox "The Activecell is  a Number"<br />
+
+   End If<br />
+
+   <br />
+
+   End Sub<br /></td>
+
+       <td width="627" valign="top"><p>Sub iznumber()<br />
+
+         Dim x As Variant<br />
+
+         x = ActiveCell<br />
+
+         If x &gt;= 10 Then <span class="Blue_Text">' Can't say  x &lt;&gt; isnumber (isnumber would have to be a variable in this instance)</span><br />
+
+         MsgBox &quot;Activecell is greater than or equal to 10&quot;<br />
+
+         Else<br />
+
+         MsgBox &quot;Activecell may be a number less than 10 or letter&quot; &amp; vbCrLf &amp; &quot;Contents of activecell is:&quot; &amp; ActiveCell
+
+     <br />
+
+         End If</p>
+
+         <p>End Sub<br />
+
+         </p><hr width="600" align="left" />
+
+         <p>Note that the macro above will not work like the Function and Sub to the left.</p>
+
+         <p> If we change &quot;Variant&quot; to &quot;Long&quot; the macro will fail if the ActiveCell is a Letter. </p>
+
+         <p>So, the Function tells us what the ActiveCell is. Is it a Number or is it a Letter and the macro takes the appropriate action? </p></td>
+
+     </tr>
+
+   </table>
+
+   
+
+   
+
+   </ul>
+
+   <h3>WorksheetFunctions Examples</h3>
+
+   <ul>
+
+     <p>Sub FunctionExample()<br />
+
+       Dim n As Long<br />
+
+       Dim x As Long<br />
+
+       Dim a As Long<br />
+
+       Dim b As Long<br />
+
+       Dim c As Long<br />
+
+       Dim D As Long<br />
+
+       Dim E As Long<br />
+
+       Dim F As Long<br />
+
+       Dim G As Long<br />
+
+       Dim diff as long
+
+   </p>
+
+     <p>n = WorksheetFunction.Average(Range(&quot;D:D&quot;)) &nbsp;&nbsp;<span class="Blue_Text">'This section sums columns</span><br />
+
+       x = WorksheetFunction.Sum(Range(&quot;D:D&quot;))<br />
+
+       a = WorksheetFunction.Sum(Range(&quot;D:D&quot;)) + 1<br />
+
+       b = WorksheetFunction.Sum(Range(&quot;D:D&quot;)) - 1<br />
+
+       c = WorksheetFunction.Sum(Range(&quot;D:D&quot;)) / 2<br />
+
+       D = WorksheetFunction.CountA(Range(&quot;D:D&quot;))<br />
+
+       E = WorksheetFunction.Min(Range(&quot;D:D&quot;))<br />
+
+       F = WorksheetFunction.Max(Range(&quot;D:D&quot;))<br />
+
+       G = WorksheetFunction.Large(Range(&quot;D:D&quot;), 2)</p>
+
+     <p><br />
+
+       diff = Range("B1") - Range("A1")  &nbsp;&nbsp;<span class="Blue_Text">'diff is like saying =sum(B1-A1)</span> - use this to sum or minus + or / two cells</p>
+
+     <p>[i1].Value = x<br />
+
+       [i2].Value = n<br />
+
+       [i3].Value = a<br />
+
+       [i4].Value = b<br />
+
+       [i5].Value = D<br />
+
+       [i6].Value = E<br />
+
+       [i7].Value = F<br />
+
+       [i8].Value = G<br />
+
+       [i9].value = diff</p>
+
+     <p>End Sub</p>
+
+   </ul>
+
+   <h3>Shift a Column to the right</h3>
+
+   <ul>
+
+     <p>Sub insertCC()<br />
+
+       Dim diff, iCntr As Integer<br />
+
+       diff = Range(&quot;B1&quot;) - Range(&quot;A1&quot;) + 1<br />
+
+       If Cells(1, 1) = &quot;&quot; Or Cells(1, 2) = &quot;&quot; Then <span class="Blue_Text">' Here we are using the &quot;OR&quot; command so if (Cell A1 or B1) is empty then</span><br />
+
+       <ul>MsgBox &quot;Missing Data in Cell A1 or B1. Please try again.&quot;
+
+         <br />
+
+       Exit Sub</ul>
+
+       End If</p>
+
+     <p>For iCntr = 1 To diff
+
+       <ul>Columns(&quot;C:C&quot;).Insert Shift:=xlToRight&nbsp;&nbsp;&nbsp;<span class="Blue_Text"> ' Note here we can Insert and Shift Column C moving data to the right</span><br />
+
+       Range(&quot;C1&quot;) = Range(&quot;B1&quot;) - iCntr + 1</ul>
+
+     Next</p>
+
+     <p>End Sub<br />
+
+     </p>
+
+   </ul>
+
+   <h3>Concatenating a Range of cells</h3>
+
+   <ul>
+
+     <a href="https://www.mrexcel.com/forum/excel-questions/930696-vba-concatenate-dynamic-range-row-row.html">Answer from web.</a><br /><br />
+
+   <code>
+
+       <strong>Private Sub Trial_1_Click()<br />
+
+     Dim lr As Long<br />
+
+     <br />
+
+     lr = Cells(Rows.Count, ActiveCell.Column).End(xlUp).Row<br />
+
+     Select Case lr - ActiveCell.Row<br />
+
+       Case 0: Range("P2").Value = ActiveCell.Value<br />
+
+       Case Is < 0: Range("P2").ClearContents<br />
+
+       Case Else: Range("P2").Value = Join(Application.Transpose(Range(ActiveCell, Cells(lr, ActiveCell.Column))), "")<br />
+
+     End Select<br />
+
+   End Sub</strong><br /><br />
+
+   </code>
+
+   </ul>
+
+   <h3>=Concatenate A1,B1 - - A1,C1 -- A1,D1</h3>
+
+   <ul>
+
+   <li>Copy the data from sheet 1 to sheet2 and transpose the data into columns</li>
+
+   <li>Set a & b range for column "A"</li>
+
+   <li>Goto an open cell and concatenate using "ActiveCell = a & b".  Once the loop is complete Delete column "A" to shift all data to the left and start loop "P"</li>
+
+   <li>Once loop "P" is complete macro will copy all data and paste to sheet 3 using transpose  to put data back into rows. </li>
+
+   <br />
+
+   
+
+   
+
+   <ul><code>
+
+   Sub Concat1()<br />
+
+   Dim ws1 As Worksheet<br />
+
+   Set ws1 = Worksheets("Sheet1")<br />
+
+   Dim ws2 As Worksheet<br />
+
+   Set ws2 = Worksheets("Sheet2")<br />
+
+   Dim ws3 As Worksheet<br />
+
+   Set ws3 = Worksheets("Sheet3")<br />
+
+   Dim a As Range<br />
+
+   Dim b As Range<br />
+
+   Dim x As Integer<br />
+
+   Dim y As Integer<br />
+
+   Dim i As Long<br />
+
+   Dim lrow As Long<br />
+
+   Dim p As Long<br />
+
+   ws1.Range("A1").CurrentRegion.Copy<br />
+
+   ws2.Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks:=False, Transpose:=True<br />
+
+   <br />
+
+   ws2.Select<br />
+
+   <br />
+
+   For p = 1 To 647<br />
+
+   lrow = Cells(Rows.Count, "A").End(xlUp).Row - 1<br />
+
+   x = 1<br />
+
+   y = 2<br />
+
+   Set a = Range("A" & x)<br />
+
+   Set b = Range("A" & y)<br />
+
+   [XX1].Select<br />
+
+   For i = 1 To lrow<br />
+
+   <br />
+
+   ActiveCell = a & b<br />
+
+   ActiveCell.Offset(1).Select<br />
+
+   y = y + 1<br />
+
+   Set b = Range("A" & y)<br />
+
+   Next i<br />
+
+   <br />
+
+   Columns("A").Delete<br />
+
+   Next p<br />
+
+   <br />
+
+   ws2.Range("A1").CurrentRegion.Copy<br />
+
+   ws3.Range("A1").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks:=False, Transpose:=True<br />
+
+   ws2.Range("A1").CurrentRegion.ClearContents<br />
+
+   ws3.Columns("A:XA").AutoFit<br />
+
+   ws3.Select<br />
+
+   MsgBox "Done!"<br />
+
+   End Sub<br />
+
+   </code><br /><br /></ul>
+
+   </ul>
+
+   <h3>=Large(array,k)</h3>
+
+   <ul>
+
+   Sub Top25()<br />
+
+   <ul>Dim r As Integer<br />
+
+   Dim i As Integer<br />
+
+   Dim dbLarge As Double<br />
+
+   r = 1<br />
+
+   [N6].Select<br />
+
+   For i = 1 To 25<br />
+
+       dbLarge = WorksheetFunction.large(Range("N3:CD3"), r)<span class="Blue_Text"> ' This is is the part you want to see</span><br />
+
+       ActiveCell.Value = dbLarge<br />
+
+       ActiveCell.Offset(1).Select<br />
+
+       r = r + 1<br />
+
+   Next i<br /></ul>
+
+   End Sub<br /><br /></ul>
+
+   <h3>Working with Function&nbsp;&nbsp;&nbsp; =Countif(myRange, Cells(1,1))</h3><br />
+
+   <em><strong>In this example &quot;myRange&quot; is a Fixed Range.</strong></em>
+
+   <ul>
+
+   Sub setcount()<br />
+
+   Dim myrange As Range<br />
+
+   Dim x As Integer<br />
+
+   Dim r As Integer<br />
+
+   Dim i As Integer<br />
+
+   Set myrange = Application.Range("A1:A20")<br />
+
+   r = 1<br />
+
+   <br />
+
+   [E1].Select<br />
+
+       For i = 1 To 4<br />
+
+           <br />
+
+           x = Application.WorksheetFunction.CountIf(myrange, Cells(r, 3))<br />
+
+           ActiveCell.Value = x<br />
+
+           ActiveCell.Offset(1).Select<br />
+
+           r = r + 1<br />
+
+           <br />
+
+       Next i<br />
+
+   End Sub<br />
+
+   <img src="Excel_Image/FunctionCountif.jpg" width="352" height="362" /><br />
+
+   </ul>
+
+   <h3>Working with Function&nbsp;&nbsp;&nbsp; =Countif(myRange, Cells(1,1))</h3><br />
+
+   <em><strong>In this example &quot;myRange&quot; is a Dynamic Range.</strong></em>
+
+   <ul>
+
+   Sub setcount()<br />
+
+   Dim myrange As Range<br />
+
+   Dim x As Integer<br />
+
+   Dim r As Integer<br />
+
+   Dim i As Integer<br />
+
+   Dim s As Integer<br />
+
+   Dim e As Integer<br />
+
+   <br />
+
+   s = [I2]<br />
+
+   e = [J2]<br />
+
+   <br />
+
+   Set myrange = Application.Range(Cells(s, 2), Cells(e, 5))<br />
+
+   <br />
+
+   r = 1<br />
+
+   <br />
+
+   [O1].Select<br />
+
+       For i = 1 To 69<br />
+
+            <br />
+
+           x = Application.WorksheetFunction.CountIf(myrange, Cells(r, 14))<br />
+
+           ActiveCell.Value = x<br />
+
+           ActiveCell.Offset(1).Select<br />
+
+           r = r + 1<br />
+
+           <br />
+
+       Next i<br />
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <hr align="left" width="500" />
+
+   
+
+   
+
+   <h3>Add Date and Military Time to Cell</h3>
+
+   <ul>
+
+   Sub Date_and_Time<br />
+
+   <ul>Dim ws1 As Worksheet<br />
+
+   Set ws1 = Worksheets("Sheet1")<br />
+
+   ws1.Range("A1:D1").Merge <span class="Blue_Text">' This will merge Cells A1:D1</span><br />
+
+   ws1.Range("A1:A1").Value = "The Date and time is " & Format(Now, "mm/dd/yy hh:Nn") ' Note this is military time.<br /><br />
+
+   <span class="Blue_Text">'You may want to add a "With" statement to size and format the range</span>. <a href="#Withstatement">Click to see &quot;WITH&quot; Options</a></ul>
+
+   End sub<br /><br />
+
+   </ul>
+
+   <h3>Add Date  to cell A1 and Time to cell B1 non Military time</h3>
+
+   <ul>
+
+   Sub Date_anTime()<br />
+
+       <ul>Dim ws1 As Worksheet<br />
+
+       Set ws1 = Worksheets("Sheet1")<br />
+
+       ws1.Range("A1:D1").Merge ' This will merge Cells A1:D1<br />
+
+       Range("A1").Value = "The Date and time is " & Format(Now, "mm/dd/yy")<br />
+
+       Columns("A").AutoFit<br />
+
+       Range("b1").Value = Format(Now, "hh:Nn")</ul>
+
+   End Sub<br />
+
+   </ul>
+
+   <h3>Add date and Time 12 hour clock using &quot;With&quot; statement</h3>
+
+   <ul>
+
+   Sub Date_anTime()
+
+       <ul>
+
+         With Sheet1<br />
+
+         .Range("A1").Value = "The Date and time is " & Format(Now, "mm/dd/yy")<br />
+
+         .Range("b1").Value = Format(Now, "hh:Nn")<br />
+
+         .Columns("A:B").AutoFit<br />
+
+       End With</ul>
+
+   End Sub<br />
+
+   </ul>
+
+   <br /><br />
+
+   <h3>Lastrow</h3>
+
+   <ul>
+
+   <table width="800" border="0" cellspacing="0" cellpadding="1">
+
+     <tr>
+
+       <td width="502" valign="top">
+
+   <strong>What is <u>in</u> the lastrow.</strong>
+
+   (Answer 6)
+
+   <ul>Dim lastRow As Long<br />
+
+   lastRow = Cells(Rows.Count, "A").End(xlUp).Row</ul><br />
+
+   <strong>What is the lastrow</strong>
+
+   (Answer 3)
+
+   <ul>Dim lastRow As Long<br />
+
+   Lastrow = Application.WorksheetFunction.CountA(Columns(1))</ul>
+
+   <br />
+
+   <strong class="Blue_Text"><em>Asking the right question! Makes the difference.</em></strong>
+
+         </strong></td>
+
+       <td width="294" valign="top"><img src="Excel_Image/Lastrow.jpg" width="286" height="116" /></td>
+
+     </tr>
+
+   </table><br />
+
+   
+
+   </ul>
+
+   <h3>Find in expanding box</h3>
+
+   <ul>
+
+     <img src="Excel_Image/Find_in_ExpandingRange.jpg" width="786" height="461" />
+
+   </ul>
+
+   
+
+   <h3>Find Duplicates in a Column of numbers</h3>
+
+   <ul>
+
+   Sub sbFindDuplicatesInColumn()<br />
+
+       <ul>Dim lastRow As Long<br />
+
+       Dim matchFoundIndex As Long<br />
+
+       Dim iCntr As Long<br />
+
+       lastRow = Cells(Rows.Count, "D").End(xlUp).Row<span class="Blue_Text"> ' Need to change the Column from "D"<br />
+
+       </span><br />
+
+       For iCntr = 1 To lastRow<br />
+
+       If Cells(iCntr, 4) <> "" Then<span class="Blue_Text"> ' Need to change the Column# where Cells(iCntr,4) is found</span><br />
+
+           matchFoundIndex = WorksheetFunction.Match(Cells(iCntr, 4), Range("D1:D" & lastRow), 0) <span class="Blue_Text">' Change the Column#('s) &amp; Letters<br /></span>
+
+           If iCntr <> matchFoundIndex Then<br />
+
+               Cells(iCntr, 5) = &quot;Duplicate&quot;<span class="Blue_Text"> ' Need to change the Column number to next column to the right</span><br />
+
+          End If<br />
+
+       End If<br />
+
+       Next</ul><br />
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <h3>Get Data From one workbook and move it to another workbook</h3>
+
+   <ul>
+
+   We will use connections located on the Data tab. Data Tab / Get External Data<br />
+
+   
+
+     <img src="Excel_Image/ExcelConnections.png" width="359" height="218" /> <br />
+
+     Make a connect to the other excel sheet. If you have too many connection you can delete the ones you do not want from the follow folder(C:\Users\Dan\Documents\My Data Sources)<br /><br />
+
+   </ul>
+
+   <h3>Copy a Range using PasteSpecial - ( and not using Destination:= )</h3>
+
+   <ul>
+
+   Range("A2:B48").Copy<br />
+
+       Range("C2:D48").PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+
+           :=False, Transpose:=False<br /><br />
+
+   
+
+   </ul>
+
+   <h3>Copy Data from one workbook, from a dynamic range and paste to another workbook.</h3>
+
+   <ul>
+
+   Sub GetNewData()<br />
+
+   Application.ScreenUpdating = False<br />
+
+   Dim Target_Workbook As Workbook<br />
+
+   Dim Target_Path As String<br />
+
+   Dim Master_Workbook As Workbook<br />
+
+   Dim Master_Path As String<br />
+
+   Dim r As Integer<br />
+
+   Dim lastrow As Long<br />
+
+   <br />
+
+   <span class="Blue_Text">'This is the caregiver file</span><br />
+
+   Target_Path = "E:\Excel\Pam\CaregiverMaxhours.xlsx"<br />
+
+   Set Target_Workbook = Workbooks.Open(Target_Path)<br />
+
+   r = Cells(Rows.Count, "A").End(xlUp).Row<br />
+
+   Range("A2:H" & r).Copy<br />
+
+   <br />
+
+   <span class="Blue_Text">'This is the Master file</span><br />
+
+   Master_Path = "E:\Excel\Pam\Master.xlsm"<br />
+
+   Set Master_Workbook = Workbooks.Open(Master_Path)<br />
+
+   lastrow = Cells(Rows.Count, "A").End(xlUp).Row<br />
+
+   [a1].Offset(lastrow, 0).PasteSpecial Paste:=xlPasteValues<br />
+
+   [a1].Select<br />
+
+   Master_Workbook.Save<br />
+
+   Target_Workbook.Close<br />
+
+   Kill "E:\Excel\Pam\CaregiverMaxhours.xlsx"<br />
+
+   <br />
+
+   </ul>
+
+   <h3>Setting the path</h3>
+
+   <ul>
+
+   Sub SaveAsString()<br />
+
+   <br />
+
+   Dim i As Integer<br />
+
+   Dim lRow As Integer<br />
+
+   <span class="Blue_Text">Dim sPath As String</span><br />
+
+   Dim sFileName As String<br />
+
+   <br />
+
+   Dim oFilename As String<br />
+
+   oFilename = "Book1" ' Change "Book1" to the name of the original book<br />
+
+   <br />
+
+   <span class="Blue_Text">sPath = ThisWorkbook.Path</span><br />
+
+   lRow = Sheets("Sheet1").Range("A" & Rows.Count).End(xlUp).Row<br />
+
+   <br />
+
+   Application.DisplayAlerts = False<br />
+
+   Application.ScreenUpdating = False<br />
+
+   <br />
+
+   For i = 2 To lRow<br />
+
+   <br />
+
+   sFileName = Range("N" & i).Value<br />
+
+   <span class="Blue_Text">ActiveWorkbook.SaveAs Filename:=sPath & "\" & sFileName & ".xlsx", FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False</span><br />
+
+   <br />
+
+   Next i<br />
+
+   <br />
+
+   <span class="Blue_Text">Workbooks.Open Filename:=sPath & "\" & oFilename & ".xlsm"<br />
+
+   Workbooks.Open Filename:=sPath & "\" & sFileName & ".xlsx"<br />
+
+   </span><br />
+
+   Application.ScreenUpdating = True<br />
+
+   Application.DisplayAlerts = True<br />
+
+   <br />
+
+   ActiveWorkbook.Close<br />
+
+   <br />
+
+   End Sub<br />
+
+   </ul>
+
+   
+
+   <h3><a href="https://chandoo.org/wp/">Chandoo</a></h3><ul>
+
+     <a href="https://chandoo.org/wp/">Become awesome in excel</a>
+
+   </ul><br />
+
+   
+
+   
+
+   <h3>Saving a file to the workbook path</h3>
+
+   <ul>
+
+   Dim sPath As String<br />
+
+   Dim sFileName As String<br />
+
+   sPath = ThisWorkbook.Path &nbsp;&nbsp;<span class="Blue_Text">' This is the path of the workbook.</span><br />
+
+   sFileName = Range("N" & i).Value<br />
+
+   <ul>
+
+     <strong><em>Here is an example, Located at E:\Excel\NotCopyingLastWorkbook</em></strong><br /><br />
+
+   Sub SaveAsString()<br />
+
+   Dim i As Integer<br />
+
+   Dim lRow As Integer<br />
+
+   Dim sPath As String<br />
+
+   Dim sFileName As String<br />
+
+   sPath = ThisWorkbook.Path<br />
+
+   lRow = Sheets("Sheet1").Range("A" & Rows.Count).End(xlUp).Row<br />
+
+   <br />
+
+   Application.DisplayAlerts = False<br />
+
+   Application.ScreenUpdating = False<br />
+
+   <br />
+
+   For i = 2 To lRow<br />
+
+   <br />
+
+   sFileName = Range("N" & i).Value<br />
+
+   ActiveWorkbook.SaveAs Filename:=sPath & "\" & sFileName & ".xlsx", FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False<br />
+
+   <br />
+
+   Next i<br />
+
+   <br />
+
+   Application.ScreenUpdating = True<br />
+
+   Application.DisplayAlerts = True<br />
+
+   ActiveWorkbook.Close<br />
+
+   <br />
+
+   End Sub<br />
+
+   <br />
+
+   </ul>
+
+   </ul>
+
+   <ul>
+
+   <a name="copypaste" id="copypaste"></a>
+
+   <h3>Select a Range and Selecting and copying a range to a cell</h3>
+
+   <ul>
+
+   Range("A1:C1").Select or .copy<br />
+
+   Range("A1", "C1").Select or.copy<br />
+
+   Range("A1", Range("C1").End(xlDown)).Copy <span class="Blue_Text">' Copies "A1" thru the end of C </span><br />
+
+   Range("A1", Range("A1").End(xlDown)).Copy Range("B1") <br />
+
+   Range("A1").CurrentRegion.Copy &nbsp;&nbsp;' Current Region works but UsedRegion will not.<br />
+
+   <strike>Range("A1").UsedRegion.copy </strike>' This will not work -<a href="#usedrange"> see below for UsedRange.</a><br />
+
+   </ul>
+
+   <h3>Copy and paste</h3>
+
+   <ul>When pasting in VBA use PasteSpecial and then Ctrl+spacebar for additional arguments</ul><br />
+
+   
+
+   <strong>Example 1:</strong> The word "<strong>Destination</strong>" does not need to be used
+
+   <ul>Worksheets("List").Cells(5, 4).Copy Destination:=Worksheets("Inventory").Cells(r, 14)<br />
+
+   Worksheets("List").Cells(5, 4).Copy Worksheets("Inventory").Cells(r, 14)
+
+   <span class="Blue_Text">(This should work just as well as the line above it)</span><br />
+
+   Activesheet.Range("A1").Copy Destination:=Range("B1")
+
+   <br /><br />
+
+   Range("A1:A5").copy Destination:=Range("B1")
+
+   <br />
+
+   <br />
+
+   
+
+     Dim dt As Object<br />
+
+   <ul>
+
+       Set dt = Worksheets("List").Cells(2, 8)<br />
+
+       dt.Copy<br />
+
+       Cells(r, 12).Select <span class="blueText">' This selects the cell on the activesheet</span><br />
+
+       Selection.PasteSpecial Paste:=xlPasteValues<em class="blueText"><strong> ' This will paste as a value</strong></em><br /></ul>
+
+       End Sub
+
+     </ul>
+
+     <h3>Example 2: &nbsp;&nbsp;&nbsp;(Using Special Paste xlPaste Values in a Macro)</h3>
+
+     <ul>
+
+         Dim rng as Range<br />
+
+       Dim ws2 as Worksheet<br />
+
+       Set rng = Range("A1:D10")<br />
+
+       Set ws2 = Worksheets("Sheet2")<br />
+
+        rng.Copy <br />
+
+       ws2.Cells(Rows.Count, 5).End(xlUp).Offset(1, -2).PasteSpecial xlPasteValues <br />
+
+   <br />
+
+   <strong>This will fail. </strong><br />
+
+   
+
+   <ul>rng.Copy Destination:=ws2.Cells(Rows.Count, 5).End(xlUp).Offset(1, -2).PasteSpecial xlPasteValue
+
+   </ul>
+
+   <br />
+
+   <strong>This will work:</strong> (So we can use Paste Special xlPasteValue)
+
+   <ul>rng.Copy<br />
+
+   ws2.Cells(Rows.Count, 5).End(xlUp).Offset(1, -2).PasteSpecial xlPasteValues
+
+   </ul></ul>
+
+       <br />
+
+       <h3>Copy and paste special (SpecialPaste Values)</h3>
+
+       <ul>Sub Neworders()<br />
+
+   Dim wsI As Worksheet<br />
+
+   Dim wsO As Worksheet<br />
+
+   <br />
+
+   Set wsI = Worksheets("Inventory")<br />
+
+   Set wsO = Worksheets("Order")<br />
+
+   <br />
+
+   ' Application.ScreenUpdating = False<br />
+
+   <br />
+
+   <span class="blueText">wsO.ListObjects("Table2").DataBodyRange.Copy<br />
+
+   wsI.Cells(Rows.Count, 16).End(xlUp).Offset(1).PasteSpecial Paste:=xlPasteValues<br />
+
+   </span> <br />
+
+   wsO.ListObjects("Table2").DataBodyRange.ClearContents<br />
+
+   wsO.ListObjects("Table2").Resize Range("A9:D10")<br />
+
+   <br />
+
+   [C10].Formula = "=vlookup([Item '#],Table3,2,0)"<br />
+
+   [D10].Formula = "=vlookup([Item '#],Table3,5,0)"<br />
+
+   ActiveWorkbook.Save<br />
+
+   End Sub<br />
+
+   </ul>
+
+   <h3>Copy and paste a range column and Transpose to a cell</h3>
+
+   <ul>
+
+   Range("L10:L14").Select<br />
+
+       Selection.Copy<br />
+
+       Range("M2").Select<br />
+
+       Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks:= _<br />
+
+           False, Transpose:=True<br />
+
+      <br />
+
+   </ul>
+
+   <h3>Hide and unHide columns, using a Combobox - Combobox list and target located on Tab &quot;List&quot;.</h3>
+
+   <ul>Here is a Macro to hide and unhide columns based on a ComboBox.<br />
+
+   <br />
+
+   Sub hidcol()<br />
+
+   Dim col As Integer<br />
+
+   col = [List!B1] + 1<br />
+
+   If Worksheets("List").Range("B1") = 27 Then GoTo Line1<br />
+
+   <br />
+
+   Columns(col).EntireColumn.Hidden = True<br />
+
+   GoTo Line2<br />
+
+   <br />
+
+   Line1:<br />
+
+   Columns("B:AA").EntireColumn.Hidden = True<br />
+
+   Line2:<br />
+
+   Worksheets("Home").Shapes("Drop Down 5").OLEFormat.Object.Value = 28<br />
+
+   End Sub<br />
+
+   <hr width=475 align="left"/>
+
+   Sub unhidcol()<br />
+
+   Dim col As Integer<br />
+
+   col = [List!b2] + 1<br />
+
+   <br />
+
+   If Worksheets("List").Range("B2") = 27 Then GoTo Line1<br />
+
+   Columns(col).EntireColumn.Hidden = False<br />
+
+   GoTo Line2<br />
+
+   <br />
+
+   Line1:<br />
+
+   Columns("B:AA").EntireColumn.Hidden = False<br />
+
+   <br />
+
+   Line2:<br />
+
+   Worksheets("Home").Shapes("Drop Down 6").OLEFormat.Object.Value = 28<br />
+
+   End Sub<br />
+
+   
+
+   </ul>
+
+   <h3>Copy the worksheet into new workbook and Save in a specific folder.</h3>
+
+   <ul>
+
+   Sub sb_Copy_Save_Worksheet_As_Workbook()<br />
+
+   Dim wb As Workbook<br />
+
+   Set wb = Workbooks.Add<br />
+
+   ThisWorkbook.Sheets("Sheet1").Copy Before:=wb.Sheets(1)<br />
+
+   wb.SaveAs "C:\temp\test1.xlsx"<br />
+
+   End Sub <br />
+
+   </ul><br />
+
+   </ul>
+
+   <ul><h3>VBA Course Instruction in PDF</h3>
+
+     <ul>
+
+             <li><a href="pdf/1. Introduction.pdf">Introduction</a></li>
+
+             <li><a href="pdf/2. Sheets and cells.pdf">Sheets and Cells</a></li>
+
+             <li><a href="pdf/3. Variables.pdf">Variables</a></li>
+
+             <li><a href="pdf/4. Conditions.pdf">Conditions</a></li>
+
+             <li><a href="pdf/5. Loops.pdf">Loops</a></li>
+
+             <li><a href="pdf/6. Procedures and functions.pdf">Proceedures and Function</a></li>
+
+             <li><a href="pdf/7. Dialog boxes.pdf">Dialog boxes</a></li>
+
+             <li><a href="pdf/8. Events.pdf">Events</a></li>
+
+             <li><a href="pdf/9. Forms and controls.pdf">Forms and controls</a></li>
+
+             <li><a href="pdf/10. Arrays.pdf">Arrays</a></li>
+
+             <li><a href="pdf/11. Supplements.pdf">Supplements</a></li><br />
+
+   <h4><a href="https://www.excel-pratique.com/en/index.php"><em>VBA Course home page</em></a></h4>
+
+     </ul>
+
+   
+
+   
+
+     <a href="http://www.excel-easy.com/vba/examples/option-explicit.html"><strong>Click here: Why use "Option Explicit"</strong></a><br />
+
+   
+
+   <h3>How to Password Protect your macro's</h3>
+
+   <ul>To protect your code, open the Excel Workbook and go to Tools>Macro>Visual Basic Editor (Alt+F11).<br />
+
+     <br />
+
+     Goto: Tools>VBAProject Properties and  click &quot;Protection&quot; Check &quot;Lock Project for viewing" and then enter your password and again to confirm it. Click :OK:<br />
+
+     <br />
+
+     <a href="http://www.ozgrid.com/VBA/protect-vba-code.htm">http://www.ozgrid.com/VBA/protect-vba-code.htm</a></ul>
+
+   <br /><br />
+
+   <h3>How to protect and unprotect a pw protected worksheet or workbook (Tab Review protect sheet/Protect workbook)</h3>
+
+   <ul>Activesheet.Unprotect "Password"<br />
+
+   Activesheet.Protect "Password"<br /><br />
+
+   Activeworkbook.Unprotect "Password"<br />
+
+   Activeworkbook.Protect "Password"</ul><br />
+
+   <br />
+
+   
+
+   <h3>How to Password Protect / Hide a worksheet and open it using a Macro .</h3>
+
+   This will allow you to open a workbook which only contains a worksheet named &quot;Menu&quot;.  The macro on this Menu page will open hidden worksheets using a password.<br />
+
+   <br />
+
+   
+
+   <ul>
+
+       <li>Create a worksheet named “Menu” that serves as a menu page. On that page, add a button that will control the macro.</li>
+
+       <li>Create the macro, here is the Code.
+
+       <ul>
+
+         <p>Sub openws()<br />
+
+           Dim xinput As Variant<br />
+
+           Dim ws As Worksheet<br />
+
+     <br />
+
+           xinput = InputBox("Enter your password")<br /><br />
+
+           Select Case xinput<br />
+
+           Case "pw2" <span class="blueText">'This is the password for this sheet</span><br />
+
+           Sheets("Sheet2").Visible = True<br />
+
+           Sheets("Sheet2").Activate<br /><br />
+
+           Case "pw3"<br />
+
+           Sheets("Sheet3").Visible = True<br />
+
+           Sheets("Sheet3").Activate<br /><br />
+
+           Case "pw4"<br />
+
+           Sheets("Sheet4").Visible = True<br />
+
+           Sheets("Sheet4").Activate<br /><br />
+
+           Case "Showall" <span class="blueText">'this should be a Very Strong Password </span><br />
+
+           For Each ws In ActiveWorkbook.Worksheets<br />
+
+           ws.Visible = True<br />
+
+           Next<br /><br />
+
+           Case "Hideall" <span class="blueText">'this will hide all worksheets</span><br />
+
+           For Each ws In ActiveWorkbook.Worksheets<br />
+
+           If ws.Name <> "Menu" Then<br />
+
+           ws.Visible = xlVeryHidden<br />
+
+           End If<br />
+
+           Next<br />
+
+           <br />
+
+           Case Else
+
+           <br />
+
+           MsgBox &quot;Incorrect Password&quot;, vbExclamation
+
+         <br />
+
+           End Select<br />
+
+           End Sub<br /></p>
+
+          </ul>
+
+   </li>
+
+   <table width="800" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td valign="top"><br /><strong>
+
+   <li>For each worksheet change (-1xlSheetVisable) to (2-xlSheetVeryHidden)<br />in the VBA editor.</li>
+
+   <br />
+
+       </strong>
+
+         <strong>Finally step.<br />
+
+         </strong> Password protect your VBA code as outlined in<br />
+
+   (<strong>How to Password Protect your macro's.</strong>) <br />
+
+   so that no one can  open your vba editor and view the macro and its passwords.<br /></td>
+
+       <td valign="top"><br />
+
+   <img src="Excel_Image/xlSheetVeryHidden.jpg" width="257" height="502" /></td>
+
+     </tr>
+
+   </table>
+
+   </ul><br /></ul>
+
+   <h3>Insert a Row</h3>
+
+   <ul>Sub inserrt()<br />
+
+   '<br />
+
+   ' inserrt Macro<br />
+
+   <br />
+
+       Rows("3:3").Select<br />
+
+       Selection.Insert Shift:=xlDown<br />
+
+   End Sub<br />or<br />
+
+    Rows("3:5").EntireRow.Insert
+
+   <br /></ul>
+
+   <h3>File picker</h3>
+
+   <ul>
+
+   Sub GetFilePathBasic()<br />
+
+   <br />
+
+   ' (1) Shows the msoFileDialogFilePicker dialog box.<br />
+
+   ' (2) Checks if the user picked a file.<br />
+
+   ' (3) Stores the path to the selected file in a string type variable.<br />
+
+   <br />
+
+       Dim strFilePath As String<br />
+
+       With Application.FileDialog(msoFileDialogFilePicker)<br />
+
+           ' show the file picker dialog box<br />
+
+           If .Show <> 0 Then<br />
+
+               strFilePath = .SelectedItems(1)<br />
+
+   <br />
+
+               ' *********************<br />
+
+               ' put your code in here<br />
+
+               ' *********************<br />
+
+   <br />
+
+               ' Example: print the path of the selected file to the immediate window<br />
+
+               Debug.Print strFilePath ' remove in production<br />
+
+           End If<br />
+
+       End With<br />
+
+   End Sub<br /><br />
+
+   </ul>
+
+   <h3>Column Name to Column Number</h3>
+
+   <ul>
+
+   
+
+   <span class="Blue_Text">Use this macro to find the Column Number Like (A is 1) and (Z is 26) so what is JK? Use the macro to find out.</span><br />
+
+   <span class="Blue_Text">' To create a keyboard shortcut to this macro click on Developer/Macro/Options</span><br /><br />
+
+   Sub Name2Number()<br />
+
+   Dim N As String<br />
+
+   N = InputBox("Choose Column Name")<br />
+
+   Dim ColName As String<br />
+
+       ColName = N<br />
+
+       MsgBox Range(ColName & 1).Column, 32, &quot;The Column Number is!...&quot;<br />
+
+   End Sub<br /><br />
+
+   
+
+   </ul>
+
+   <h3>Using TARGET</h3>
+
+   <ul><em>Note Target is used from the "Sheet" module and not the Module</em><br />
+
+   <br />
+
+   <table width="900" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td width="388">Private Sub Worksheet_Change(ByVal Target As Range)<br />
+
+       Application.ScreenUpdating = False<br />
+
+       If Target.Row > 599 And Target.Column = 2 Then<br />
+
+           Target.Offset(0, -1) = Date<br />
+
+       End If<br />
+
+       Application.ScreenUpdating = True<br />
+
+   End Sub<br />&nbsp;</td>
+
+       <td width="512"><img src="Excel_Image/TARGET.jpg" width="230" height="152" /></td>
+
+     </tr>
+
+   </table>
+
+   
+
+   
+
+   </ul>
+
+   <h3>Count number of Rows and Columns</h3>
+
+   <ul>
+
+   Dim lastrow As Integer<br />
+
+   Dim lastcol As Integer<br />
+
+   <br />
+
+   lastrow = Cells(Rows.Count, "A").End(xlUp).Row&nbsp;&nbsp;&nbsp; <span class="blueText">' Last Row in Column &quot;A&quot;</span><br />
+
+   lastcol = ws1.Cells(1, Columns.Count).End(xlToLeft).Column &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blueText">' Last Column in Row 1</span><br /><br />
+
+   Dim lColumn As Long<br />
+
+   lColumn = ws1.UsedRange.Columns.Count <span class="blueText">' Last used Column on worksheet (ws1)</span><br />
+
+   <br />
+
+   Dim lRow As Long<br />
+
+   lRow = ws1.UsedRange.Rows.Count <span class="blueText">' Last used Row on worksheet (ws1)</span><br />
+
+   </ul>
+
+   <h3>Count the number of non blank cells in a column. Or how many items values or text are in column 2</h3>
+
+   <ul>Dim lRow As Double<br />
+
+   lRow = Application.WorksheetFunction.CountA(Columns(2))
+
+   </ul>
+
+   <h3>Create a Temp worksheet</h3>
+
+   <ul>On Error GoTo Line1<br />
+
+   Application.DisplayAlerts = False<br />
+
+   ThisWorkbook.Sheets("Temp").Delete<br />
+
+   Line1:<br />
+
+   Application.DisplayAlerts = True<br />
+
+   ThisWorkbook.Sheets.Add(After:= _<br />
+
+                ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)) _<br />
+
+                .Name = "Temp"</ul>
+
+   <br />
+
+   <h3>Selecting a column with was chosen with Inputbox</h3>
+
+   <ul>Dim ltr As String<br />
+
+   ltr = InputBox("What column is your data in?", "Date Information")<br />
+
+   Dim rng As Range<br />
+
+   Set rng = Range(Range(ltr & 1), Range(ltr & 10))<br />
+
+   </ul>
+
+   <h3>Delete and or Clear Contents in a Row or Column</h3>
+
+   <ul>
+
+   Sub Clear_A_RowsContent()<br />
+
+       <ul>Rows("1:1").ClearContents<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Clear_A_ColumnsContent()<br />
+
+       <ul>Columns("C:C").ClearContents<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Clear_A_ColumnsContentUsingInputbox()<br />
+
+       Dim x As String<br />
+
+      <ul> x = InputBox("Which Row would you like to clear?")<br />
+
+       Columns(x).ClearContents<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Clear_A_RowsContentUsingInputbox()<br />
+
+       <ul>Dim x As Long<br />
+
+       x = InputBox("Which Row would you like to clear?")<br />
+
+       Rows(x).ClearContents<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Delete_A_Row()<br />
+
+       <ul>Rows(1).EntireRow.Delete ' This will also Shift Up<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Delete_A_Column()<br />
+
+       <ul>Columns("A").Delete   ' This will also Shift:=xlLeft<br /></ul>
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Delete_A_ColumnUsingInputbox()<br />
+
+       <ul>Dim x As String<br />
+
+       x = InputBox("Which Column would you like to delete?")<br />
+
+       If IsNumeric(x) Then GoTo Line1<br />
+
+       Columns(x).Delete<br />
+
+       GoTo Line2<br /></ul>
+
+   Line1:<br />
+
+       <ul>MsgBox "Please enter Text only"<br /></ul>
+
+   Line2:<br />
+
+   End Sub<br />
+
+   <hr width = 450 align="Left" />
+
+   Sub Delete_A_RowUsingInputbox()<br />
+
+       <ul>On Error GoTo Line1<br />
+
+       Dim x As Long<br />
+
+       x = InputBox("Which Row would you like to delete?")<br />
+
+           Rows(x).EntireRow.Delete  ' This will also Shift:=xlUp<br />
+
+           GoTo Line2<br /></ul>
+
+   Line1:<br />
+
+       <ul>MsgBox "Please enter Numbers only"<br /></ul>
+
+   Line2:<br />
+
+   End Sub<br />
+
+   </ul>
+
+   <br />
+
+   <br />
+
+   
+
+   <h3>Loop, skipping cells. (<a href="pdf/5. Loops.pdf">More on Loops</a>)</h3>
+
+   <ul>
+
+     <ul>Dim i As Integer<br />
+
+       <br />
+
+       For i = 1 To 6 Step 2<br />
+
+       Cells(i, 1).Value = 100<br />
+
+       Next i<br /><br />
+
+   
+
+       <img src="Excel_Image/loopSkipCells.jpg" width="624" height="781" /><br />
+
+    
+
+   <br />
+
+   
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     
+
+     <h3>Case / Example</h3>
+
+     <ul>Sub pik()<br />
+
+       Dim intValue As Integer<br />
+
+       intValue = InputBox("Enter value")<br />
+
+       Select Case intValue<br />
+
+       Case 1<br />
+
+       MsgBox "Aircraft"<br />
+
+       Case 2<br />
+
+       MsgBox "AutoMobile"<br />
+
+       Case 3<br />
+
+       MsgBox "SnowMobile"<br />
+
+       Case Else<br />
+
+       Debug.Assert False<br />
+
+       End Select<br />
+
+     <br />
+
+     End Sub<br /></ul>
+
+     <br />
+
+     <br />
+
+     <h3>Last Row in Column &quot;A&quot;</h3>
+
+     <ul>
+
+       Dim r As Long<br />
+
+       r = Cells(Rows.Count, "A").End(xlUp).Row
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>Link to Microsoft Color Index</h3>
+
+     <ul>
+
+       <a href="https://access-excel.tips/excel-vba-color-code-list/">Link to Microsoft Color Index with examples</a><br /><br />
+
+   
+
+   
+
+     </ul>
+
+     <h3>Change font color to red of all numbers in column "A" based on input number.</h3>
+
+     <ul>
+
+       Sub colr()<br />
+
+     <ul>Dim i As Long<br />
+
+       Dim r As Long<br />
+
+       Dim x As Long<br />
+
+     <br />
+
+       x = InputBox("Enter number", "Red number below")<br />
+
+     <br />
+
+       Columns(1).Font.Color = vbBlack<br />
+
+       r = Cells(Rows.Count, "A").End(xlUp).Row<br />
+
+     <br />
+
+       For i = 1 To r<br />
+
+       
+
+       <ul> If Cells(i, 1).Value < x Then<br />
+
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cells(i, 1).Font.Color = vbRed<br />
+
+         End If<br /></ul>
+
+       
+
+       Next i<br /></ul>
+
+       End Sub<br />
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>If Interior ColorIndex is then? - <a href="http://www.javascripter.net/faq/hextorgb.htm">Hex to RGB</a> converter</h3>
+
+         <ul>
+
+       Sub CellColors()<br />
+
+       '<br />
+
+       <span class="Blue_Text">' So you may want to use these examples instead of using conditional formatting because<br />
+
+       'you can not determine the interior color of a conditionally formatted cell<br />
+
+       </span> <br />
+
+       Range("A1").Interior.ColorIndex = 11 <span class="Blue_Text">' This will change the interior color TO 11 = Dark Blue</span><br />
+
+       <br />
+
+       Range("A1").Font.ColorIndex = 3 <span class="Blue_Text">' This will change the FONT color to 3 is red</span><br />
+
+       <br />
+
+       Range("A1").Interior.ColorIndex = -4142 <span class="Blue_Text">' This will reset the cell interior to NO FILL</span><br />
+
+       Range("A1").Interior.ColorIndex = -4105 <span class="Blue_Text">' This will reset the cell interior to White</span><br />
+
+           <span class="Blue_Text">' What the difference between -4142 and -4105<br />
+
+           '-4105 fills the interior White so in you will not see the Guideline between "A1" and "B1" where as -4142 resets to no fill like a new sheet looks.<br />
+
+           </span> <br />
+
+       Range("A1").ClearContents <span class="Blue_Text">' This will clear the content of the cell</span><br />
+
+       <br />
+
+       Range("A1").ClearFormats <span class="Blue_Text">' This will clear the Formatting of the cell</span><br />
+
+       <br />
+
+          <br />
+
+       If Range("A1").Interior.ColorIndex = 56 Then ActiveCell.Offset(0, 1).Select <span class="Blue_Text">' 56 = Dark Green</span><br />
+
+       <br />
+
+       If Range("A1").Interior.ColorIndex = 56 Then Range("A2:H2").Interior.ColorIndex = 3 <span class="Blue_Text">' 3 = Red - This changes the color of a range of cells.</span><br />
+
+       <br />
+
+   End Sub<br /><br />
+
+   <img src="Excel_Image/ColorIndexTable.jpg" width="633" height="762" /> <br /><br />
+
+       </ul>
+
+       <h3>What color is the ActiveCell ?</h3>
+
+       <ul>Sub test_color()<br />
+
+   MsgBox ActiveCell.Interior.ColorIndex<br />
+
+   End Sub<br />
+
+   <br /></ul>
+
+   <h3>Setting the interior color of a cell based on Criteria</h3>
+
+   <ul>
+
+   
+
+   <span class="Blue_Text">(----------------This could be use like conditional formating--------------)</span><br /><br />
+
+   Sub ConditionalColorChange()<br />
+
+   Dim r As Integer<br />
+
+   Dim c As Integer<br />
+
+   Dim r1 As Integer<br />
+
+   Dim c1 As Integer<br />
+
+   Dim i As Integer<br />
+
+   <br />
+
+   r = 1<br />
+
+   c = 1<br />
+
+   r1 = 2<br />
+
+   <br />
+
+   Range("A1:E1").ClearFormats<br />
+
+   <br />
+
+   Cells(1, 1).Select<br />
+
+   <br />
+
+   For i = 1 To 5<br />
+
+   <br />
+
+   Do Until IsEmpty(ActiveCell)<br />
+
+       If Cells(r, c) = Cells(r1, 7) Then<br />
+
+           With ActiveCell<br />
+
+               .Interior.Color = RGB(0, 128, 0)<br />
+
+               Exit Do<br />
+
+           End With<br />
+
+       End If<br />
+
+       ActiveCell.Offset(0, 1).Select<br />
+
+       c = c + 1<br />
+
+           <br />
+
+       Loop<br />
+
+       <br />
+
+       Cells(1, 1).Select<br />
+
+       c = 1<br />
+
+       r1 = r1 + 1<br />
+
+         <br />
+
+   Next i<br />
+
+   <br />
+
+   MsgBox "Finished!"<br />
+
+   <br />
+
+   End Sub<br />
+
+   <br />
+
+   <em>Here we see Cells &quot;A1&quot;, &quot;C1&quot; &amp; &quot;E1&quot; changed to Green because those numbers were found in Column &quot;G&quot;.</em><br />
+
+   <img src="Excel_Image/VBA_ColorChange.jpg" width="545" height="148" /><br /><br />
+
+   
+
+   
+
+   </ul>
+
+     <h3>Todays date is (Variable Name (TDay))</h3>
+
+     <ul>
+
+       Sub tdat()<br />
+
+       Dim TDay As String<br />
+
+       TDay = Date<br />
+
+       <br />
+
+       MsgBox TDay <span class="blueText">' This will show Todays Date</span><br />
+
+       <br />
+
+       End Sub<br />
+
+     </ul>
+
+     <br /></ul>
+
+     <h3>Add Todays Date to cell A1 then add days to that date in cell below it.
+
+     </h3>
+
+       
+
+       <h3>
+
+         <ul>Working with Dates ... <a href="http://www.excelfunctions.net/vba-dateadd-function.html">Click here for more.</a></ul>
+
+     </h3>
+
+     <ul>
+
+       <table width="1000" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td width="257" valign="top"><img src="Excel_Image/startdate.jpg" width="231" height="165" /></td>
+
+       <td width="743">Sub addnumbers()<br />
+
+   Dim startdate As Date<br />
+
+   Dim newdate As Date<br />
+
+   Dim r As Integer<br />
+
+   <br />
+
+   <br />
+
+   startdate = Date<br />
+
+   <br />
+
+   Range("A1") = startdate<br />
+
+   <br />
+
+   r = 30<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A2") = newdate<br />
+
+   <br />
+
+   r = 31<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A3") = newdate<br />
+
+   <br />
+
+   r = 60<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A4") = newdate<br />
+
+   <br />
+
+   r = 61<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A5") = newdate<br />
+
+   <br />
+
+   r = 90<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A6") = newdate<br />
+
+   <br />
+
+   r = 91<br />
+
+   newdate = DateAdd("d", r, startdate)<br />
+
+   Range("A7") = newdate<br />
+
+   <br />
+
+   <br />
+
+   End Sub<br /></td>
+
+     </tr>
+
+   </table>
+
+   
+
+     </ul>
+
+     <br />
+
+     <h3>Delete Duplicates in a Range</h3>
+
+     <ul>
+
+       Sub Remove_Duplicates()<br />
+
+       With ActiveSheet<br />
+
+       <ul>.Range("A1:N" & .Cells(Rows.Count, 14).End(xlUp).Row).RemoveDuplicates</ul> 
+
+       Columns:=14, Header:=xlYes<br />
+
+       End With<br />
+
+       End Sub<br />
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     
+
+     <h3>Download a txt file from the internet and save in file E:\Lotto.&nbsp;&nbsp;(used in Lotto_Fun 7)</h3>
+
+     <ul>
+
+       Sub GetPBallNumbers()<br />
+
+       Dim db As Worksheet<br />
+
+       Set db = Worksheets("DB")<br />
+
+       Kill "<span class="blueText">E:\Lotto\Winnums-Text.txt</span>"<br />
+
+     <br />
+
+       Dim myURL As String<br />
+
+       myURL = <span class="blueText">"http://www.powerball.com/powerball/winnums-text.txt"</span><br />
+
+     <br />
+
+       Dim WinHttpReq As Object<br />
+
+       Set WinHttpReq = CreateObject("Microsoft.XMLHTTP")<br />
+
+       WinHttpReq.Open "GET", myURL, False<br />
+
+       WinHttpReq.Send<br />
+
+     <br />
+
+       Dim oStream As Variant<br />
+
+       myURL = WinHttpReq.ResponseBody<br />
+
+       If WinHttpReq.Status = 200 Then<br />
+
+       Set oStream = CreateObject("ADODB.Stream")<br />
+
+       oStream.Open<br />
+
+       oStream.Type = 1<br />
+
+       oStream.Write WinHttpReq.ResponseBody<br />
+
+       oStream.SaveToFile ("<span class="blueText">E:\Lotto\Winnums-Text.txt</span>")<br />
+
+       oStream.Close<br />
+
+       End If<br />
+
+     <br />
+
+       Dim rng As Range<br />
+
+       Set rng = Range("A:A")<br />
+
+       Dim col As Long<br />
+
+       col = Application.WorksheetFunction.CountA(rng)<br />
+
+       db.Range("K3:Q" & col).ClearContents<br />
+
+       db.Range("A:I").ClearContents<br />
+
+     <br />
+
+       Call ImportDataTxT<br />
+
+       [A1].End(xlDown).Offset(0, 9).Select<br />
+
+       Dim i As Integer<br />
+
+       For i = 1 To 7<br />
+
+       ActiveCell.Offset(0, 1).Select<br />
+
+       Range(Selection, Selection.End(xlUp)).FillDown<br />
+
+     <br />
+
+       Next i<br />
+
+     <br />
+
+       End Sub<br />
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>Create a new Worksheet using VBA</h3>
+
+     <ul>
+
+       Sub CreateSheet()<br />
+
+       Dim nwsht As Variant<br />
+
+       nwsht = InputBox("Enter name of new Sheet")<br />
+
+       With ThisWorkbook<br />
+
+       .Sheets.Add(After:=.Sheets(.Sheets.Count)).name = nwsht<br />
+
+       End With<br />
+
+       End Sub<br />
+
+     <br />
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>Create new Worksheets for all names listed in column "A" on Sheet("Sched")</h3>
+
+     <ul>
+
+       Sub AddSheet()<br />
+
+       With Worksheets("Sched")<br />
+
+       Dim lastrow As Long<br />
+
+       lastrow = .Cells(.Rows.Count, "A").End(xlUp).Row<br />
+
+       Dim i As Long<br />
+
+       For i = 1 To lastrow<br />
+
+       If IsError(Application.Evaluate("'" & .Cells(i, 1).Value & "'!A1")) And .Cells(i, 1) <> "" Then<br />
+
+       Dim ws As Worksheet<br />
+
+       Set ws = ThisWorkbook.Worksheets.Add<br />
+
+       ws.name = .Cells(i, 1).Value<br />
+
+       End If<br />
+
+       Next i<br />
+
+       End With<br />
+
+     <br />
+
+       End Sub<br />
+
+     <br />
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>Control a table filter with a macro.</h3>
+
+     <ul>
+
+       <strong>Here is the setup by </strong>  <strong>Tabs:</strong><br />
+
+       <ul>Home Tab, will display results.<br />
+
+         DB Tab, will contain the data base information. AKA Table 1<br />
+
+         List Tab, will duplicate the DB informaton. In this case Table 4<br />
+
+       List2 Tab will house the Combo box data and logic. Table 6</ul><br />
+
+     <br />
+
+     <strong>The macro:</strong><br /><ul>
+
+       Sub startmigration()<br />
+
+       Dim wsD As Worksheet<br />
+
+       Dim wsL As Worksheet<br />
+
+       Dim wsH As Worksheet<br />
+
+       Dim wsL2 As Worksheet<br />
+
+       Dim x As Long<br />
+
+     <br />
+
+       Set wsD = Worksheets("DB")<br />
+
+       Set wsL = Worksheets("List")<br />
+
+       Set wsH = Worksheets("Home")<br />
+
+       Set wsL2 = Worksheets("List2")<br />
+
+       x = wsL2.[D1]<br />
+
+     <br />
+
+       wsH.Range("B2:J100").Delete<br />
+
+       wsL.ListObjects("Table4").DataBodyRange.ClearContents<br />
+
+       wsD.ListObjects("Table1").DataBodyRange.Copy Destination:=wsL.Range("A2")<br />
+
+       <br />
+
+       wsD.Range("Table1[Invoice '#]").Copy Destination:=wsL2.Range("A2")<br />
+
+       wsL2.Range("A1").CurrentRegion.RemoveDuplicates Columns:=1<br />
+
+     <br />
+
+       wsL.ListObjects("Table4").Range.AutoFilter Field:=1, Criteria1:=x<br />
+
+       wsL.ListObjects("Table4").DataBodyRange.Copy Destination:=wsH.Range("B2")<br />
+
+     <br />
+
+       wsH.Columns("B:L").AutoFit<br />
+
+       <br />
+
+       End Sub<br />
+
+     <span class="blueText">(This macro also needs the following macro to refresh the invoice list when something is added to the database)</span>
+
+     </ul>
+
+     <h3>Here is a <U>newer</U> example of controlling the filter</h3>
+
+     <ul>
+
+       Sub lookup() &nbsp;&nbsp;<span class="Blue_Text">'This macro gets the data from table 1</span><br />
+
+   Dim r As Double<br />
+
+   Dim x As Double <span class="Blue_Text">' if you get an error change Double to String</span><br />
+
+   Dim wsL As Worksheet<br />
+
+   Dim wsD As Worksheet<br />
+
+   Dim wsH As Worksheet<br />
+
+   Set wsL = Worksheets("List")<br />
+
+   Set wsD = Worksheets("DB")<br />
+
+   Set wsH = Worksheets("Home")<br />
+
+   r = wsL.[C1]<br />
+
+   x = wsL.Cells(r, 1)<br />
+
+   Application.ScreenUpdating = False<br />
+
+   wsH.Range("B2:J50").Delete<br />
+
+   wsD.ListObjects("Table1").Range.AutoFilter Field:=1, Criteria1:=x<br />
+
+   wsD.ListObjects("Table1").DataBodyRange.Copy Destination:=wsH.Range("B2")<br />
+
+   wsH.Columns("B:J").AutoFit<br />
+
+   End Sub<br />
+
+   <hr width=500 align="Left"/>
+
+   Sub GetInvoiceNumbers() <span class="Blue_Text">' This macro gets the invoice numbers from table 1 then remove the duplicates so that we can use the number in a combo-box</span><br />
+
+   Dim wsD As Worksheet<br />
+
+   Dim wsL As Worksheet<br />
+
+   Set wsD = Worksheets("DB")<br />
+
+   Set wsL = Worksheets("List")<br />
+
+   Application.ScreenUpdating = False<br />
+
+   wsD.ListObjects("Table1").ListColumns(1).Range.Copy Destination:=wsL.Cells(1, 1)<br />
+
+   wsL.Range("A1").CurrentRegion.RemoveDuplicates Columns:=1<br />
+
+   End Sub<br />
+
+   <hr width=500 align="Left"/>
+
+   Sub resetDB()&nbsp;&nbsp;&nbsp;<span class="Blue_Text">'This macro resets the main data in table 1 on sheet &quot;DB&quot;</span><br />
+
+   Dim wsD As Worksheet<br />
+
+   Set wsD = Worksheets("DB")<br />
+
+   wsD.ListObjects("Table1").Range.AutoFilter Field:=1<br />
+
+   End Sub<br />
+
+   <h3>This was used in Excel File: &nbsp;&quot; Autofilter_ControlledByVBA&quot;</h3>
+
+     </ul>
+
+   <h3>Slicer ... This will Clearing the slicer filter.</h3>
+
+   <ul>
+
+   Sub ClearSlicer()<br />
+
+       <ul>
+
+       ActiveWorkbook.SlicerCaches("Slicer_Name").ClearManualFilter<br />
+
+       ActiveWorkbook.SlicerCaches("Slicer_CareGiver").ClearManualFilter<br />
+
+       ActiveWorkbook.SlicerCaches("Slicer_Weeks").ClearManualFilter<br />
+
+       ActiveWorkbook.SlicerCaches("Slicer_Month").ClearManualFilter<br />
+
+       ActiveWorkbook.SlicerCaches("Slicer_Year").ClearManualFilter<br /></ul>
+
+   End Sub<br />
+
+   <br /></ul>
+
+    <h3>Clearing a Table Filters</h3>
+
+    <ul>
+
+    Sub TableFilterClear()<br />
+
+   '<br />
+
+   ' TableFilterClear Macro<br />
+
+   '<br />
+
+       ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=1<br />
+
+       ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=2<br />
+
+       ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=3<br />
+
+       ActiveSheet.ListObjects("Table2").Range.AutoFilter Field:=4<br />
+
+   End Sub<br /><br /> </ul>
+
+    <h3>Table Filter ... Setting a specific filter in a Field/Column</h3>
+
+    <ul>
+
+   ActiveSheet.ListObjects("Table3").Range.AutoFilter Field:=1, Criteria1:= _<br />
+
+           "David Duncan"<span class="Blue_Text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   'Specifies David Duncan in field/column 1</span><br />
+
+           <br />
+
+        ActiveSheet.ListObjects("Table3").Range.AutoFilter Field:=2, Criteria1:= _<br />
+
+           "39"&nbsp;&nbsp;&nbsp;&nbsp;   <span class="Blue_Text">'Specifies 39 in field/Column 2</span><br />
+
+    </ul>
+
+     <h3>AutoFilter with 2 criteria</h3>
+
+     <ul>Here we are concatenating <span class="blueText">"<" & date1 and ">" & date2</span> &nbsp; (in blue text below)<br /><br />
+
+       Sub picr()<br />
+
+     <br />
+
+       Dim r As Integer<br />
+
+       Dim wsml As Worksheet<br />
+
+       Dim wspp As Worksheet<br />
+
+       Dim date1 As Date<br />
+
+       Dim date2 As Date<br />
+
+       Set wsml = Worksheets("Member_List")<br />
+
+       Set wspp = Worksheets("PayPeriods")<br />
+
+       r = wsml.[A1]<br />
+
+       date1 = wspp.Cells(r, 1)<br />
+
+       date2 = wspp.Cells(r, 2)<br />
+
+     <br />
+
+       Application.ScreenUpdating = False<br />
+
+       wsml.ListObjects("Table1").<span class="blueText">Range.AutoFilter Field:=3, Criteria1:= _<br />
+
+         ">" & date1, Operator:=xlAnd, Criteria2:="<" & date2</span><br />
+
+       [A1].Select<br />
+
+       End Sub<br />
+
+     </ul>
+
+     <h3>Reset AutoFilter on Table 1 in Field 3</h3>
+
+     <ul>
+
+       Sub ResetAutoFilter()<br />
+
+       <ul>ActiveSheet.ListObjects("Table1").Range.AutoFilter Field:=3</ul><br />
+
+       End Sub</ul>
+
+     <br />
+
+     <h3>Select Current Region and remove duplicates</h3>
+
+     <ul>Sub Updatedatabase()<br />
+
+       Dim wsL2 As Worksheet<br />
+
+       Dim wsD As Worksheet<br />
+
+       Set wsL2 = Worksheets("List2")<br />
+
+       Set wsD = Worksheets("DB")<br />
+
+     <br />
+
+       wsD.Range("Table1[Invoice '#]").Copy Destination:=wsL2.Range("A2")<br />
+
+       wsL2.Range("A1").CurrentRegion.RemoveDuplicates Columns:=1<br />
+
+     <br />
+
+       End Sub<br /><br />
+
+     <span class="blueText">You will use this macro when you add a new item to the database Tab DB. <a href="VBA_Controls_Table.xlsm">Download the speadsheet here this was based on here.</a></span>
+
+     </ul>
+
+       
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>How to copy and paste from one workbook to another workbook</h3>
+
+     <ul>
+
+       How this works. There will be a Master Workbook that will allow you to choose up to two other workbooks in a directory and move data from those workbooks to a Target workbook which has a know location.
+
+       <ul>
+
+       <img src="Excel_Image/CopyMaster2Target.png" width="734" height="1050" />
+
+     </ul>
+
+   <br />
+
+   <strong>Code for all 3 macros:</strong> (<span class="Blue_Text">Look up a file location on the computer</span>)<br />
+
+   <ul>
+
+   Sub sbVBA_To_Choose_Workbook1()<br />
+
+   Dim strFileToOpen As String<br />
+
+   strFileToOpen = Application.GetOpenFilename _<br />
+
+   (Title:="Please choose a file to open", _<br />
+
+   FileFilter:="Excel Files *.xlsm* (*.xlsm*),")<br />
+
+   If strFileToOpen = "False" Then<br />
+
+   MsgBox "No file selected.", vbExclamation, "Sorry!"<br />
+
+   Exit Sub<br />
+
+   Else<br />
+
+   Range("D5") = strFileToOpen<br />
+
+   End If<br />
+
+   End Sub<br />
+
+   <hr width=250 align="left"/>
+
+   <br />
+
+   Sub sbVBA_To_Choose_Workbook2()<br />
+
+   Dim strFileToOpen As String<br />
+
+   strFileToOpen = Application.GetOpenFilename _<br />
+
+   (Title:="Please choose a file to open", _<br />
+
+   FileFilter:="Excel Files *.xlsm* (*.xlsm*),")<br />
+
+   If strFileToOpen = "False" Then<br />
+
+   MsgBox "No file selected.", vbExclamation, "Sorry!"<br />
+
+   Exit Sub<br />
+
+   Else<br />
+
+   Range("D6") = strFileToOpen<br />
+
+   End If<br />
+
+   End Sub<br /><hr width=250 align="left"/>
+
+   Sub sbMainProcess()&nbsp;&nbsp;&nbsp;<span style="color: #00F"> ' thiswill open the filed that you just looked up.</span><br />
+
+   Dim wbSource1, wbSource2, wbTarget<br />
+
+   <br />
+
+   If Cells(5, 4) = "" Then GoTo Line1 ' If no file name is in File 1 then exit<br />
+
+   If Cells(6, 4) = "" Then GoTo Line2 ' If no file name is in File 2 only process File 1<br />
+
+   <br />
+
+   'Open 1 files<br />
+
+   Set wbSource1 = Workbooks.Open(Range("D5"))<br />
+
+   ThisWorkbook.Activate<br />
+
+   Set wbSource2 = Workbooks.Open(Range("D6"))<br />
+
+   ThisWorkbook.Activate<br />
+
+   <br />
+
+   Set wbTarget = Workbooks.Open("E:\Excel\CopyWB1ToWB2\Target") 'Change this<br />
+
+   'Now Copy the Data<br />
+
+   ' ----Note!----- You will need to change the Range locations and Destination Ranges <br />
+
+   wbSource1.Sheets("Sheet1").<span class="blueText">Range("A1:B10")</span>.Copy Destination:=wbTarget.Sheets("Sheet1").Range("C1")<br />
+
+   wbSource2.Sheets("Sheet1").<span class="blueText">Range("A1:B10")</span>.Copy Destination:=wbTarget.Sheets("Sheet1").Range("E1")<br />
+
+   'Now Close the Files<br />
+
+   wbSource1.Close<br />
+
+   wbSource2.Close<br />
+
+   GoTo Line3<br />
+
+   <br />
+
+   Line2:<br />
+
+   'Open 1 files<br />
+
+   Set wbSource1 = Workbooks.Open(Range("D5"))<br />
+
+   ThisWorkbook.Activate<br />
+
+   <br />
+
+   Set wbTarget = Workbooks.Open("E:\Excel\CopyWB1ToWB2\Target") 'Change this<br />
+
+   'Now Copy the Data<br />
+
+   <br />
+
+   wbSource1.Sheets("Sheet1").Range("A1:B10").Copy Destination:=wbTarget.Sheets("Sheet1").Range("C1")<br /><br />
+
+   'Now Close the Files<br />
+
+   wbSource1.Close<br />
+
+   GoTo Line3<br />
+
+   Line1:<br />
+
+   MsgBox "No File was choosen. Please choose a file."<br />
+
+   Line3:<br />
+
+   'Save the Target File<br />
+
+   wbTarget.Save<br />
+
+   'Save the Target File<br />
+
+   wbTarget.Close<br />
+
+   End Sub<br />
+
+   <br />
+
+   </ul>
+
+   </ul>
+
+     <br />
+
+     <h3>Open a Excel workbook (file) from an existing workbook</h3>
+
+     <ul>
+
+     Sub sbVBA_To_Choose_Workbook1()<br />
+
+   Dim wbSource1<br />
+
+   Dim strFileToOpen As String<br />
+
+   strFileToOpen = Application.GetOpenFilename _<br />
+
+   (Title:="Please choose a file to open", _<br />
+
+   FileFilter:="Excel Files *.xlsm* (*.xlsm*),")<br />
+
+   If strFileToOpen = "False" Then<br />
+
+   MsgBox "No file selected.", vbExclamation, "Sorry!"<br />
+
+   Exit Sub<br />
+
+   Else<br />
+
+   Set wbSource1 = Workbooks.Open(strFileToOpen)<br />
+
+   End If<br />
+
+   End Sub<br />
+
+     </ul>
+
+     
+
+     <br />
+
+       <h3>How to: Create / Delete a folder or delete a file in a folder</h3>
+
+     <ul>Sub Make_Dir_on_G()<br />
+
+       MkDir "G:\DannyBoy" ' This will create a folder named DannyBoy on Drive G:\ <br />
+
+     <br />
+
+       End Sub<br />
+
+     <br />
+
+     <br />
+
+       Sub Remove_Dir_on_G()<br />
+
+       RmDir "G:\DannyBoy" ' This will remove the folder DannyBoy on drive G:\<br />
+
+     <br />
+
+       End Sub<br />
+
+     <br />
+
+     <br />
+
+       Sub Delete_all_txt_files()<br />
+
+       Kill "G:\DannyBoy\*.txt" ' This will delete all .txt files found in G:\DannyBoy folder<br />
+
+     <br />
+
+     End Sub</ul>
+
+     <h3>How to create a folder with a inputbox and then copy a file using the FileCopy from one folder to another using the Inputbox</h3>
+
+     <ul>Original folder is Dano.<br />
+
+       #1 Will create a folder in Dano using the inputbox to name for folder. If the folder name already exist, you will get a messagebox error.<br />
+
+     <br />
+
+       #2 Will copy a pre existing file named templa.xlsm to a folder specified by the inputbox.<br /><br />
+
+     <ul>
+
+       <strong><em>#1</em></strong><br />
+
+       Sub filefolder()<br />
+
+     <ul>Dim name As String<br />
+
+       name = InputBox("Create new file in C:\Dano")<br />
+
+     <br />
+
+       If Len(Dir("c:\Dano\" & name, vbDirectory)) = 0 Then<br />
+
+       MkDir "c:\Dano\" & name<br />
+
+       Exit Sub<br />
+
+       End If<br />
+
+     <br />
+
+       MsgBox "Sorry that name already exists please try again"</ul><br />
+
+     <br />
+
+       End Sub<br />
+
+     <br />
+
+     <em><strong>#2</strong></em><br />
+
+       Sub copytemplate()<br />
+
+       '<br />
+
+     <ul>Dim frompath As String<br />
+
+       Dim topath As String<br />
+
+     <br />
+
+       Dim name As String<br />
+
+       name = InputBox("Name to put template in?")<br />
+
+     <br />
+
+       frompath = "C:\Dano\Templa.xlsm"<br />
+
+       topath = "C:\Dano\" & name & "\" & name & ".xlsm"<br />
+
+     <br />
+
+       FileCopy frompath, topath</ul><br />
+
+     <br />
+
+       End Sub<br />
+
+     </ul></ul>
+
+     
+
+     <h3>Using CountA</h3>
+
+     
+
+     <ul>Application.WorksheetFunction.CountA(A:A)&nbsp;&nbsp;(or A:A can be a variable)<br />
+
+     
+
+     Dim rng as range<br />
+
+     Dim r as long<br />
+
+     set rng = Range("A:A")<br />
+
+     r = Application.WorksheetFunction.CountA(rng)<br />
+
+     <br />
+
+     <br />
+
+     <h3>Count even and odd numbers in a range using the MOD operator</h3>
+
+     <ul>
+
+       MOD is the remainder of two number. Thus <br /><br />
+
+   <ul>14 MOD 4 = 2<br />
+
+    8 MOD 5 = 3</ul><br />
+
+   <br />
+
+   14 divide by 4 or (4 * 3 =12) with a remainder of 2 <br />
+
+   8 divide by 5 or (5 * 1 = 5) with a remainder of 3 <br />
+
+       <br />
+
+       20 Mod 2 = 0<br />21 Mod 2 = 1<br />
+
+       <br />
+
+       If the value 20 is MODed by 2 then the result would be 0. Since 2 divides into 20 evenly. we know that we have an even number. IF there is a remainder of anything else than zero we are dealing with an Odd number. <br />
+
+       <br />
+
+       
+
+       To check if a value is an even or an odd number I used the Mod operator to divide the variable  by 2. If the result returned 0 then it must be an even number. And if not then it must be an odd number.<br />
+
+       <br />
+
+       Find if cell &quot;A1&quot; is even or odd. Note a Blank cell is considered &quot;Even&quot;<br />
+
+       <br />
+
+       <ul><p>Sub oddevn()</p>
+
+       <p>If Cells(1, 1) Mod 2 = &quot;0&quot; Then<br />
+
+         MsgBox &quot;Cells is Even&quot;<br />
+
+         Else<br />
+
+         MsgBox &quot;Cells is odd&quot;<br />
+
+         End If</p>
+
+       <p>End Sub<br /></ul>
+
+       </p>
+
+       <br />
+
+     <br />
+
+     
+
+     <h3>Functions (application.WorksheetFunction. ?)</h3>
+
+     <ul>
+
+       <a href="https://msdn.microsoft.com/en-us/vba/excel-vba/articles/worksheetfunction-object-excel">List of Functions</a>
+
+     </ul>
+
+     <h3>Functions - VBA w/Sub Example:</h3>
+
+     <ul>
+
+       Function Celsius(dan)<br />
+
+       Celsius = (dan - 32) * 5 / 9<br />
+
+       End Function<br /><br />
+
+       
+
+       Sub tempconversion()<br />
+
+       Dim temp As Variant
+
+       temp = Application.InputBox(Prompt:= _
+
+       "Please enter the temperature in degrees F.", Type:=1)
+
+       MsgBox "The temperature is " & Celsius(temp) & " degrees C."
+
+       <br />
+
+       End Sub<br /><br />
+
+       
+
+       
+
+       Note! the word "dan" was originaly "fDegrees". Deleting "dan" or "fDegrees" and the macro will fail.<br /><br />
+
+       <strong>More example of Functions.</strong><br />
+
+     </ul>
+
+     </ul>
+
+     <ul>
+
+       <ul>Function Area(x As Long, y As Long) ' Note that in the parentheses could be a Range, This is like Dim in a Sub - Like Dim x As Long<br />
+
+         <br />
+
+         Area = x - y ' Note this could be + , - , / , * &nbsp;&nbsp;This is the actual function which can be called with the key word &quot;Area&quot;<br />
+
+         <br />
+
+         End Function<br />
+
+         <hr width="550" align="Left"/>
+
+         Sub nex() ' <strong>Find more on Functions at: <a href="http://www.excel-easy.com/vba/function-sub.html">http://www.excel-easy.com/vba/function-sub.html</a></strong><br />
+
+         Dim z As Long<br />
+
+         <br />
+
+         z = Area([A1], [B1])<br />
+
+         [D1].Value = z<br />
+
+         <br />
+
+         'MsgBox z<br />
+
+         End Sub</ul><br />
+
+       This places the answer to the equation in cell D1.<br />
+
+       <table width="600" border="1" cellspacing="0" cellpadding="0">
+
+         <tr>
+
+           <td>&nbsp;</td>
+
+           <td align="center">A</td>
+
+           <td align="center">B</td>
+
+           <td align="center">C</td>
+
+           <td align="center">D</td>
+
+           </tr>
+
+         <tr>
+
+           <td align="center">1</td>
+
+           <td align="center">10</td>
+
+           <td align="center">6</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">4</td>
+
+           </tr>
+
+         <tr>
+
+           <td align="center">2</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           </tr>
+
+         <tr>
+
+           <td align="center">3</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           <td align="center">&nbsp;</td>
+
+           </tr>
+
+         </table>
+
+       
+
+     </ul>
+
+     <br /><br />
+
+     
+
+     <h3>Types of Variables</h3>
+
+     <ul><table width="800" border="1" cellpadding="1">
+
+       <tr>
+
+         <td><strong>Name</strong></td>
+
+         <td><strong>Type</strong></td>
+
+         <td><strong>Details</strong></td>
+
+         <td><strong>Symbol</strong></td>
+
+         </tr>
+
+       <tr>
+
+         <td>Byte</td>
+
+         <td>Numerical</td>
+
+         <td>Whole number between 0 and 255.</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Integer</td>
+
+         <td>Numerical</td>
+
+         <td>Whole number between -32'768 and 32'767.</td>
+
+         <td>%</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Long</td>
+
+         <td>Numerical</td>
+
+         <td>Whole number between - 2'147'483'648 and 2'147'483'647.</td>
+
+         <td>&amp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Currency</td>
+
+         <td>Numerical</td>
+
+         <td>Fixed decimal number between -922'337'203'685'477.5808 and 922'337'203'685'477.5807.</td>
+
+         <td>@</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Single</td>
+
+         <td>Numerical</td>
+
+         <td>Floating decimal number between -3.402823E38 and 3.402823E38.</td>
+
+         <td>!</td>
+
+         </tr>
+
+       <tr>
+
+         <td bgcolor="#FFFF00">Double</td>
+
+         <td>Numerical</td>
+
+         <td>Floating decimal number between -1.79769313486232D308 and 1.79769313486232D308.</td>
+
+         <td>#</td>
+
+         </tr>
+
+       <tr>
+
+         <td bgcolor="#FFFF00">String</td>
+
+         <td>Text</td>
+
+         <td>Text.</td>
+
+         <td>$</td>
+
+         </tr>
+
+       <tr>
+
+         <td bgcolor="#FFFF00">Date</td>
+
+         <td>Date</td>
+
+         <td>Date and time.</td>
+
+         </tr>
+
+       <tr>
+
+         <td bgcolor="#FFFF00">Boolean</td>
+
+         <td>Boolean</td>
+
+         <td>True or False.</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Object</td>
+
+         <td>Object</td>
+
+         <td>Microsoft Object.</td>
+
+         </tr>
+
+       <tr>
+
+         <td>Variant</td>
+
+         <td>Any type</td>
+
+         <td>Any kind of data (default type if the variable is not declared).</td>
+
+         </tr>
+
+     </table></ul><br /><br />
+
+     <h3>Scope of Variable</h3>
+
+     <ul><table width="900" border="0" cellspacing="0" cellpadding="0">
+
+     <tr>
+
+       <td><img src="Excel_Image/Scope_Variable.jpg" width="896" height="585" /></td>
+
+       <td>&nbsp;</td>
+
+     </tr>
+
+   </table>
+
+   </ul><br />
+
+   
+
+     <h3>Hiding Rows</h3>
+
+     <ul>Rows.EntireRow.Hidden = True or False to unhide<br />
+
+       <table width="1000" border="0" cellspacing="0" cellpadding="0">
+
+         <tr>
+
+           <td width="503" valign="top"><strong>Example:</strong><br />
+
+             Sub hidrow()<br />
+
+     <br />
+
+             Dim BeginRow As Integer<br />
+
+             Dim EndRow As Integer<br />
+
+             Dim ChkCol As Integer<br />
+
+             Dim RowCnt As Integer<br />
+
+             Dim r As Integer<br />
+
+             Dim box As Integer<br />
+
+     <br />
+
+             BeginRow = 10<br />
+
+             EndRow = 205<br />
+
+             ChkCol = 2<br />
+
+             r = 1<br />
+
+     <br />
+
+             Application.ScreenUpdating = False<br />
+
+     <br />
+
+             For box = 1 To 5 ' this represents the number of check boxes being used<br />
+
+             For RowCnt = BeginRow To EndRow<br />
+
+             <br />
+
+             If Cells(r, 1) = True Then<br />
+
+             If Cells(BeginRow, ChkCol).Value = Cells(r, 2) Then<br />
+
+             Cells(BeginRow, ChkCol).<span class="blueText">Rows.EntireRow.Hidden = True</span><br />
+
+             End If<br />
+
+             End If<br />
+
+             If Cells(r, 1) = False Then<br />
+
+             If Cells(BeginRow, ChkCol).Value = Cells(r, 2) Then<br />
+
+             Cells(BeginRow, ChkCol).<span class="blueText">Rows.EntireRow.Hidden = False</span><br />
+
+             End If<br />
+
+             End If<br />
+
+             <br />
+
+             BeginRow = BeginRow + 1<br />
+
+             <br />
+
+             Next RowCnt<br />
+
+             <br />
+
+             r = r + 1<br />
+
+             BeginRow = 10<br />
+
+             EndRow = 30<br />
+
+             Next box<br />
+
+     <br />
+
+             End Sub<br />
+
+     <br /></td>
+
+           <td width="497" valign="top"><img src="Excel_Image/jax1.jpg" width="241" height="557" /></td>
+
+         </tr>
+
+       </table>
+
+       <br />
+
+       
+
+     </ul>
+
+     <br />
+
+     
+
+     <h3>If statement that stops or ends the macro operation.</h3>
+
+     <ul>If [a1] > "6" Then Exit Sub</ul><br />
+
+     <br />
+
+     <h3>Moving Up, Down, Left, Right</h3>
+
+     <ul>
+
+       .end.(xlup)<br />
+
+       .end.(xlDown)<br />
+
+       .end.(xlToRight)<br />
+
+       .end.(xlToLeft)<br /><br />
+
+       
+
+       Selection.End(xlDown).select<br />
+
+       
+
+     <br />
+
+       Activecell.offset(Row, Column).select<br />
+
+     </ul>
+
+     <h3>Find next blank cell in Column "B"</h3>
+
+     <ul>Cells(ActiveSheet.Rows.Count, 2).End(xlUP).Offset(1 ,0).Select</ul>
+
+     <h3>Fill in the &quot;Blanks&quot; or other value in a Contiguous range that contains blank cells</h3>
+
+     <ul>
+
+       Range("A1").CurrentRegion.SpecialCells(xlCellTypeBlanks).Value = "Blank"<br />
+
+     <ul><table width="400" border="1" cellspacing="0" cellpadding="1">
+
+       <tr>
+
+         <td width="24">&nbsp;</td>
+
+         <td width="75" align="center">A</td>
+
+         <td width="96" align="center">B</td>
+
+         <td width="102" align="center">C</td>
+
+         <td width="81" align="center">D</td>
+
+         </tr>
+
+       <tr>
+
+         <td>1</td>
+
+         <td bgcolor="#FFFF00">Dan</td>
+
+         <td bgcolor="#FFFF00">Edie</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         </tr>
+
+       <tr>
+
+         <td>2</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         <td bgcolor="#FFFF00">Amanda</td>
+
+         <td bgcolor="#FFFF00">Bella</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         </tr>
+
+       <tr>
+
+         <td>3</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         <td align="center" bgcolor="#FFFF00">Blank</td>
+
+         <td bgcolor="#FFFF00">Patrick</td>
+
+         </tr>
+
+       <tr>
+
+         <td>4</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>5</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+     </table></ul>
+
+       
+
+     </ul>
+
+     <br />
+
+     <h3>Fill blanks with cell above</h3>
+
+     <ul><table width="900" border="0" cellspacing="0" cellpadding="0">
+
+       <tr>
+
+         <td width="350" valign="top"><strong>Start with:</strong><br />
+
+           <img src="Excel_Image/FillBlankCells1.jpg" width="313" height="258" /></td>
+
+         <td width="550" valign="top"><strong>Finish with:</strong><br />
+
+           <img src="Excel_Image/FillBlankCells2.jpg" width="407" height="299" />
+
+           </td>
+
+         </tr>
+
+       </table><br />
+
+       <ul><li>Place the activecell in column "A".</li>
+
+         <li>Press "F5"</li>
+
+         <li>Choose Special</li>
+
+         <li>Click "Blanks"</li>
+
+         <li>Click "OK"</li>
+
+         
+
+         <li>In formula bar type: =B2</li>
+
+       <li>Press: Ctrl + Enter</li></ul>
+
+     </ul>
+
+     <br />
+
+     <a name="usedrange" id="usedrange"></a> <br />
+
+     <h3>Select a Range and Selecting and copying a range to a cell</h3>
+
+   <ul>
+
+   Range("A1:C1").Select or .copy<br />
+
+   Range("A1", "C1").Select or.copy<br />
+
+   Range("A1", Range("C1").End(xlDown)).Copy <span class="Blue_Text">' Copies "A1" thru the end of C </span><br />
+
+   Range("A1", Range("A1").End(xlDown)).Copy Range("B1") <br />
+
+   Range("A1").CurrentRegion.Copy &nbsp;&nbsp;' Current Region works but UsedRegion will not.<br />
+
+   <strike>Range("A1").UsedRegion.copy </strike>' This will not work - see below for UsedRange.<br />
+
+   </ul>
+
+     <h3>Select a "CurrentRegion"</h3>
+
+     <ul><strong>Current Region = A contiguous range of cells. Total and 100 will not be selected.</strong><br />
+
+       <ul>
+
+         Range("A1").CurrentRegion.SpecialCells(xlCellTypeBlanks).Value = "Blank"<br /><br />
+
+     <table width="400" border="1" cellspacing="0" cellpadding="1">
+
+       <tr>
+
+         <td width="19">&nbsp;</td>
+
+         <td width="79" align="center">A</td>
+
+         <td width="92" align="center">B</td>
+
+         <td width="107" align="center">C</td>
+
+         <td width="81" align="center">D</td>
+
+         </tr>
+
+       <tr>
+
+         <td>1</td>
+
+         <td bgcolor="#FFFF00">Dan</td>
+
+         <td bgcolor="#FFFF00">Edie</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>2</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td bgcolor="#FFFF00">Amanda</td>
+
+         <td bgcolor="#FFFF00">Bella</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>3</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td bgcolor="#FFFF00">Patrick</td>
+
+         </tr>
+
+       <tr>
+
+         <td>4</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>5</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>Total</td>
+
+         <td>100</td>
+
+         </tr>
+
+     </table>
+
+     </ul>
+
+     </ul>
+
+     <br />
+
+     <h3>Select a "Used Range"</h3>
+
+     <ul><strong>Used Range. All data is select regardless of the blank cells in Row 4.</strong> This is only used on a Sheets not from a cell range.<br />
+
+       <ul>Sheet1.UsedRange.Select<br /><br />
+
+         <table width="400" border="1" cellspacing="0" cellpadding="1">
+
+           <tr>
+
+             <td width="23">&nbsp;</td>
+
+             <td width="120" align="center">A</td>
+
+             <td width="74" align="center">B</td>
+
+             <td width="80" align="center">C</td>
+
+             <td width="81" align="center">D</td>
+
+           </tr>
+
+           <tr>
+
+             <td>1</td>
+
+             <td bgcolor="#FFFF00">Dan</td>
+
+             <td bgcolor="#FFFF00">Edie</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+           </tr>
+
+           <tr>
+
+             <td>2</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">Amanda</td>
+
+             <td bgcolor="#FFFF00">Bella</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+           </tr>
+
+           <tr>
+
+             <td>3</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">Patrick</td>
+
+           </tr>
+
+           <tr>
+
+             <td>4</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+           </tr>
+
+           <tr>
+
+             <td>5</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">&nbsp;</td>
+
+             <td bgcolor="#FFFF00">Total</td>
+
+             <td bgcolor="#FFFF00">100</td>
+
+           </tr>
+
+         </table>
+
+         <br />
+
+     </ul></ul>
+
+     <br />
+
+     
+
+     <h3>Select Used Range and activate cell "B5"</h3>
+
+     <ul>Sheet1.UsedRange.Cells(Sheet1.UsedRange.Rows.Count, 1).Offset(1, 0).Select<br /><br />
+
+       
+
+       <ul><table width="400" border="1" cellspacing="0" cellpadding="1">
+
+         <tr>
+
+           <td width="22">&nbsp;</td>
+
+           <td width="64" align="center">A</td>
+
+           <td width="101" align="center">B</td>
+
+           <td width="110" align="center">C</td>
+
+           <td width="81" align="center">D</td>
+
+           </tr>
+
+         <tr>
+
+           <td>1</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           </tr>
+
+         <tr>
+
+           <td>2</td>
+
+           <td>&nbsp;</td>
+
+           <td>Dan</td>
+
+           <td>Edie</td>
+
+           <td>&nbsp;</td>
+
+           </tr>
+
+         <tr>
+
+           <td>3</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>Amanda</td>
+
+           <td>Patrick</td>
+
+           </tr>
+
+         <tr>
+
+           <td>4</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>Bella</td>
+
+           </tr>
+
+         <tr>
+
+           <td>5</td>
+
+           <td>&nbsp;</td>
+
+           <td bgcolor="#FFFF00">&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           </tr>
+
+     </table></ul></ul>
+
+     <br />
+
+     <h3>Using "With" to choose a cell and set a value in a cell</h3>
+
+     <ul>
+
+       Sub UsingWith ( )<br />
+
+       With Worksheets(2).Range("C5") <span class="blueText">'Chooses cell "C5"</span><br />
+
+       <ul>.Value = "Enter Number" <span style="color: #00F">' Puts text "Enter Number" in cell "C5"</span><br />
+
+         .Offset(1).Value = "1" <span class="blueText">'Offsets from "C5" one cell down to "C6" and enter number "1"</span><br />
+
+         .Offset(1).Resize(10).DataSeries Step:=1 <span class="blueText">'Offsets from "C6" and repeats 10 times one "Step" at a time</span><br />
+
+       .Cells(ActiveSheet.UsedRange.Rows.Count, 1).Offset(1, 0).Select <span class="blueText">'Activecell is moved to location "C16"</span></ul>
+
+       End With<br />
+
+       End Sub<br />
+
+       <span class="blueText">'So it's like adding each of the dot lines to the original statement. Also note that we only used "Select" one time.  This helps with keeping the macro fast.</span><br />
+
+       <a name="Withstatement" id="Withstatement"></a><br />
+
+     <h3>Using "With" to format a range of cells</h3>
+
+     <ul>
+
+     <table width="800" border="1" cellspacing="0" cellpadding="1">
+
+       <tr>
+
+         <td valign="top">&nbsp;Sub FontBorderColor()<br />
+
+     <ul>With Range("A1:E1")<br />
+
+       .Font.Name = "Arial"<br />
+
+       .Font.Bold = True<br />
+
+       .HorizontalAlignment = xlCenter (Left or Right)<br />
+
+       .VerticalAlignment = xlBottom (Center or Top)<br />
+
+       .Font.Color = RGB(255, 255, 255)<br />
+
+       .Font.Size = 18<br />
+
+       .Font.Italic = True<br />
+
+       .Font.Underline = True<br />
+
+       .Borders.Weight = 2<span class="blueText"> ' Use this to set cell borders</span><br />
+
+       .Borders.Color = RGB(217, 255, 196)<br />
+
+       .Interior.Color = RGB(68, 114, 196)<br />
+
+       End With</ul>
+
+     <br />
+
+     &nbsp;End Sub<br />&nbsp;</td>
+
+         <td valign="top">&nbsp;Sub colorOutSideBorderFont2()<br />
+
+     <ul><br />
+
+       With Range("A3:E3")<br />
+
+       .Font.Bold = True<br />
+
+       .Font.Color = RGB(255, 21, 0) ' RGB = Red<br />
+
+       .BorderAround ColorIndex:=3, Weight:=xlThin <span class="blueText">' or xlThick</span><br />
+
+       <br />
+
+       End With</ul>
+
+     <br />
+
+     &nbsp;End Sub<br />&nbsp;</td>
+
+         </tr>
+
+     </table>
+
+     </ul>
+
+     </ul>
+
+     <h3>Fill Down</h3>
+
+     <ul>Range(ActiveCell, ActiveCell.End(xlUp)).FillDown<br />
+
+       <br />
+
+       Range(Selection, Selection.End(xlUp)).Select<br />
+
+     Selection.filldown</ul>
+
+     <br /><br />
+
+     <h3>Fill Down Example</h3>
+
+     <ul>
+
+     (In Cell &quot;A1&quot; put number &quot;1&quot; In Cell &quot;B1&quot; put number &quot;2&quot;)<br />
+
+     Sub fil()<br />
+
+   Dim SourceRange As Range<br />
+
+   Dim fillRange As Range<br />
+
+   <br />
+
+   Set SourceRange = Worksheets("Sheet1").Range("A1:A2")<br />
+
+   Set fillRange = Worksheets("Sheet1").Range("A1:A22")<br />
+
+   SourceRange.AutoFill Destination:=fillRange<br />
+
+   End Sub<br />
+
+     </ul>
+
+     <br /><br />
+
+     <h3>Flash fill (Fill down)</h3>
+
+     <ul>
+
+       Range("$A$1").flashfill
+
+       ' This will fill down to adjacent column. Set up Column &quot;B&quot; enter 1 thru 10. Cell &quot;A1&quot; enter &quot;1&quot;. Run macro.
+
+     </ul>
+
+     <br /><br />
+
+     <h3>Setting Row Height and Column Width</h3>
+
+     <ul>Sub wide()<br />
+
+       <ul>Columns("A:E").ColumnWidth = 25<br />
+
+       Rows("1:10").RowHeight = 25<br /></ul>
+
+     End Sub</ul>
+
+     <br /><br />
+
+     <h3>Goto last Row in a specified Column </h3>
+
+     <ul>
+
+       FinalRow = Cells(Rows.Count, 2).End(xlUp).Select '
+
+       <span class="blueText">This will take you to the last cell in column 2.</span>
+
+       <br />
+
+     <br />
+
+       FinalRow = Cells(Rows.Count, 2).End(xlUp).Offset(1).Select  '
+
+       <span class="blueText">This will take you to the last cell in column 2 and offset to the next open cell down.</span> <br /></ul>
+
+     <h3>Goto last Row in column &quot;A&quot; using a (Control box using Sheet2 Cell B1 (Dan))</h3>   
+
+     <ul>Sub lstrow()<br />
+
+       Dim x As Integer<br />
+
+       x = Worksheets("Sheet2").Range("B1") + 3<br />
+
+       FinalRow = Cells(Rows.Count, x).End(xlUp).Offset(1).Select
+
+     <br />End Sub<br />
+
+     <table width="523" border="1" cellspacing="0" cellpadding="1">
+
+       <tr>
+
+         <td width="24">&nbsp;</td>
+
+         <td width="119" align="center">A</td>
+
+         <td width="121" align="center">B</td>
+
+         <td width="119" align="center">C</td>
+
+         <td width="195" align="center">D</td>
+
+         </tr>
+
+       <tr>
+
+         <td>1</td>
+
+         <td>Dan</td>
+
+         <td>Edith</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>2</td>
+
+         <td>Amanda</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>3</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>4</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>5</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+     </table>
+
+     </ul>
+
+     <h3>Goto last Column &quot;C&quot; cell using a (Control box using Sheet2 Cell B1(Dan))</h3>
+
+     <ul>
+
+       Sub LCol()<br />
+
+       Dim x As Integer<br />
+
+       x = Worksheets("Sheet2").Range("B1")<br />
+
+       FinalColumn = Cells(x, Columns.Count).End(xlToLeft).Offset(0, 1).Select<br />
+
+     <br />
+
+       End Sub<br />
+
+       
+
+     <table width="529" border="1" cellspacing="0" cellpadding="1">
+
+       <tr>
+
+         <td width="42">&nbsp;</td>
+
+         <td width="94" align="center">A</td>
+
+         <td width="100" align="center">B</td>
+
+         <td width="101" align="center">C</td>
+
+         <td width="241" align="center">D</td>
+
+         </tr>
+
+       <tr>
+
+         <td>1</td>
+
+         <td>Dan</td>
+
+         <td>Edith</td>
+
+         <td bgcolor="#FFFF00">&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>2</td>
+
+         <td>Amanda</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>3</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>4</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+       <tr>
+
+         <td>5</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         <td>&nbsp;</td>
+
+         </tr>
+
+     </table>
+
+     <br /><br /></ul>
+
+     <br />
+
+     <h3>Goto the end of a Row using a drop down list of names regardless of order.</h3>
+
+     <ul>Sub go2DBcol()<br />
+
+       <ul>Dim r As Long<br />
+
+         Dim wsH As Worksheet<br />
+
+         Dim wsD As Worksheet<br />
+
+         Dim wsL As Worksheet<br />
+
+         <br />
+
+         Set wsH = Worksheets("Home")<br />
+
+         Set wsD = Worksheets("DB")<br />
+
+         Set wsL = Worksheets("List")<br />
+
+         r = Application.WorksheetFunction _<br />
+
+         
+
+         .Match(wsH.Range("B3"), wsD.Range("A:A"), 0)<br /><br />
+
+         With wsD<br />
+
+         .Cells(r, Columns.Count).End(xlToLeft).Offset(0, 1).Value = "NewCell"<br />
+
+       End With</ul>
+
+       <br />
+
+       End Sub<br />
+
+       <br />
+
+       another example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x = WorksheetFunction.Match(0, Range(Cells(1, 1), Cells(10, 1)), 0))<br />
+
+       <br />
+
+       
+
+       <span class="blueText">DropDown list is located on Tab &quot;Home&quot; &quot;Cell B3&quot;.</span><br />
+
+       <br />
+
+       <strong>This can also paste a range to the end of the row.</strong><br />
+
+       <ul>Sub go2DBcol()<br />
+
+         Dim r As Long<br />
+
+         Dim wsH As Worksheet<br />
+
+         Dim wsD As Worksheet<br />
+
+         Dim wsL As Worksheet<br />
+
+         Dim x As Range<br />
+
+         <br />
+
+         Set wsH = Worksheets("Home")<br />
+
+         Set wsD = Worksheets("DB")<br />
+
+         Set wsL = Worksheets("List")<br />
+
+         r = Application.WorksheetFunction _
+
+         .Match(wsH.Range("B3"), wsD.Range("A:A"), 0)<br /><br />
+
+         Set x = wsH.Range("A1").CurrentRegion<br />
+
+         x.Copy<br />
+
+         With wsD<br />
+
+         .Cells(r, Columns.Count).End(xlToLeft).Offset(0, 1).PasteSpecial Paste:=xlPasteValues<br />
+
+         End With<br />
+
+         x.ClearContents<br />
+
+         <br />
+
+       End Sub</ul><br /><br />
+
+     </ul>
+
+     <br />
+
+     <h3>Open a word docx from excel</h3>
+
+     <ul>
+
+     Sub opnworddoc() <br />
+
+   Dim objWord As Object <br />
+
+   Set objWord = CreateObject("Word.Application") <br />
+
+   objWord.Visible = True <br />
+
+   'Change the directory path and file name to the location <br />
+
+   'of the document you want to open from Excel <br />
+
+   objWord.Documents.Open "E:\Excel\StackOverFlow\WorkProfile.docx" <br />
+
+   End Sub <br />
+
+    <br />
+
+     </ul>
+
+     <br />
+
+     
+
+     <h3>Selecting cells with "Resize" and then taking action on them.</h3>
+
+     <ul>Sub resize()<br />
+
+       <ul><span class="blueText">'Range("A1").resize(Row,Column).Select or ClearContents or what ever.<br />
+
+         'Range("A1").resize(Rowsize:=4, ColumnSize:=4).Select 'Select from A1 4 row and 4 columns<br />
+
+         'Range("A1").resize(2).Select ' Selects from A1 2 row or Cells A1 and A2</span> <br />
+
+       Range("A1").resize(2,0).ClearContents ' This clears the contents of Cells A1 and A2<br /></ul>
+
+       
+
+       End Sub<br />
+
+       <br />
+
+       <table width="400" border="1" cellspacing="0" cellpadding="1">
+
+         <tr>
+
+           <td width="52">&nbsp;</td>
+
+           <td width="87" align="center">A</td>
+
+           <td width="105" align="center">B</td>
+
+           <td width="66" align="center">C</td>
+
+           <td width="68" align="center">D</td>
+
+         </tr>
+
+         <tr>
+
+           <td>1</td>
+
+           <td bgcolor="#FFFF00">Dan</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+         </tr>
+
+         <tr>
+
+           <td>2</td>
+
+           <td bgcolor="#FFFF00">Edith</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+         </tr>
+
+         <tr>
+
+           <td>3</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+         </tr>
+
+         <tr>
+
+           <td>4</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+         </tr>
+
+         <tr>
+
+           <td>5</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+           <td>&nbsp;</td>
+
+         </tr>
+
+       </table>
+
+       
+
+     </ul><br />
+
+     
+
+     <h3>Convert a range of formula's to Values</h3>
+
+     <ul>Sub ChangeToValue()<br />
+
+       
+
+       <ul>Dim rngcol As Range<br />
+
+         Set rngcol = Range("D:D") <span class="blueText">'Set the range to Column "D"</span><br />
+
+         <br />
+
+       rngcol.Value = rngcol.Value <span class="blueText">'Change the copied formula('s) from &quot;C&quot; to column "D" to values</span>. </ul>
+
+       
+
+       End Sub<br />
+
+       <table>
+
+         <tr>
+
+           <td><img src="Excel_Image/ChangeToValue.jpg" width="370" height="231" /></td>
+
+           <td>Cells in column "C" are formulas.  Once we copy the<br />
+
+             formula to Column "D" we can now use the macro to<br />
+
+           convert the formula's in column &quot;D&quot; to values.</td>
+
+         </tr>
+
+       </table>
+
+     </ul>
+
+     <br />
+
+     <br />
+
+     <h3>On Error handling. (<a href="https://support.microsoft.com/en-us/help/141571/how-to-use-on-error-to-handle-errors-in-a-macro">Read more about error handling</a>)</h3> 
+
+     <ul>
+
+         On Error GoTo ErrorHandler<br />
+
+         ErrorHandler:<br />
+
+         <br />
+
+   On Error GoTo Line1 <span class="Blue_Text">' you can change 1 to any number.</span><br />
+
+   Line1:<br />
+
+   
+
+   <br />
+
+   On Error Resume Next
+
+     <span class="Blue_Text">' This will skip the error and continue on with the next line of code in the macro. </span><br />
+
+     <strong>Example:</strong><br />
+
+   <ul>Sub fillblanks()<br />
+
+   <br />
+
+   On Error Resume Next<br />
+
+   Range("A1").CurrentRegion.SpecialCells(xlCellTypeBlanks).Value = 0 &nbsp;&nbsp;<span class="Blue_Text">' there are no blank cells to fill so the error is skipped</span><br />
+
+   <span class="Blue_Text">'The macro continues from here. </span><br />
+
+   End Sub<br /></ul>
+
+     </ul><br />
+
+     <br />
+
+     <h3>Skipping lines inside a macro</h3>
+
+     <ul>Sub go2()<br />
+
+       <ul>If Range("A1") = 1 Then<br />
+
+         GoTo Line1 <br />
+
+         Else <br />
+
+         GoTo Line2<br />
+
+         End if<br />
+
+         
+
+         <br />
+
+         Line1:<br />
+
+         MsgBox "This is line 1"<br />
+
+         GoTo Line3<br />
+
+         <br />
+
+         Line2:<br />
+
+         MsgBox "Range A1 does is not number 1"<br />
+
+         Exit Sub<br />
+
+         <br />
+
+         Line3:<br />
+
+       MsgBox "You just skipped Line2. This macro will now end"</ul><br />
+
+     End Sub<br /></ul><br />
+
+     <h3>Using Case</h3>
+
+     <ul>Sub Using_case()<br />
+
+       <ul>Dim score As Integer<br />
+
+         Dim result As String<br />
+
+         <br />
+
+         score = InputBox("Enter Score")<br />
+
+         Range("A1").Value = score<br />
+
+         <br />
+
+         Select Case score<br />
+
+         Case Is >= 80<br />
+
+         result = "very good"<br /><br />
+
+         Case Is >= 70<br />
+
+         result = "good"<br /><br />
+
+         Case Is >= 60<br />
+
+         result = "sufficient"<br /><br />
+
+         Case Else<br />
+
+         result = "poor"<br /><br />
+
+         End Select<br />
+
+         <br />
+
+       Range("B1").Value = result</ul> 
+
+       <br />
+
+     End Sub<br /></ul>
+
+     <br />
+
+     <br />
+
+     <h3>What does ME mean?</h3>
+
+     <ul>
+
+       <strong>What is Me?</strong><br />
+
+       Me refers to the parent object from which the code is "sitting" in. For a UserForm, when you are writing the code within the UserForm module,<br />
+
+       Me will refer to that UserForm. Similarily, if you are writing in a Sheet module, the Me will refer to that specific sheet.<br />
+
+     <br />
+
+       Using Me is handy because we don't have to worry about the sheet name changing, and it also makes it a little easy for future code readers as <br />
+
+       they don't have to remember that "Main UserForm" is the UserForm we are currently working on. You can apply the same methods to the Me<br />
+
+       that you would be able to apply to the object if you gave the full name.<br />
+
+     <br />
+
+       Note!, that (&quot;Me.&quot;) can only be used in a Sheet not in a Module.<br />
+
+     <img src="Excel_Image/ME_.jpg" width="449" height="186" /> <br />
+
+       
+
+       Within the Sheet1 module, the following lines are identical in purpose<br /><br />
+
+       Worksheets("Sheet1").Range("A1").Select<br /><br />
+
+       Me.Range("A1").Select<br /><br />
+
+     </ul>
+
+   </ul>
+
+   <h3>Events</h3>
+
+   <ul>
+
+   Private Sub Workbook_open()<span class="blueText"> ' This will trigger when the WorkBook is opened.</span><br />
+
+   <ul>MsgBox "Welcome Back!"</ul><br />
+
+   
+
+    End Sub<br />
+
+    <br /><br />
+
+   
+
+    Private Sub Worksheet_Change(ByVal Target As Range)  &nbsp;&nbsp;<span class="blueText">' This will trigger any time a cell has changed</span> <br />
+
+   MsgBox "Hello, The macro just triggered"<br /><br />
+
+   
+
+   End Sub<br />
+
+    <br />
+
+   Private Sub Worksheet_Calculate()<span class="blueText">' This will Trigger on an Calculation event</span><br />
+
+   MsgBox "Just recalulated"<br />
+
+    <br />
+
+   End Sub<br />
+
+    <a href="https://www.tutorialspoint.com/vba/vba_events.htm"><br />
+
+   <br />
+
+   More Events at Tutorpoint.com</a>
+
+   </ul><br />
+
+   <h3>Searchable Dropdown List using ActiveX combobox</h3>
+
+   <ul>
+
+     See file "ActiveSearchDropdownList.xlsm" in excel.<br />
+
+   <br />
+
+   Instruction on the web at:  <a href="https://trumpexcel.com/excel-drop-down-list-with-search-suggestions/">Click Here. </a>Watch the video.
+
+   </ul><br /><br />
+
+   
+
+   <h3>VBA Wait Application Method: Example 1</h3>
+
+   <ul>Please find the below example for Wait method of application object in excel VBA.
+
+   Application. The below macro Pauses an application till 4.00 PM today.<br /><br />
+
+   Sub Appl_Wait1()<br />
+
+   Application.Wait "16:00:00"<br />
+
+   End Sub<br /></ul>
+
+   <br />
+
+   
+
+   <h3>VBA Wait Application Method: Example 2</h3>
+
+   <ul>Please find the below example for Wait method of application object in excel VBA.
+
+   Application. The below macro Pauses an application for 20 seconds from now.<br /><br />
+
+   Sub Appl_Wait2()<br />
+
+   Application.Wait Now + TimeValue("00:00:20") <span class="Blue_Text">' I used this one in lotto xlPlus</span><br />
+
+   End Sub<br />
+
+   </ul>
+
+   <br />
+
+   
+
+   <h3>VBA Wait Application Method: Example 3</h3>
+
+   <ul>
+
+   Please find the below example for Wait method of application object in excel VBA.
+
+   ‘Display message after 60 seconds.The below macro displays a message like “Your session has expired”
+
+   after 60 seconds or 1 hour.<br /><br />
+
+   Sub Appl_Wait3()<br />
+
+   If Application.Wait(Now + TimeValue("0:00:60")) Then<br />
+
+   MsgBox "Your session has expired"<br />
+
+   End If<br />
+
+   End Sub<br />
+
+   <br />
+
+  </ul>
+
+  <h3>VBA Wait Application Method: Example 4 Less than 1 second</h3>
+
+  <ul>Application.Wait (Now + TimeValue("0:00:01") / 1000)<br /><br />
+
+      The guy who wrote this says. 
+
+      Divide by whatever you need. A tenth, a hundredth, etc. all seem to work. By removing the "divide by" portion, the macro does take longer to run, so therefore, with no errors present, I have to believe it works.
+
+ </ul>           
+
+ <div>
+
+ </dl>    
+
+</div>
+
+</body>
+
+</html>

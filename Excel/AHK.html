@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../index6.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 225px; position: relative; top: 10px; left: 40px;">Auto Hot Key</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3><a href="https://www.autohotkey.com/">Auto Hot Key</a> ...... <a href="https://www.autohotkey.com:443/boards">AutoHotKey Forum</a></h3>
+    <ul>
+        <a href="https://www.autohotkey.com/">Download & Install Auto Hot Key </a><br />
+      <a href="https://fincs.ahk4.net/scite4ahk/">Download & Install Scite Editor for Auto Hot Key</a></ul>
+    <br>
+		<h3> <a href="https://www.the-automator.com/"> The Automator</a></h3><ul>
+	        <a href="https://www.the-automator.com/intro-to-autohotkey-how-to-hack-your-windows-pc-with-ahk-course/">Intro to AHK</a><br>
+
+		  <a href="https://www.the-automator.com/intermediate-autohotkey-how-to-automate-your-windows-pc-course/?src=eml">Intermediate Course</a>
+		</ul>
+		<br>
+	
+      <li><strong>Let's get Started</strong></li>
+      <ol>
+            <li>Open Scite Editor and click file new.</li>
+              <li>Save the new file</li>
+              
+    </ol>
+         <br />
+  
+          For Help Click Windows Start > AutoHotKey > AutoHotKey Help File
+      </ul>
+      <h3>Special keys</h3>
+  <ul>Ctrl = ^<br />
+    Shift = +<br />
+    Alt = 	!<br />
+    Win = #<br />
+      & is ampersand (used to combine two components)<br />
+    SendMode Input<br />
+  
+    `t = Add a Tab. Note the ` is on the  Tilde key and is commmonly used like this:<br />
+  Inputbox,user_input,`t, Enter text to determine if it is in the Test Case. The Title of the inputbox will be blank. <br />
+    `n = next line or  new line<br />
+    ~r = Carrage Retrun<br />
+    Send,{Tab} = Tab to the right<br> 
+	Send,{Tab}^ = Tab to the left or reverse tab
+      <strong>!= ... Not Equals or Does not equal</strong><br />
+        <dd>	
+        <strong>Example:</strong><br />
+        luckynumber:=77<br />
+      Inputbox,temp, , Enter Lucky Number<br />
+      Sleep,333<br />
+      IF(temp!=luckynumber)<br />
+  {<br />
+  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Msgbox,Oops that's Not the lucky numbrt, try again.<br />
+  
+  }<br />
+  Else<br />
+  {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Msgbox, You choose the Lucky Number!<br />
+  }<br />
+  return</dd><br /><br />
+  
+  
+  <strong>
+    </dd>
+    = ... Equals matchs upper and lower case as the same</strong><br /><br />
+    <strong>== ... Equals Equals must be an exact match (Use for pw like this)</strong><br />
+      <dd>
+        <p>My_Password:="PassWord"<br />
+          Inputbox,userinput, , Please enter PW<br />
+          Sleep,333<br />
+          If(userinput == My_Password)<br />
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Msgbox,Correct Password<br />
+          }<br />
+          Else<br />
+          {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;Msgbox,Password is Not Correct<br />
+          }<br />
+        return</p>
+        <p><br />
+          
+        </p>
+    </dd>
+  
+  </ul>
+  <h3>Math Add Subtract Multiply Divid</h3>
+  <ul>^D::<br>
+
+        InputBox,VAR,Enter Airport Elevation ;~(VAR is the variable)<br>
+        InputBox,ALT,Enter Current Elevation ;~(ALT is the variable)<br>
+        Base := 1800 ;~(Base is the altitude we want to get to)<br>
+        V2 := Base + Var ;~(V2 is the Base plus+ Airport Elevation)<br>
+        V3 := ALT - V2 ;~(V3 is Airport elevation less - Current elevationi)<br>
+        V4 := V3 * 0.1 ;~(V4 = V3 X 0.1 because xplane A/P Altitude changes in lots of 10)<br>
+        
+        loop %V4%<br>
+        {<br>
+            Send, "{u Down}"<br>
+            Send, "{u UP}"<br>
+            }<br>
+ return<br><br></ul>
+  <h3>This will open a label in CQL</h3>
+  <ul>InputBox,Soldas,Enter Sold As Number<br>
+
+SetCapsLockState, On<br>
+folderPath = C:\Users\Dan\Documents\QuickLabel\CQL Pro\Labels
+filePath = %Soldas%.qll<br>
+ScriptFullPath = "L:\Mouse\CheckfolderforSoldasNumber.ahk"<br>
+if FileExist(folderPath . "\" . filePath)<br>
+{<br>
+   InputBox,SN,Enter Serial Number<br>
+}<br>
+else<br>
+{
+    MsgBox,4,,The label does not exist.`r`n Would you like to check another ID?<br>
+	Sleep,1000<br>
+	IfMsgBox Yes<br>
+	Run,%ScriptFullPath%<br>
+	Return<br>
+	IfMsgBox No<br>
+	return<br>
+}
+Run, "%folderPath%\%filepath%"<br>
+</ul>
+  <h3>Date format</h3>
+  <ul>
+  FormatTime, now,, yyMMdd ; keep the CASE as shown<br>
+SendInput %now%<br>
+</ul>
+<h3>Progress Bar</h3>
+<ul>#NoEnv<br>
+#SingleInstance,force<br>
+Progress,b w200,My Subtext,My Maintext,My Title<br>
+Progress,10 ; set the position of the bar to 10%<br>
+Sleep,250
+Progress,off<br>
+
+Optional - Msgbox,0,,Done!,3
+
+
+</ul>
+  <h3>Keywait</h3>
+  <ul>Keywait,Enter,D ; this will stop AHK until Enter is pressed</ul>
+    <h3>Trim Left & Right</h3>
+     <ul>InputBox,sn11d,Enter 11 digit serial number<br>
+
+
+String = %sn11d%<br>
+
+String = %sn11d% Trimright, stockid, String, 6<br>
+
+ String = %sn11d%
+StringTrimLeft, Serial, String, 5<br>
+
+</ul>
+<h3>If VAR Length = 11</h3>
+<ul>#NoEnv<br>
+#SingleInstance,force<br>
+CoordMode,Window<br>
+<br>
+InputBox,sn11d,Enter 11 digit serial number<br>
+<br>
+ t=%sn11d%<br>
+y = %	StrLen(t)<br>
+if y = 11<br>
+{<br>
+	goto line4<br>
+}Else{<br>
+	msgbox, Scan is not 11 digit serial number. Please try again<br>
+	return<br>
+}<br>
+Line4:<br>
+MsgBox, YOU MADE IT THE END<br>
+<br>
+<br>
+return<br>
+^x::ExitApp<br><br></ul>
+<h3>#Include</h3>
+<ul>
+  <p><strong>The Request to the Function.</strong></p>
+  <p><br>
+    #Include, C:\AHK_Scripts\FUNCTIONS\MyFunc1.<mark>ahk</mark><br>
+    #SingleInstance,Force<br>
+    <br>
+    f1::  <Mark>(Must use a hotkey)</Mark>
+  </p>
+</ul>
+<p><br>
+    InputBox,x,Enter your Name<br>
+    <br>
+    MyFunc1(x)<br>
+    <br>
+    return<br>
+    
+    ^x:: ExitApp<br><br>
+
+    <strong>=== The Function</strong> ===<br>
+    <br>
+
+    MyFunc1(Var)<br>
+{<br>
+	global<br>
+	MsgBox, Hello %var% lets open Google<br>
+	Run,www.google.com<br>
+}<br>
+return<br><br>
+  </p>
+<h3>All Scripts should Start and End with:</h3>
+  <ul>
+    #NoEnv<br />
+      #SingleInstance,Force <br />   
+      CoordMode,Window
+        <dd>your code here</dd>
+        <p>^X::ExitApp </p>
+   </ul>     
+   <h3>AHK Choose a Printer</h3>   
+   <ul>
+   		#NoEnv<br /> 
+#SingleInstance,force<br /> 
+CoordMode,Window<br /> 
+<br /> 
+<br /> 
+F1::<br /> 
+Run, var1.txt - Notepad, C:\Dan\openclose  ;snagit<br /> 
+WinWaitActive,var1.txt - Notepad<br /> 
+var :=1<br /> 
+goto prt <br /> 
+return<br /> 
+<br /> 
+F2::   <br />  
+run,var2.txt - Notepad, C:\Dan\openclose ;onenote<br /> 
+WinWaitActive,var2.txt - Notepad<br /> 
+var := 2<br /> 
+goto prt<br /> 
+return<br /> 
+<br /> 
+F3::   <br />  
+run,var3.txt - Notepad, C:\Dan\openclose <br /> 
+WinWaitActive,var3.txt - Notepad<br /> 
+var := 3<br /> 
+goto prt<br /> 
+return<br /> 
+<br /> 
+<br /> 
+prt:<br /> 
+SendInput,^p<br /> 
+Sleep,500<br /> 
+<br /> 
+if var = 1	<br /> 
+{<br /> 
+send, Snagit 11<br /> 
+ Sleep,250<br /> 
+send, {Enter}<br /> 
+return<br /> 
+<br /> 
+if var = 2<br /> 
+send, Onenote (Desktop)<br /> 
+Sleep,250<br /> 
+send, {Enter}<br /> 
+}else{<br /> 
+send, PDF Architect 6<br /> 
+Sleep,250<br /> 
+send, {Enter}	<br /> 
+}<br /> 
+<br /> 
+<br /> 
+return<br /> 
+<br /> 
+^X::ExitApp<br />
+</ul>
+<h3>CapsLock</h3>
+<ul>SetCapsLockState,on
+return<br>
+SetCapsLockState,off
+return</ul>
+   </ul>
+        <h3>Close all open programs, and put the Computer to Sleep or Turn it Off</h3>
+    <ul> 
+      #NoEnv<br />
+  #SingleInstance,force<br />
+  CoordMode,Window<br />
+  <br />
+  F12::<br />
+  ; From: https://github.com/matthewmorrone/autohotkey/blob/master/dev/close-all-windows.ahk<br />
+  WinGet, id, list, , , Program Manager<br />
+  Loop, %id%<br />
+  
+  {<br />
+   StringTrimRight, this_id, id%a_index%, 0<br />
+   WinGetTitle, this_title, ahk_id %this_id%<br />
+   winclose,%this_title%<br />
+  }<br />
+  <br />
+  <span class="Blue_Text">;~This will put the computer to sleep</span><br />
+  DllCall("PowrProf\SetSuspendState", "int", 0, "int", 0, "int", 0)<br />
+  <br />
+  <span class="Blue_Text">;~This  turns the computer off<br />
+  ;~ Run shutdown /s</span><br /><br />
+  ExitApp<br />
+  Return<br />
+  <br />
+  ^x::ExitApp<br />
+  </ul>
+  <H3>msgbox</H3>
+  <dd>
+    !2::<br />
+msgbox, Print  4x4  Logo ; this <br />
+Logo = 1<br />
+gosub, template<br />
+return<br />
+<br />
+!3::<br />
+MsgBox, Generic text<br />
+logo=2<br />
+gosub, template<br />
+return<br />
+<br />
+<br />
+template:	<br />
+MsgBox, 4, 4x4logos,Would you like to print a 4x4?,5<br />
+	IfMsgBox no<br />
+		return<br />
+	IfMsgBox Timeout<br />
+		return<br />
+    <br />
+IfEqual,logo, 1 <br />
+		run,4x4wLogo.txt - Notepad<br />
+	else	 IfEqual,logo,2<br />
+		run, 4x4Generic.txt - Notepad<br />
+	else IfGreater,logo,2<br />
+		goto, LrowV
+	return<br />
+  <br />
+;~Enter your code here<br />
+<br />
+<br />
+	Lrow:<br />
+	return<br /><br /><br />
+
+  </dd>
+  <H3>The Golf Swing</H3>
+ <ul> #NoEnv<br />
+#SingleInstance,force<br />
+CoordMode,Window<br />
+<br />
+RCtrl & y::<br />
+	Click,200,20<br />
+	Sleep,2000<br />
+	MouseClickDrag,Left,200,20,200,650,8<br />
+Sleep,1<br />
+	MouseClickDrag,Left,200,650,200,30,1<br />
+return<br />
+<br />
+<br />
+^x::ExitApp<br /><br /></ul>
+   <h3><a href="https://www.autohotkey.com/docs_1.0/commands.htm">Link to usable Commands</a></h3>
+   <br/>
+   <h3>Gui with background & Transparent Text box</h3>
+      <dd>
+        Gui,add,picture,w375 h425,rdr2.jpg ;The picture should be in the same folder as the AHK<br/>
+        Gui, Add,  Text, backgroundtrans  x20 y40  gBrave, Brave ; This will keep the text box transparent<br>
+        <br>
+      </dd>
+      <h3>Gui Add horizontal and veritcal lines</h3>
+      <ul>
+      	Horizontal - gui, add, text, x30 y105 w200 h2 0x7<br>
+Vertical - gui, add, text, x30 y105 w2 h200 0x7
+      </ul>
+  <h3>Drop Down List</h3>
+  <ul>
+  ^J::<br />
+    List1:="Aqua|Brown|Black|Red|Green|Blue|Colors||"<br /><br />
+    Gui, Add, DropDownList,r5 sort vDDL gSWITCH,% List1<br />
+    Gui,SHOW,X15 Y150 W150 H160<br />
+    <br />
+    return<br />
+      <br />
+    SWITCH:<br />
+    <br />
+      Gui,Submit,NoHide<br />
+      ;~ tooltip, % DDL<br />
+     if % DDL = "Aqua"<br />
+      {<br />
+        InputBox,5DIGIT, , ENTER CODE<br />
+        RUN, C:\Users\wareh\OneDrive\Documents\%5DIGIT%.odt	<br />
+      }<br />
+     if % DDL = "Black"<br />
+      {<br />
+        InputBox,5DIGIT, , ENTER CODE<br />
+        RUN, C:\Users\wareh\OneDrive\Documents\TEST\%5DIGIT%.odt	<br />
+      }	<br />
+    return<br />
+  <br />
+  GuiClose:<br />
+      ExitApp<br />
+  <br />
+  <br />
+  return<br />
+  </ul>
+  <h3>AHK Reads and Writes to and Reads from Excel</h3>
+  
+  <ul>
+    <p><a href="https://www.youtube.com/watch?v=HwpIX1rzAeE">Tab Nation</a><br>
+      Here we will look at three ways to gather data from an excel file. And best part is you dont even have to have excel open to grab data.<br>
+  <br>
+      
+    CODE:</p>
+    <p>inputbox,x,Enter Sold As ID</p>
+    <p>&nbsp;</p>
+    <p>Path := &quot;C:\Code\Coder1.xlsm&quot;</p>
+    <p>&nbsp;</p>
+    <p>xl := ComObjCreate(&quot;Excel.Application&quot;)<br>
+      xl.Workbooks.Open(Path)<br>
+    xl.visible := true</p>
+    <p>; xl.visible := false</p>
+    <p>&nbsp;</p>
+    <table width="900" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="391">xl.Worksheets.(&quot;Home&quot;).Range(&quot;A1&quot;).value := &quot;Dan&quot;</td>
+        <td width="509">(If Text) ... (Writes to excel - Cell A1)</td>
+      </tr>
+      <tr>
+        <td>xl.Worksheets.(&quot;Home&quot;).Range(&quot;A1&quot;).value := x </td>
+        <td>(If Variable) ... (Writes Variable to excel - Cell A1)</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>xl.Worksheets.(&quot;Home&quot;).Range(&quot;H1&quot;) := x<br>
+      Sleep,150<br>
+      var1 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;B1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+      var2 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;AB1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+      PW1 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;C1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+      PW2 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;D1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+      PW3 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;E1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+      PW4 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;F1&quot;).TEXT .......... (Reads from Excel)<br>
+      Sleep,150<br>
+    PW5 := xl.Worksheets.(&quot;Home&quot;).Range(&quot;G1&quot;).TEXT .......... (Reads from Excel)</p>
+    <p>Sleep,200  ; Quit With-out saving<br>
+      xl.quit()<br>
+      send,{Tab}</p>
+    <p>send,{Enter}</p>
+    <p><br>
+      send,%PW1%<br>
+      sleep,200<br>
+      Send,{Tab} <br>
+      send,%PW2%<br>
+      Send,{Tab}<br>
+      send,%PW3%<br>
+      Send,{Tab}<br>
+      send,%PW4%</p>
+    <p><br>
+    </p>
+  </ul>
+  <H3>AHK Read / Write to Excel.xlsx</H3>
+  <ul>
+      #SingleInstance,force<br>
+CoordMode,Window<br>
+;Display set for screen resolution of 1920x1080<br>
+<br>
+^B::<br>
+InputBox,soldas,Enter Sold as Number<br>
+Path := "H:\Excel_XLSX\Sn_BinFile.xlsx"<br>
+xl := ComObjCreate("Excel.Application")<br>
+xl.Workbooks.Open(Path)<br>
+; xl.visible := true<br>
+xl.visible := false<br>
+<br>
+<br>
+xl.Worksheets.("Home").Range("D1").value := soldas ;(Writes Variable to excel - Cell A1)<br>
+ sleep,500<br>
+var1 := xl.Worksheets.("Home").Range("E1").TEXT ;... (Reads from Excel)<br>
+Sleep,150<br>
+xl.quit()<br>
+sleep,1000<br>
+Send,{Tab}<br>
+Send,{Enter}<br>
+Sleep,500<br>
+WinActivate,SFP<br>
+Sleep,1000<br>
+Click,1015,430<br>
+Sleep,500<br>
+SendRaw,%var1%<br>
+sleep,500<br>
+Send,{Enter}<br>
+<br>
+
+return
+
+^X:: ExitApp
+
+  </ul>
+<h3>Open/Close Excel w/AHK</h3>
+    <ul>
+      !q::<br />
+    <dd>IfWinExist, BAR_CODE.xlsm - Excel<br />
+      {	<br />
+        goto Line1 ' this skips the opening of the Excel<br />
+      }	<br />
+    ;~ this opens excel should it not be open	<br />
+      Path := "E:\Excel\BAR_CODE.xlsm"<br />
+      xl := ComObjCreate("Excel.Application")<br />
+      xl.visible :=true<br />
+      xl.workbooks.Open(Path)<br />
+    <br />
+    Line1:<br />
+      Inputbox,N, What is your Name <span class="Blue_Text">;N is the variable
+      WinActivate,BAR_CODE.xlsm - Excel</span><br /><br />
+      xl := ComObjActive("Excel.Application")<br />
+      xl.Range("A1").Select<span class="Blue_Text"> ;Selects Cell A1</span><br />
+      xl.Range("C5").Value := "Danny"<span class="Blue_Text"> ;Enters Danny in cell C5</span><br />
+          xl.Range("A6").Value := n 	<span class="Blue_Text">;Passes the variable (N). Note there are no %Percent% signs for (N).</span> xl.Range("A1").offset(10,0).select <span class="Blue_Text">; Offsets(R,C).select</span><br />
+      <br />
+          Click,470,267 'This will click on the macro button in excel. You will need to get X,Y location.<br />
+          Click,300,15  ' This clicks on the save button<br />
+  
+      Click,853,10  'This click the " X " in the upper right corner to close the program.<br />
+  
+          <br /></dd>
+  
+  return<br />
+      </ul>
+  <h3>Open/Close Add Data to the next open cell in column &quot;A&quot; in Excel w/AHK</h3>    
+    <ul>
+        !q::<br />
+    IfWinExist, BAR_CODE.xlsm - Excel<br />
+      {	<br />
+        goto Line1 ; this skips the opening of the Excel<br />
+      }	<br />
+    ;~ this opens excel should it not be open	<br />
+      Path := "E:\Excel\BAR_CODE.xlsm"<br />
+      xl := ComObjCreate("Excel.Application")<br />
+      xl.visible :=true<br />
+      xl.workbooks.Open(Path)<br />
+    <br />
+    Line1:<br />
+    InputBox,i,What is your name<br />
+      <br />
+      WinActivate,BAR_CODE.xlsm - Excel<br />
+      xl := ComObjActive("Excel.Application")<br />
+      xl.Range("A1").select ;This will select Cell A1<br />
+      <span class="Blue_Text">r:= xl.Range("K1") ; This will get the number in cell K1 (Note K! contains the formula =CountA(A:A)<br />
+      xl.Range("A1").offset(r,0).select ; R is now the variable for the offset</span><br />
+      xl.Activecell.value :=i ; Enter the variable (i) in the open cell in col. "A"<br />
+      <br />
+      <br />
+      ;~ r:= xl.Range("K1")	;R = Cell K1 which is =COUNTA(A:A)<br />
+      <br />
+      ;~ xl.Range("A1").offset(r,0).select ; Offsets(Var"R",C).select<br />
+      <br />
+      ;~ xl.Activecell.value :=i 			;Passes the Variable to Cell A6<br />
+      <br />
+      ;~ Click,470,267 ; This will click on the macro button in excel<br />
+      <br />
+      ;~ Click,645,264 ; This runs second macro that autofits column C<br />
+      <br />
+      ;~ Click,300,15  ; This clicks on the save button<br />
+      <br />
+      ;~ Click,853,10  ;This click the " X " in the upper right corner to close the program.<br />
+          
+  return<br />
+      </ul>
+  <h3>Form (Basic Form)</h3>    
+  <ul>
+    #NoEnv<br />
+  #SingleInstance,force<br />
+  <br />
+  gui, +Alwaysontop<br />
+  gui,Color,606060 ; This is the Gui background color<br />
+  Gui,font,S9 c000000 bold ;Sets Font size & color<br />
+  <br />
+  ;---Text Names--------------------------------<br />
+  Gui, Add, Text, x30 y50 cffe6b3 , Name:<br />
+  Gui, Add, Text, x30 y75 cffe6b3 , Address<br />
+  Gui, Add, Text, x30 y100 cffe6b3 , City:	<br />
+  Gui, Add, Text, x30 y125 cffe6b3 , State:<br />
+  Gui, Add, Text, x30 y150 cffe6b3 , Zip:<br />
+  <br />
+  ;---Edit boxes to match Text Names------------<br />
+  Gui, Add, Edit, x120 y50 w225 vName<br />
+  Gui, Add, Edit, x120 y75 w225 vAddress<br />
+  Gui, Add, Edit, x120 y100 w225 vCity<br />
+  Gui, Add, Edit, Uppercase x120 y125 w225 vState<br />
+  Gui, Add, Edit,Limit5 x120 y150 w80 vZip<br />
+  <br />
+  Gui, Add, Button, x30 y325 cffe6b3 gSubmitBtn, Click here to Submit order. ; Submit Variables to Button press<br />
+  <br />
+  gui,show,x1450 y100 w450 h400, Sales Entry Form<br />
+  return<br />
+  <br />
+  ;---------------Labels-------------------------------------------------<br />
+  <br />
+  SubmitBtn:<br />
+    Gui, Submit<br />
+    MsgBox %Name% `n%Address% `n%City% `n%State% `n%Zip%<br />
+    ExitApp<br />
+  return<br />
+  <br />
+  ;-----This will close the GUI Using the "X" in the upper right courner---<br />
+  
+  GuiClose:<br />
+  *ESC::<br />
+  ExitApp<br />
+  <br />
+  ^x::ExitApp<br /><br />
+  <img src="Excel_Image/AHKFirstForm.png" width="452" height="427" />
+  </ul>
+  
+  <h3>Open Printer</h3>
+  <dd>Run, control printers<br />
+    WinWaitActive, Devices and Printers, <br />
+    Sleep, 500<br />
+    <br /><br /></dd>
+    <h3>Sending Text and Key Strokes</h3>
+         
+         <ul>
+         Sendinput, Dan .... <span class="Blue_Text">Text up to 5000 characters ... This is much faster than Send alone,</span><br />
+         Sendinput, Hello Dan `n (`n means next line) or (`r means carrage return)<br />
+  
+         Send, Dan ........... <span class="Blue_Text">Sends Dan letter by letter</span><br />
+         
+         Send, {Enter} ...... <span class="Blue_Text">Press the enter key</span><br />
+         Send,{Tab}.......... <span class="Blue_Text">Press the Tab key</span><br />
+         Send,{Tab 5}........ <span class="Blue_Text">Presses the Tab key 5 times</span><br />
+         Send, ^s ............... <span class="Blue_Text">This is the same as Ctrl +S</span><br />
+         Send,#D ....... This is the same as Win+D but will fail. Use "<span class="Blue_Text">WinMinimizeAll</span>"
+   </ul>
+   <h3>Change icon for AutoHotKey script</h3>
+   <dd>
+       <strong>Use the AHK "<u>Convert.ahk to .exe</u>" rather than the Script editor to change the Icon.<br />The Icon is done during the compiling of the script. Once it is done the .exe file can be pinned to the task bar.</strong><br />
+          <table width="800" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top"><img src="Excel_Image/AHK_Change_ICon.jpg" width="321" height="258" />&nbsp;<br />
+  <br />
+  <a href="https://iconarchive.com/tag/ico-files">Icons? Click here.</a></td>
+      <td><img src="Excel_Image/AHK_Icon_Converter.jpg" width="596" height="435" /></td>
+    </tr>
+  </table>
+   </dd>
+   <h3>CapsLocks</h3>
+   <dd>
+     #NoEnv<br />
+  #SingleInstance,force<br />
+  CoordMode,Window<br />
+  <br />
+  SetStoreCapsLockMode, Off<br />
+  state := GetKeyState("CapsLock", "T") ; True if CapsLock is ON, false otherwise.<br />
+  <br />
+  if (state = True)<br />
+        SENDINPUT,{CAPSLOCK} <span class="Blue_Text">... (This line will presses the Capslock key only if capslock is True (ON)) </span><br />
+  return<br />
+  <br />
+  ^X::ExitApp<br /><br />
+   </dd>
+  <h3>Move or Skip to another line in script</h3>
+  <ul>
+  Goto, Label ... Example <dd>goto, MyLine1<br />
+    MyLine1:<br />
+    This will move the cursor to where ever you place the label Myline1:</dd><br />
+  </ul>
+  <h3>GoSub (Calls a sub routine by Label name.</h3>
+  <ul>
+  #SingleInstance,force<br />
+  <br />
+  ^t::<br />
+  InputBox,name,What is your name<br />
+  <br />
+    MsgBox,%name%, you are in the main routine<br />
+  gosub 4x4 <span class="Blue_Text">; This calls the subroutine</span><br />
+  <br />
+  return<br />
+  <br />
+  4x4: <span class="Blue_Text">; this is the label of the sub routine</span><br />
+    MsgBox,%name%, you are in the sub routine<br />
+  <br />
+  ^x::ExitApp<br />
+  </ul>
+  <h3>Loops</h3>
+  <ul>
+  <strong>Loop with Inputbox  </strong><br />
+  <br />
+  #NoEnv<br />
+  #SingleInstance,force<br />
+  <br />
+  Inputbox, partnumber, Enter 5 digit Number, Enter the 5 digit part number<br />
+  Inputbox, numberoflabels , How many labels are you printing?<br />
+  <br />
+  Loop,%numberoflabels%<br />
+  {<br />
+    <dd>msgbox,%partnumber%<br />
+    InputBox, SerialNumber, Enter Serial Number<br />
+    msgbox,%SerialNumber%<br /></dd>
+      <p>}<br />
+    <br />
+        return<br /><br />
+        <strong>In the case above the macro will loop the number of time set by the variable.<br />
+      How would you stop an open ended loop. 
+  Use the word <mark>"Break" </mark>like this.</strong><br />
+  ^r::<br />
+  name := "Dan"<br />
+  <br />
+  Loop<br />
+  {	<dd>inputbox, Name1,Guess my Name, What is my name?
+    <br />
+    if Name1 = %name%<br />
+  }<br />
+    <dd>MsgBox,You guessed my name!<br />
+    <mark>break</mark> <span class="Blue_Text">;this breaks the loop</span></dd><br />
+  }<br />
+  else	<br />
+  {<br />
+    <dd>MsgBox, Oops! Try again.<br /></dd>
+  }<br /></dd>
+  <br />
+  return<br />
+        </ul>
+  <h3>i = i + 1 in VBA would look like this in AHK</h3>
+  <ul>
+        i++ is like saying (i = i + 1 as done in VBA )<br />
+        i += 5 like saying (i = i + 5 as done in VBA )</p><br /><br />
+      <strong>Here is " i++ "  used to count to ten in a loop.</strong><br />
+      <em>#SingleInstance,force</em><br />
+  <br />
+  i := 0<br />
+  <br />
+  loop,10<br />
+  {
+    <dd>i++<br />
+    MsgBox,%i%</dd>
+  }	<br />
+  <br />
+  return<br /><br />
+  </ul>
+  <h3>Winwait (Waits for window to open. Rather than guessing a Sleep time)</h3>
+  <ul>
+  #NoEnv<br />
+  #SingleInstance,force<br />
+  Run, Notepad<br />
+  <strong>WinWait, Untitled - Notepad</strong><br />
+  SendInput,Dan<br />
+  <br />
+  </ul>
+  <h3>Coordmode</h3>
+  <ul>
+    #NoEnv<br />
+    #SingleInstance,Force<br />
+  <br />
+  CoordMode,mouse,Window<br />
+  ;~ CoordMode,mouse,Screen<br />
+  ;~ CoordMode,mouse,Client<br />
+   <br />
+  gui, +Alwaysontop<br />
+  gui,Color,BB4500<br />
+  gui,show,w300 h300<br />
+  <br />
+  return<br />
+  GuiClose:<br />
+  *ESC::<br />
+    ExitApp<br />
+    <br />
+  Numpad1::<br />
+    Run,notepad<br />
+    Sleep,250<br />
+    Send,Hello_Dan<br />
+  click,25 41<br />
+  return<br />
+  </ul>
+  <h3>Close the GUI from the "X" in the upper right corner</h3>
+  <ul>GuiClose:<br />
+  <dd>*ESC::<br />
+    ExitApp</dd>
+    </ul>
+  <h3>&quot;MouseClick&quot; or &quot; Click&quot; or &quot;ControlClick&quot;</h3>
+  <ul>
+    <strong>MouseClick</strong>, Whichbutton [, X, Y, ClickCount,Speed, D|U, R]<br />
+  "Click" Assumes a left mouse click so we could say:<br />
+  <strong>Click</strong>, X, Y, ClickCount,Speed, D|U, R]<br />
+  <strong>ControlClick</strong>, [, Control-or-Pos, WinTitle, WinText, WhichButton, ClickCount, Options, ExcludeTitle, ExcludeText]
+  </ul>
+  <h3>Pasting from the Clipboard. Which is faster that sending individual keys</h3>
+  <ul>
+  Clipboard:= "192.168.0.251"<br />
+  send, ^V<br />
+  send,{Enter}
+  </ul>
+  <h3> Variables - Var Name:= text or numbers</h3>
+   <ul>
+   <strong>Variable types can be: Integer, Float or String</strong><br />
+   <br />
+     <strong>Equal sign:</strong>
+  These are Text variables 
+  <dd>A = Hello <span class="Blue_Text">; A equals String</span><br />
+  B = 123 ; 123 is a String. It is not One Hundred and Twenty Three</dd><br />
+  <strong>Expressions</strong><br />
+  <dd>
+    A : = 123 ... <span class="Blue_Text">This is a
+      <mark>Integer</mark> 
+      you can add and subtract</span><br />
+      B : = 3.14 ... <span class="Blue_Text">This is a
+      <mark>Float</mark>
+      </span><br />
+      C : = "Hello" ...<span class="Blue_Text"> This is
+      <mark>String</mark> 
+      because it is in quotations.</span><br />
+      C : = Hello ... <span class="Blue_Text">Hello is now a variable</span><br />
+      C : = A + B ... <span class="Blue_Text">Adding Integers and Floats is Okay!</span><br />
+    Msgbox, % A + B
+  </dd><br />
+  <strong>Operators</strong>
+  <dd>
+    A : = 21*7<br />
+      B : = 21/3<br />
+      C : = 3+8<br />
+      D : = 4-2<br />
+      E : = (2+1)+(7-2)/2<br />
+      F : = (A+B)+(B-C)/2<br />
+       i++ ... is like saying (i = i + 1 as done in VBA, So "i--" would be  &quot;i = i - 1&quot; as in VBA)<br />
+         i += 5 ... is like saying: add 5 to the variable &quot; i &quot;
+  </dd><br />
+  
+  <strong>AND & OR Operators</strong>
+  <ul>
+  My_Name := Dan<br />
+  Age := 50<br />
+  Inputbox,my_name, Enter my name and age. If you are correct you will get a hooray<br />
+  sleep,333
+  Inputbox,Age, Enter my age?
+  if(name == my_name&&age!=null) ; If my_name and age not null are True<br />
+  {
+    <dd>msgbox,Both name and age are true hooray!</dd>
+  }
+  Else<br />
+  {
+    <dd>msgbox,Sorry! name or age is incorrect</dd>
+  }    
+  return    
+  </ul>
+  <br />
+  <strong>Exponent (Power)</strong>
+  <dd>
+    6 to the power of 2 = 36. In AHK you could write this as:<br />
+    <br />
+    C : = 6**2 : Calling the variable "C"<br />
+      Msgbox, c<br />
+  <br />
+      A : = 6<br />
+  B : = 2<br />
+  Msgbox, % A**B<br />    
+  </dd><br />
+  <strong>Divide ... (Divide, Floor Divide & MOD)</strong>
+  <ul>
+  A : = 14.5/5 ... <span class="Blue_Text">This is standard division and will result in 2.9.</span><br />
+    B : = 14.5//5 ... <span class="Blue_Text">This Floor Division shows that 5 goes into14.5 only 2 time thus the answer is 2</span>.<br />
+      C : = Mod(14.5/5) ... <span class="Blue_Text">This is MOD will result with only the remainder thus the answer is 4.5.</span><br />
+  Msgbox, % Mod(A,B)
+      
+  </ul>
+  <br /><br />
+  <strong>Variable Examples:<br />
+  </strong> 
+  <dd>Target := 42 <span class="Blue_Text">;Note there are no quotation marks for numbers. Target is the variable name</span><br />
+  Dna := "Hamburger" <span class="Blue_Text">; Note Text is in quotes "Hamburger"</span><br />
+  Second := "Dna" <span class="Blue_Text">; Notice the quotation of the text &quot;Dna&quot;</span><br />
+  <br />
+  ;MsgBox, %Second% ; Standard variable the msgbox will report Dna<br />
+  MsgBox, % %second% <span class="Blue_Text">; Second calls Dna but due to the 2nd % signs in front of Second, Second calls Dna and Dna = "Hamburger"</span></dd><br />
+  
+  <strong>Rules of thumb. </strong>
+  <dd>1.Name your variable something that makes sense towards what it will be doing. <br />
+  2. Use:  I i, J j ,K k - Upper or lower case for your counting variables.</dd>
+   </ul>      
+   <h3>InputBox</h3>
+   <ul>
+   ^u::<br />
+  InputBox, UserInput, Phone Number, Please enter a phone number., , 250, 125<br />
+  if ErrorLevel<br />
+      MsgBox, CANCEL was pressed.<br />
+  else<br />
+      MsgBox, You entered "%UserInput%"<br />
+  return<br />
+   </ul>
+  <h3>Commenting Code</h3>
+      <ul>
+        Comment a single line of code using a semicolon. ; <span class="Blue_Text">anything here is commented out</span><br />
+  Block Comment is a slash and star. /* <span class="Blue_Text">my text goes here as many lines as you want</span> */<br />
+  Use the mouse and highlight an area. Click Ctrl + Q to comment all lines highlighted.
+  </ul>
+  <h3>Error Level</h3>
+  <ul>
+  Note: Since some commands set ErrorLevel to values higher than 1, it is best not check whether ErrorLevel is 1,<br />
+   <u>but instead whether ErrorLevel is not zero.</u> For more information see the help file.
+  <br /><br />
+  #SingleInstance,force<br />
+  <br />
+  ;~(WinWait,My_Window, ,1)<br />
+  
+  WinWait, <mark>ALT_F_Keys_Printer.xlsm - Excel, , 1</mark><br />
+  if ErrorLevel   ; i.e. it's <mark><u>not</u></mark> blank or <mark><u>zero</u></mark>.<br />
+      MsgBox, The window does not exist.<br />
+  else<br />
+      MsgBox, The window exists.<br />
+  <br />
+  ^x::ExitApp<br />
+  </ul>
+  <h3>The Basic GUI</h3>
+  <dd>
+    #NoEnv<br />
+  #SingleInstance,force<br />
+  gui, +Alwaysontop<br />
+  gui,Color,BB4500 ; This is the Gui background color<br />
+  Gui,font,S15 cdbdad5 bold ;Sets Font size & color<br />
+  <br />
+  Gui, Add, Text, x10 y30,Switch - Cisco 3400<br />
+  Gui,font,S10<br />
+  Gui, Add, Text, x30 y55 cffe6b3 gGoogle, Click here to launch Google.<br />
+  Gui, Add, Radio, x30 y75 cffe6b3 gNote, Click here to launch Notepad.<br />
+  Gui, Add, Checkbox, x30 y105 cffe6b3 gGoogle, Click here to launch Google. (<span class="Blue_Text">Note that this will toggle a check mark where as the Radio will only show the last radio button clicked</span><br />
+  Gui, Add, Button, x30 y125 cffe6b3 gGoogle, Click here to launch Google.<br />
+  <br />
+  gui,show,x1450 y100 w400 h300, Dans Text and Links<br />
+  return<br />
+  <br />
+  <span class="Blue_Text">;---------------Labels-------------------------------------------------</span><br /><br />
+  
+  Note:<br />
+    Run, Notepad<br />
+    WinWait, Untitled - Notepad<br />
+    send,Dan<br />
+  return<br />
+  <br />
+  Google:<br />
+    Run,www.google.com<br />
+  return<br />
+  <br />
+  <span class="Blue_Text">;-----This will close the GUI Using the "X" in the upper right courner---</span><br /><br />
+  
+  GuiClose:<br />
+  *ESC::<br />
+    ExitApp<br /><br />
+    <img src="Excel_Image/BasicGUI.jpg" width="402" height="327" /> </dd>
+  <br />
+  <h3>Build a GUI Menu</h3>        
+  <ol>
+  #SingleInstance force<br />
+  Gui,color,000000 -<span class="Blue_Text">Sets background color</span><br />
+    Gui,font, s11 cffffff	- <span class="Blue_Text">Sets Font Size and color</span><br />
+    <dd class="Blue_Text">&nbsp;</dd>
+  Gui, +AlwaysOnTop - <span class="Blue_Text">Keeps Gui on top</span>
+  <dd>&nbsp;</dd>
+  
+  <dd class="Blue_Text">&nbsp;</dd>
+  Gui,Add,Text, x10 y10, <span class="Blue_Text">Hello I need help. This is line 1 - Sets Text and Location of text</span><br />
+  Gui,Add,Text, x+10 y10, <span class="Blue_Text">Hello I need help. This is line 2</span><br />
+  Gui,Add,Button, X Y, W H, gFirstButton , Text on Button <br />
+  Gui,Add,Radio, X Y, W H, gFirstButton , Text on Button<br />
+  <dd class="Blue_Text">&nbsp;</dd>
+  Gui,show, x100 y220  w 500 h300,PuTTY -<span class="Blue_Text"> Show Gui box </span><br /><br />
+  
+  <strong>Explaination:</strong>
+  </ol>
+  <ul>
+  1. Gui,color,000000<span class="Blue_Text"> ; Sets BackgroundColor</span><br />
+    <dd class="Blue_Text">Gui,color, &quot;hex color&quot; this is the background of the Gui box. </dd><br />
+    2. Gui,font, s11 cffffff Underline Bold, Comic Sans Ms<br />
+    <dd class="Blue_Text">Set ,font, s = size c = color Underline Bold, Font style</dd><br />
+    3. Gui, +AlwaysOnTop     
+    <dd class="Blue_Text">; or gui, -AlwaysOnTop (Plus on Top, Minus not always on top)</dd><br />
+    
+   4 Gui,Add,Text, x10 y10, Hello I need help. This is line 1<br />
+  &nbsp;&nbsp;&nbsp;Gui,Add,Text, x+10 y10, Hello I need help. This is line 2
+  <dd class="Blue_Text">Gui,Add,Text Location X,Y Axis</dd><br />
+    
+  5. Gui,Add,Edit,limit25 x300 y200 w30
+  <dd class="Blue_Text">This is a edit box. Limited to 25 characters with a location of  X Y and width of 30 You can leave out the height or add it if you like.</dd>
+  <br />
+  6. Gui,Add,Edit,r5 limit25 x300 y200 w30
+  <dd class="Blue_Text">r5 = 5rows or the number of rows to display on screen. This will also have a scroll box. This is for Data input from user.</dd><br />
+  
+  7. Gui,show, x100 y220  w 500 h300,PuTTY<br />
+  <dd class="Blue_Text">Gui,show,Location X,Y axis  box size w=width h=height,box Title</dd><br />
+  Return
+  </ul>
+  <h3>GUI, Transparent background</h3>
+  <ul>
+  Give the GUI a Background Color that is not typical or would not interfear with a text color that you choose.<br />
+  <br />
+  
+  <dd>Gui, Color CADD22<br />
+    Gui, +LastFound<br />
+      WinSet, TransColor,CADD22</dd>
+  <br />
+   What we are saying here is set the background color to CADD22 and then make CADD22 Transparent
+  </ul>
+  <h3>Gui Buttons (Create Sections)</h3>
+  <ul>
+  <h3>Section: 1 The GUI</h3>
+  <ol>Create your GUI as outlined above.</ol>
+  <h3>Section: 2 The Button</h3>
+  <ol>
+  Gui,Add,Button, X Y, W H, gFirstButton , Text on Button <br />Gui,Add,Radio, X Y, W H, gFirstButton , Text on Button<br />
+  
+  Gui,Add,Checkbox, X Y, W H, gFirstButton , Text on Button<dd class="Blue_Text">Note: X Y = location, W H = Width &amp; Height of button, gFirstButton is a Label.</dd></ol>
+  <h3>Section: 3 Functions</h3>
+  <ol>
+  add(x,y)<br />
+  {<br />
+  <dd>return x + y</dd>
+  }
+  </ol>
+  <h3>Section: 4 Labels - <br />
+  &quot;FirstButton&quot; shown as gFirstButton.</h3>
+  <ol>
+  <strong>FirstButton:</strong>
+  <dd>A :=5<br />
+      B :=8<br />
+          C := Add(A,B)<br />
+  msgbox,A + B = %C% </dd>
+  </ol>
+  </ul>
+  <h3>IF Window Exists make active Else Run Program</h3>
+  <ul>
+    #NoEnv<br />
+    #SingleInstance force<br />
+  <br />
+  IfWinExist, ahk_class PuTTYConfigBox<br />
+    <dd>WinActivate, ahk_class PuTTYConfigBox</dd>
+      <br />
+  else<br />
+  {<br />
+    run, "C:\Program Files (x86)\PuTTY\putty.exe"	<br />
+  }<br />
+  return
+  <h3>2 Questons</h3>
+  <ol><li>What does this say?<dd>If the window PuTTY exists then make it active. Else, It does not exist therefore Run the program PuTTY.<br />
+  <br />
+  </dd></li> 
+  <li>How to find the Title of a window: 
+    <mark></mark>
+    <dd>This information can be found in the Windows Spy. In this case we were looking for: ahk_class PuTTYConfigBox</dd></li></ol>
+  <br />
+  <img src="Excel_Image/WindowsSpyWizard.jpg" width="790" height="618" />
+  </ul>
+  <h3>Gui with Reload of Active mesagebox</h3>
+  <ul>
+  #NoEnv
+#SingleInstance,force<br />
+<br />
+gui, +Alwaysontop<br />
+gui,Color,c000080 ; This is the Gui background color<br />
+Gui,font,S18 c000800  ;Sets Font size & color<br />
+Gui, Add, Text,cffff00 x10 y1, Coding Menu ; Main Header<br />
+;==========================================================<br />
+Gui,font,S12 Cffffff bold<br />
+Gui, Add, Text,gCMD1 x10 y45 , SFP Coding<br />
+Gui, Add, Text,gCMD2 x10 y+20 , QSFP Coding<br />
+Gui, Add, Text,gCMD3 x10 y+20 , HID<br />
+<br />
+
+gui,show,x1450 y100 w250 h350, Dans<br />
+return<br />
+<br />
+;---------------Labels-------------------------------------------------<br />
+<br />
+CMD1:<br />
+	run,notepad<br />
+<br />
+	Gui, Submit, NoHide<br />
+	GuiControl, Font, Verdana<br />
+	Gui, Add, Text,cffff00 x150 y45,F11 Active<br />
+<br />
+	Sleep,2000<br />
+<br />
+setTimer, reload, 10000  ; every minute ; in auto-exe<br />
+<br />
+Reload:<br />
+<br />
+;~ IfWinExist,Untitled - Notepad<br />
+;~ {<br />
+ ;~ goto line1<br />
+;~ }<br />
+winGet, running, list, ahk_class AutoHotkey  ; get running scripts<br />
+loop % running<br />
+    {<br />
+    winGetTitle, title, % "ahk_id " running%a_index%<br />
+    script := regExReplace(title, "\s-\sAutoHotkey\s.*")<br />
+    if (script = a_lineFile)    ; skip this script<br />
+        continue<br />
+<br />
+    run, % script " /restart"<br />
+    sleep 90<br />
+    }<br />
+sleep 300<br />
+reload    ; reload this script<br />
+line1:<br />
+Return<br />
+<br />
+
+CMD2:<br />
+	run,notepad<br />
+	Gui, Submit, NoHide<br />
+	GuiControl, Font,Verdana<br />
+	Gui, Add, Text,cffff00 x150 y85,F12 Active<br />
+	Return<br />
+<br />
+CMD3:<br />
+	run,notepad<br />
+	Gui, Submit, NoHide<br />
+	GuiControl, Font,Verdana<br />
+	Gui, Add, Text,cffff00 x150 y125, Active<br />
+Return<br />
+<br />
+;~ ;-----This will close the GUI Using the "X" in the upper right courner---<br />
+<br />
+GuiClose:<br />
+*ESC::<br />
+ExitApp<br />
+  </ul>
+  <h3>Windows Spy</h3>
+  <ul>
+    <img src="Excel_Image/WindowsSpy4AHK.jpg" width="331" height="295" />
+  </ul>
+  <br /><br />
+  <h3>Pause</h3>
+  <ul>
+  #NoEnv<br />
+  #SingleInstance,force<br />
+  gui,add,button,gbutton1, PAUSE ON <br />
+  gui,add,button,gbutton2, PAUSE OFF<br />
+  gui,show, x75 y100 w780 h453, Pausing<br />
+  return<br />
+  <br />
+  button1:<br />
+  InputBox, name, What is your name?<br />
+    Pause, on<br />
+    MsgBox,%name%<br />
+  return<br />
+  <br />
+  <br />
+  button2:<br />
+    <dd>Pause, off</dd><br />
+  return<br />
+  <br />
+  ^x::<br />
+  ExitApp<br />
+  </ul>
+  <br /><br />
+  <h3>&quot;Key Wait&quot; for Space bar before continuing</h3>
+  <ul>
+  #SingleInstance,force<br />
+  <br />
+  ^t::<br />
+  <br />
+  MsgBox, message box 1<br /><br />
+  
+  KeyWait, space,d <span class="Blue_Text"> ;Space represents the &quot;Space Bar&quot; While "d" means "Pressed Down". You could swap space with enter<br />
+   or any letter or key to use as the trigger.</span><br />
+  <br />
+   MsgBox, Space Bar has been pressed<br />
+  <br />
+  return<br /><br />
+  ^x::ExitApp
+  </ul>
+  <br />
+  <h3>Sleep,1000</h3>
+  <ul>Sleep is like wait but will wait a specified number of seconds. 1000 = 1 second</ul>
+  <br />
+  <h3>Contains</h3>
+  <ul>
+    ^T::<br />
+    Test_Case := "She sells sea shells at the sea shore"<br />
+    <br />
+    Inputbox,user_input,`t,Enter text to determine if it is in the Test Case<br />
+    Sleep,500<br />
+    If test_case contains %user_input%<br />
+      }
+        <dd>msgbox, Yes it is contained in the Test Case</dd>
+      {<br />
+  else<br />
+  {
+  <dd>msgbox, That text is not contained in the Test Case</dd>
+  }<br />
+  <h3>Format F: drive (File System Fat32)Quick format</h3>
+      <ul>
+        #NoEnv<br />
+        #SingleInstance,force<br />
+        ;---Careful -- This will format the F: Drive<br />
+              <dd>send,{LWinDown}<br />
+              send,{LWinUP}<br />
+              Sleep,500<br />
+              Clipboard :=&quot;cmd.exe&quot;<br />
+              Send, ^V<br />
+              Sleep,500<br />
+              Send,{Enter}<br />
+              Sleep,2000<br />
+              sendinput, format/FS:FAT32 F:/q<br />
+              Sleep,1000<br />
+              send, {Enter}<br />
+              sleep,500<br />
+              send, {Enter}<br />
+              Sleep,500<br />
+              Sendinput,Hacker1<br />
+              send, {Enter}<br />
+              WinMinimize,Command Prompt</dd><br />
+              <br />
+              return <br />
+              ^X::ExitApp</ul>
+  <h3>Gui Add Picture / Change pic with click</h3>
+ 	 <ul>
+ 	   <p>Gui,add,picture x y w h-1 var1,gCmd1,%Pic1%<br>
+			Example:<br>
+#SingleInstance,force<br />
+pic1 := "L:\Graphics\RedDot3.png"<br />
+pic2 := "L:\Graphics\YellowDot3.png"<br />
+<br />
+startpic = 1<br />
+<br />
+gui,color,navy<br />
+Gui,font,S16 cffff00<br />
+gui,add,Text, x20 y20 ,Main Menu<br />
+gui,add,picture,x100 y50 w45 h-1 vp1 gCMD1, %pic1%<br />
+<br />
+Gui,show,x1500 y55 h300 w250,Dan<br />
+Return<br />
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="320">;=== labels ================================<br />
+CMD1:<br />
+	if startpic = 1<br />
+	{</p>
+ 	   <p>Run,notepad<br />
+ 	     GuiControl,,p1,%pic2%<br />
+ 	     return<br />
+ 	     }<br />
+ 	     Startpic =2<br />
+ 	     {<br />
+ 	     GuiControl,,p1,%pic1%<br />
+ 	     return<br />
+ 	     }<br />
+ 	     return<br />
+ 	     ^x::ExitApp<br /><br />
+       </p>
+&nbsp;</td>
+    <td width="256"><img src="../images/AHK_Images/MainMenuRedDot.png" width="252" height="327"></td>
+    <td width="16">&nbsp;</td>
+    <td width="308"><img src="../images/AHK_Images/MainMenuYellowDot.png" width="252" height="327"></td>
+  </tr>
+</table>
+
+    </ul>
+      
+    <h2>Hex Colors (Standard HTML)</h2>
+      <ul>
+        <img src="../images/HTMLHexColorPalett.png" width="564" height="861">
+      </ul>
+  </ul>
+  <br /><br /><br />
+        </div>
+    </body>
+</html>

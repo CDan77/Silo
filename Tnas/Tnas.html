@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tnas</title>
+<style type="text/css">
+body {
+	margin: 0px;
+	padding: 0px;
+}
+#head {
+	margin: 0px;
+	padding: 00px;
+	height: 60px;
+	width: 100%;
+	background-image: url(tnashead.jpg);
+}
+#content {
+	width: 1000px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+</style>
+</head>
+
+<body>
+<div id="head"></div>
+<div id="content"><h2>Setup</h2>
+	<ul><h3>Tools</h3>
+    	<ol>
+        	<li>You will need a USB drive 16GB or larger.</li>
+        	<li>Download <a href="https://www.balena.io/etcher/">Balena Etcher</a> to create an image on the USB</li>
+            <li>Download <a href="https://www.truenas.com/download-truenas-core/">TrueNAS Core</a></li>
+        </ol>
+    </ul>
+   <h3>Install</h3> 
+  <ul>
+   		Use Balena and create a TrueNAS image on the USB.<br>
+	   Boot the Treunas computer to the USB. <br>
+Follow onscreen directions for install. The install will ask you what drive to install too. <br>
+Use arrow keys and space bar to choose drive. <br>
+Next you will be asked for a Root Password. Don't forget the password.<br>
+Truenas will now install to the drive specified. Once the system is up take note of the IP address.<br>
+  </ul>
+<h3>Configure TrueNAS</h3>
+From another computer, open the browser and enter the ip address. <br>
+Enter &quot;root&quot; and then the root password. You are now at the dashboard.
+<h3>Create a Mirrored Pool</h3>
+<ul>
+Click Storage &gt; Pools<br>
+Click ADD
+&gt; Create Pool<br>
+Give the pool a name.<br>
+
+Next Click Suggested layout. Note all HDD/SSD must be the same capacity. Exception  of the boot drive.<br> 
+Next click the 3 dots to the right and click on Add DataSet. Give the dataset a name and click submit.
+<br>
+Give the dataset a name and click submit.
+</ul>
+<h3>Create a user</h3>
+<ul>
+Click Accounts &gt; Users &gt; Add<br>
+<br>
+Enter a name for FullName and Username<br>
+Enter your password and then reenter under confirm password
+<br>
+Click the Microsoft Account box lower right side.<br>
+Change Primary group to dan because dan is the owner of the pools.
+<br>
+Click Submit<br>
+Repeat for new users
+</ul>
+<h3>Create Windows Share &amp; ACL</h3>
+<ul>Click Windows Share SMB<br>
+  Click ADD and add the new dataset<br>
+  You will be asked to create a ACL, Click configure now<br>
+  Change Default 
+  ACL: to Restricked<br>
+  Change User to Dan and click check box<br>
+  Change group to dan and click check box<br>
+  Click Submit<br>
+	
+</ul>
+<h3>Allow others to connect</h3>
+<ul>
+Click Accounts &gt; Groups<br>
+Click the &quot; &gt; &quot;greater than
+and click members. Add member.<br>
+<br>
+</ul>
+<h3>Drive Spin Down</h3>
+<ul>
+From the Truenas Dashboard click System > System Dataset<br>
+Change the system data set to boot drive.<br>
+Next Click: Storage > Disk<br>
+Edit each drive to spin down after 10 minutes. Also change power management to Level 1 Minimum Power Usage. Click Save.<br>
+Next from the dashboard click "Shell"
+Enter this command in the shell.<br>
+	<strong><dd>camcontrol cmd ada1 -a "E5 00 00 00 00 00 00 00 00 00 00 00" -r -</dd></strong><br>
+    Note that "ada1" is the name of the drive  you are checking.
+<br>
+Command results:
+
+<dd>
+  <p>Results: "E5 00 00 00 00 00 00 00 00 00 ff 00"  = Drive is Spinning.<br>
+    Results: "E5 00 00 00 00 00 00 00 00 00 00 00"  = Drive is Not Spinning.</p>
+</dd>
+<br>
+
+<p>
+Plex install:<br>
+1.	Create a pool (Storage1)<br>
+2.	Add a dataset (Silo1)<br>
+3.	Create Users and a Group. Add users to Group. ( PlexGroup )<br>
+4.	Click on share tab > Samba share.  Choose Silo. Click submit.<br>
+5.	Click on Create and edit ACL User “root”. Group = “PlexGroup” Check the boxes<br>
+6.	Change permission from advanced to “Basic” then change permissions to Full control<br>
+7.	Do the same for Groups. Set flag to inherit in both sections<br>
+8.	Click Save<br>
+Now copy your data to the shared drive using File Explorer<br>
+Next go back to Truenas and install plex.<br>
+1.	Click on Plugins. It will ask you to choose a pool for Plugin and Jail Storage<br>
+2.	Choose Storage1<br>
+3.	Click on Plex and click Install<br>
+4.	Give the jail a name (Truenas ) and click Save<br>
+5.	One installation is complete click Close. <br>
+6.	Click Check box next to jail and click STOP<br>
+7.	Click the drop-down arrow at the far right and click Mount Points<br>
+8.	In the “Source box” click Silo1<br>
+9.	In the destination box click on Media<br>
+10.	Next click the check box next to jail and click Start<br>
+11.	Now click the Plex icon and enter your credentials. If you do not have a login create on at plex.tv.com<br>
+12.	Change the name to Truenas and click through<br>
+13.	Go back to Truenas and click on Jails, click the drop-down and click on shell<br>
+14.	In the shell type id plex. Remember this id number. (uid=972)<br>
+15.	Goto Storage > Pool and on the dataset (Silo1) click on edit dataset<br>
+16.	Click on ADD ACL ITEM and change Who to User<br>
+17.	Add the id (972) on the line below who<br>
+18.	Change permissions to read only<br>
+19.	Save<br>
+20.	Go back to plex<br>
+21.	Click “More: and add library<br>
+22.	Click ADD Library then Browse media folder<br>
+23.	Choose /media now add slash folder name. Example: media/vidoes<br>
+24.	Plex will update the data. This will take a long time. Create each library one at a time<br>
+25.	Goto plex.tv.com login<br>
+<br><br><br>
+</p>
+
+</ul>
+</div>
+</body>
+</html>

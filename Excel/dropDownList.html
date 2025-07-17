@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop List</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 225px; position: relative; top: 10px; left: 40px;">Drop Down Menu</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+    <h3>Create a DropDown List that Auto Fills as you type</h3>
+    <ol>
+    <table width="1000" border="0" cellspacing="0" cellpadding="1">
+      <tr>
+        <td width="248" valign="top"><strong>Step1</strong><br />
+          Create a List on sheet 2 Cells A1:A11<br />
+          <br />      
+          <img src="Excel_Image/DropdownListAutoFillNames1.jpg" width="244" height="266" /></td>
+        <td width="580" valign="top"><strong>Step 2</strong><br />
+          On Sheet 1 Put the Dropdownlist in Cell C1<br />
+          <br />
+          <img src="Excel_Image/DropdownListAutoFillNames2.jpg" width="570" height="227" /><br /></td>
+        <td width="166"></td>
+      </tr>
+    </table><br />
+    <strong>Step 3</strong><br />
+    Next we need to <u>Copy</U> the range from Sheet 2 cells A1:A11<br />
+    Then goto Sheet 1 right click and <u>Paste as Link</u> in cell C9.<br />
+    <img src="Excel_Image/DropdownListAutoFillNames3.jpg" width="523" height="279" /><br />
+    <br />
+    <strong>Step 4</strong><br />
+    Next we need to connect Cell C1 with the Downdown List of names in cell C9.<br />
+    Here are two (2) methods.<br />
+    1. Place a "X" in cells B1:B9 This is called the connection method.<br />
+    2. Place a Double Space bar in cells B1:B9. Same method but you can not see the space bars so cell look empty.<br />
+    3. If there is something in cell B1:B9 you can go around using another path like Cells B1 and A1:A9 and B9<br />
+    <img src="Excel_Image/DropdownListAutoFillNames4.jpg" width="577" height="246" /><br /><br />
+    <strong>Step 5</strong><br />
+    Now start typing in the Dropdown List and it will try and auto complete for you.<br />
+    Note that you can color the list on sheet1 the same as the background so it is not seen or you can hide those rows.<br />
+    <br />
+    <strong>Notes to remember.</strong><br />
+    1. The linked list must reside in the same column that the dropdown list is in.<br />
+    2. Dropdownlist must be connected to the linked list using text or double spacebar.<br />
+    3. With names that are alike, like Dan Carpenter and Daniel Carpenter, you will not be offered Daniel Carpenter  until "n" has been typed to exclude Dan.
+    </ol>
+    <br /><br />
+    <h2>Drop Down Lists ..... See Excel file "Tabs.xlsm" </h2>
+    <h3><a href="https://docs.microsoft.com/en-us/office/vba/api/Excel.Application.SendKeys#example">SendKeys</a> ... <a href="#sendkey">SendKey example</a></h3>
+    <h3>Creating a Dropdown list using Named Ranges</h3>
+    <ol>Dynamic Named Range used as dropdown list and is dynamic to row 999 or beyond.<br />
+      <img src="Excel_Image/dropDwnList.jpg" width="295" height="39" /><br />
+      <p><strong>Named ranges using  formula&rsquo;s</strong><br />
+        <dd>=OFFSET(Sheet2!$BB$4,,,996-CountBlank (Sheet2!$BB$4:$BB$999),1)  <span class="Blue_Text">&lsquo; if cells contain Formula&rsquo;s (Text and  Numbers Ok! as well</span>)</dd><br />
+      <strong>Named ranges using  text or numbers</strong><br />
+        <dd>=OFFSET(Sheet2!$A$4,,,COUNTA(Sheet2!$A$4:$A$999),1)<span class="Blue_Text"> &lsquo; if  cells contain text or numbers
+    (Note! Can not be used if column contains Formula's)</p></span></dd>
+      <p><strong>The Dynamic Drop  down list</strong> is activated by Worksheet &ldquo;On Change&ldquo;  command VBA editor Sheet1. Which controls the  macro Empl_Load.</p>
+      <p>Private Sub  Worksheet_Change(ByVal Target As Range)<br />
+        If Not Intersect(Target,  Range(&quot;<strong>F2</strong>&quot;)) Is Nothing  Then<br />
+        If Range(&quot;F2&quot;).Value &lt;&gt;  Empty And Range(&quot;B5&quot;).Value &lt;&gt; Empty Then Empl_Load<br />
+        &lsquo;This &ldquo;if&rdquo; command controls macro Empl_Load<br />
+        End If<br />
+        End Sub</p>
+      <p><strong>The EMPL_Load Macro  (this uses row 1 sheet2 as mapped locations</strong></p>
+      <img src="Excel_Image/MappedLocation.jpg" width="481" height="144" /><br />
+      <p>Sub Empl_Load()<br />
+        Dim EmpRow As Long<br />
+        Dim EmpCol As Long</p>
+      <p>With Sheet1<br />
+        If .Range(&quot;B5&quot;).Value = Empty Then<br />
+        MsgBox &quot;Please enter a valid Employee  from the dropdown List&quot;<br />
+        Exit Sub<br />
+        End If<br />
+        .Range(&quot;B1&quot;).Value = True</p>
+      <p> <strong>EmpRow  = .Range(&quot;B5&quot;).Value <span class="Blue_Text">&lsquo; Study this as it is  what puts the data in the correct place</span></strong><br />
+        <strong> For EmpCol = 1 To 28</strong><br />
+        <strong>    .Range(Sheet2.Cells(1,  EmpCol).Value).Value = Sheet2.Cells(EmpRow, EmpCol).Value</strong><br />
+        <strong>  Next EmpCol</strong><br />
+        <br />
+        .Range(&quot;B1&quot;).Value = False<br />
+        End With<br />
+        End Sub</p><br />
+    
+        <dd>
+          <p><strong>Lets look at this more closely</strong><br />
+            EmpRow = .Range("B5").Value<span class="Blue_Text"> ‘ So EmpRow becomes Row &quot;4&quot; on Sheet2</span><br />
+      <br />
+            For EmpCol = 1 To 28 <span class="Blue_Text">' This will cycle through 28 columns</span><br />
+            .Range(Sheet2.Cells(1, EmpCol).Value).Value = Sheet2.Cells(EmpRow, EmpCol).Value<span class="Blue_Text"> ' Lets look at this broken into 2 parts</span><br />
+      </p>
+          <p><strong>Part1 - The Destination Cell will become cell &quot;J2&quot;</strong><br />
+            .Range(Sheet2.Cells(1,EmpCol).Value).Value)
+            would = Sheet2 cells(1 or Row 1, EmpCol or Col 1).Value which is &quot;J2&quot; See cell &quot;A1&quot; above. &quot;J2&quot; is Employee ID<br />
+      </p>
+          <ul><p><strong>Part 2 - So &quot;J2&quot; will be filled with the Value in Cells(EmpRow,EmpCol)</strong><br />
+            =Sheet2.Cells(EmpRow, EmpCol).Value 'The contents in Sheet2.Cells(4,1).Value<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EmpRow = Cell B5 on sheet1 which is 4<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EmpCol = 1 and will change for each column because EmpCol = 1 to 28 <br />
+            <br />
+            Next EmpCol</p></ul>
+        </dd>
+        </ol>
+    <h3>Using a Validation list to control the content of a second validation list</h3>
+    <ol>
+          <li>Create a validation list of the header names. In this  example that would be cells A1, B1, C1</li>
+        <li>Create a second validation list. This validation list will be controlled with a formula. <br />
+          Note!:
+        The maximum dynamic number of entries in this example will  not  exceed 200.<br />
+        You can change the number  200 to whatever you think is needed. <br /><br />
+        <strong>The formula for the second list will be a &quot;offset&quot; formula.</strong><br />
+        =offset(Referance,rows,cols,[height],[width]) <br /><br />
+    
+        <strong>Here is the formula to use for the Second  validation list.</strong><br />
+        =OFFSET(A1,1,MATCH(E1,A1:C1,0)-1,counta(offset(A1,1,MATCH(E1,A1:C1,0)-  1,200,1)),1)</li>
+        <img src="Excel_Image/ValidationList1_Controls_Validationlist2.jpg" width="560" height="488" /><br />
+        <a href="../Excel_Video/ValidationList1controlsList2/Validation1controlsValidation2.html">Watch the video</a>
+    </ol>
+    <h3>Tabs and "Target" </h3>
+    <strong>Remember all the conditional formatting</strong> that was done. <br />
+    Formula: =$B$2=COLUMN() <br />
+    Then Choose Color and Borders, Text, Text Color and so forth.
+    <ol>
+      <img src="Excel_Image/Tabs_Targets.jpg" width="896" height="490" /><br /><br />
+    Tab <strong>"General Info"</strong> and the other 5 tabs are controlled by a Target statment located in the vba editor on the <strong>Sheet</strong> <U>not in the module</U> and uses the SelectionChange declaration seen below.<br />
+    <dd><p>Private Sub Worksheet_<strong>SelectionChange</strong>(ByVal Target As Range)<br />
+      If Target.Count &gt; 1 Then Exit Sub<br />
+      If Not Intersect(Target, Range(&quot;E4:J4&quot;)) Is Nothing Then <span class="Blue_Text">' This makes each horizontal cell in the range a target button</span><br />
+      Range(&quot;B2&quot;).Value = Target.Column <span class="Blue_Text">' The target column numberis placed in cell B2 - So Column &quot;E&quot; is the 5th column noted in cell B2</span> <br />
+      Range(&quot;F2&quot;).Select<br />
+      switchHorizontialTabs<span class="Blue_Text"> ' This is the macro that will run and control what is seen on screen</span><br />
+      End If<br />
+      If Not Intersect(Target, Range(&quot;E66:E129&quot;)) Is Nothing Then <span class="Blue_Text">' This is for the Vertical tabs not seen in the picture above</span><br />
+      If Target.Value = Empty Or Target.Value = &quot;Select Option&quot; Then Exit Sub<br />
+      SwitchVerticalTabs<br />
+      End If
+    </p>
+    <p>End Sub</p></dd></ol>
+    <h3>Here are the macros for the Horizontal and Vertical targeted cells</h3>
+    <ol>
+      <p>Sub switchHorizontialTabs()<br />
+        Dim SelCol As Long<br />
+        Dim FirstRow As Long</p>
+      <p>With Sheet1<br />
+        SelCol = Range(&quot;B2&quot;).Value <span class="Blue_Text">' SelCol is 5 because cell B2 is 5 which was created by the Target statement above</span><br />
+        .Range(&quot;5:144&quot;).EntireRow.Hidden = True<span class="Blue_Text"> ' This Hides all rows</span><br />
+        FirstRow = 5 + ((SelCol - 5) * 20) <span class="Blue_Text">' This calculates the First Row and names it &quot;FirstRow&quot;</span><br />
+        .Range(FirstRow &amp; &quot;:&quot; &amp; FirstRow + 19).EntireRow.Hidden = False<span class="Blue_Text"> 'This defines the range to unhide. FirstRow = 5 Thru FirstRow +19 or 24 (5:24)</span><br />
+        End With<br />
+        End Sub<br />
+      </p>
+      <hr width="400" align="Left" />
+      <p>  
+        Sub SwitchVerticalTabs()<br />
+        Dim SelRow As Long<br />
+        Dim FirstRow As Long<br />
+        SelRow = Right(ActiveCell.Row, 1) - 5<br />
+        With Sheet1<br />
+        .Range(&quot;65:144&quot;).EntireRow.Hidden = True<br />
+        FirstRow = 65 + ((SelRow - 1) * 20)<br />
+        .Range(FirstRow &amp; &quot;:&quot; &amp; FirstRow + 19).EntireRow.Hidden = False<br />
+        .Range(&quot;B3&quot;).Value = SelRow + FirstRow<br />
+        .Range(&quot;F2&quot;).Select<br />
+        End With<br />
+        End Sub<br />
+      </p>
+    </ol>
+    <h3>Conditional Formatting</h3>
+    <ol>
+      <p>Formula is: =MOD(Row(),2)=0 <br />
+        Tthen Choose Color and Boarders Text,Text Color and so forth. </p>
+      <p><img src="Excel_Image/Conditional_ColoredRows.jpg" width="429" height="210" /> </p></ol>
+      <a name="sendkey" id="sendkey"></a>
+    <h3>SendKey Example</h3>
+    <ol>
+      <p>Sub CreatePDFForms()<br />
+        Dim PDFTemplateFile, NewPDFName, SavePDFFolder, LastName As String<br />
+        Dim ApptDate As Date<br />
+        Dim CustRow, LastRow As Long<br />
+        With Sheet1<br />
+        If .Range(&quot;G18&quot;).Value = Empty Or .Range(&quot;G20&quot;).Value = Empty Then<br />
+        MsgBox &quot;Both PDF Template and Saved PDF Locations are required for macro to run&quot;<br />
+        Exit Sub<br />
+        End If</p>
+      <p>LastRow = .Range(&quot;E9999&quot;).End(xlUp).Row  'Last Row<br />
+        PDFTemplateFile = .Range(&quot;G18&quot;).Value 'Template File Name<br />
+        SavePDFFolder = .Range(&quot;G20&quot;).Value 'Save PDF Folder<br />
+        ThisWorkbook.FollowHyperlink PDFTemplateFile<br />
+        Application.Wait Now + 0.00006</p>
+      <p>For CustRow = 5 To LastRow<br />
+        LastName = .Range(&quot;E&quot; &amp; CustRow).Value 'Last Name<br />
+        ApptDate = .Range(&quot;G&quot; &amp; CustRow).Value 'Appt Date<br />
+        Application.SendKeys &quot;{Tab}&quot;, True<br />
+        Application.SendKeys LastName, True<br />
+        Application.Wait Now + 0.00001</p>
+      <p>Application.SendKeys &quot;{Tab}&quot;, True<br />
+        Application.SendKeys .Range(&quot;F&quot; &amp; CustRow).Value, True 'First Name<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys .Range(&quot;I&quot; &amp; CustRow).Value, True 'Address<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys .Range(&quot;J&quot; &amp; CustRow).Value, True 'City<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys .Range(&quot;K&quot; &amp; CustRow).Value, True 'State<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys .Range(&quot;L&quot; &amp; CustRow).Value, True 'Zip<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys .Range(&quot;M&quot; &amp; CustRow).Value, True 'Email<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys Format(.Range(&quot;N&quot; &amp; CustRow).Value, &quot;###-###-####&quot;), True 'Phone<br />
+        Application.Wait Now + 0.00001<br />
+        Application.SendKeys &quot;{Tab}&quot;, True</p>
+      <p>Application.SendKeys &quot;^(p)&quot;, True<br />
+        Application.Wait Now + 0.00003<br />
+        Application.SendKeys &quot;{Enter}&quot;, True<br />
+        Application.Wait Now + 0.00007</p>
+      <p>If Dir(SavePDFFolder &amp; &quot;\&quot; &amp; LastName &amp; &quot;_&quot; &amp; Format(ApptDate, &quot;DD_MM_YYYY&quot;) &amp; &quot;.pdf&quot;) &lt;&gt; Empty Then Kill (SavePDFFolder &amp; &quot;\&quot; &amp; LastName &amp; &quot;_&quot; &amp; Format(ApptDate, &quot;DD_MM_YYYY&quot;) &amp; &quot;.pdf&quot;)<br />
+        Application.SendKeys &quot;%(n)&quot;, True<br />
+        Application.Wait Now + 0.00002<br />
+        Application.SendKeys SavePDFFolder &amp; &quot;\&quot; &amp; LastName &amp; &quot;_&quot; &amp; Format(ApptDate, &quot;DD_MM_YYYY&quot;) &amp; &quot;.pdf&quot;<br />
+        Application.Wait Now + 0.00003<br />
+        Application.SendKeys &quot;%(s)&quot;, True<br />
+        Application.Wait Now + 0.00002<br />
+      </p>
+      <p>Next CustRow<br />
+        Application.SendKeys &quot;^(q)&quot;, True<br />
+        Application.SendKeys &quot;{numlock}%s&quot;, True</p>
+      <p>End With<br />
+        End Sub<br />
+      </p>
+    </ol>
+        </div>
+    </body>
+</html>

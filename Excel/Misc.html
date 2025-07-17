@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISC</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 80px; position: relative; top: 10px; left: 40px;">Misc</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1">
+              
+<a name="exceljet" id="exceljet"></a>
+<h3>ExcelJet (<a href="https://exceljet.net/">website</a>)</h3>
+<ol>
+	<li><a href="https://exceljet.net/formulas">Formula's</a></li>
+	<li><a href="https://exceljet.net/excel-functions">Functions</a></li>
+    <li><a href="https://exceljet.net/keyboard-shortcuts">Key Board Short Cuts</a></li>
+</ol>
+<h3>Send email from Excel</h3>
+<dd>
+	Sub Mail_Sheet_Outlook_Body()<br>
+'For Tips see: http://www.rondebruin.nl/win/winmail/Outlook/tips.htm<br>
+'Don't forget to copy the function RangetoHTML in the module.<br>
+'Working in Excel 2000-2016<br>
+    Dim rng As Range<br>
+    Dim OutApp As Object<br>
+    Dim OutMail As Object<br>
+    Dim wsL, wsP As Worksheet<br>
+    Set wsL = Worksheets("List")<br>
+    Set wsP = Worksheets("PreEmail")<br>
+    Dim name As Variant<br>
+    'name = [Q1] 'this is the cliets email addrss font color in this cell is white<br>
+    name = Application.WorksheetFunction.VLookup(wsP.[A2], wsL.Range("A:E"), 3, False)<br><br>
+    
+    With Application<br>
+        .EnableEvents = False<br>
+        .ScreenUpdating = False<br>
+    End With<br>
+<br>
+    Set rng = Nothing<br>
+    Set rng = ActiveSheet.UsedRange<br>
+    'You can also use a sheet name<br>
+    'Set rng = Sheets("YourSheet").UsedRange<br>
+<br>
+    Set OutApp = CreateObject("Outlook.Application")<br>
+    Set OutMail = OutApp.CreateItem(0)<br>
+<br>
+    On Error Resume Next<br>
+    With OutMail<br>
+        .To = name<br>
+        .CC = ""<br>
+        .BCC = "ocskininthebuff@hotmail.com"<br>
+        .Subject = "OC SKIN IN THE BUFF"<br>
+        .HTMLBody = RangetoHTML(rng)<br>
+        .Send   'or use .Display<br>
+    End With<br>
+    On Error GoTo 0<br>
+<br>
+    With Application<br>
+        .EnableEvents = True<br>
+        .ScreenUpdating = True<br>
+    End With<br>
+<br>
+    Set OutMail = Nothing<br>
+    Set OutApp = Nothing<br>
+End Sub<br>
+<br>
+<br>
+Function RangetoHTML(rng As Range)<br>
+' Changed by Ron de Bruin 28-Oct-2006<br>
+' Working in Office 2000-2016<br>
+    Dim fso As Object<br>
+    Dim ts As Object<br>
+    Dim TempFile As String<br>
+    Dim TempWB As Workbook<br>
+<br>
+    TempFile = Environ$("temp") & "\" & Format(Now, "dd-mm-yy h-mm-ss") & ".htm"<br>
+<br>
+    'Copy the range and create a new workbook to past the data in<br>
+    rng.Copy<br>
+    Set TempWB = Workbooks.Add(1)<br>
+    With TempWB.Sheets(1)<br>
+        .Cells(1).PasteSpecial Paste:=8<br>
+        .Cells(1).PasteSpecial xlPasteValues, , False, False<br>
+        .Cells(1).PasteSpecial xlPasteFormats, , False, False<br>
+        .Cells(1).Select<br>
+        Application.CutCopyMode = False<br>
+        On Error Resume Next<br>
+        .DrawingObjects.Visible = True<br>
+        .DrawingObjects.Delete<br>
+        On Error GoTo 0<br>
+    End With<br>
+<br>
+    'Publish the sheet to a htm file<br>
+    With TempWB.PublishObjects.Add( _<br>
+         SourceType:=xlSourceRange, _<br>
+         Filename:=TempFile, _<br>
+         Sheet:=TempWB.Sheets(1).name, _<br>
+         Source:=TempWB.Sheets(1).UsedRange.Address, _<br>
+         HtmlType:=xlHtmlStatic)<br>
+        .Publish (True)<br>
+    End With<br>
+<br>
+    'Read all data from the htm file into RangetoHTML<br>
+    Set fso = CreateObject("Scripting.FileSystemObject")<br>
+    Set ts = fso.GetFile(TempFile).OpenAsTextStream(1, -2)<br>
+    RangetoHTML = ts.readall<br>
+    ts.Close<br>
+    RangetoHTML = Replace(RangetoHTML, "align=center x:publishsource=", _<br>
+                          "align=left x:publishsource=")<br>
+<br>
+    'Close TempWB<br>
+    TempWB.Close savechanges:=False<br>
+<br>
+    'Delete the htm file we used in this function<br>
+    Kill TempFile<br>
+<br>
+    Set ts = Nothing<br>
+    Set fso = Nothing<br>
+    Set TempWB = Nothing<br>
+End Function<br>
+<br>
+<br>
+</dd>
+<h3>Embedding a table in excel to a word doc. Update the table from excel to word.</h3>
+<ol><li>Create a table in excel. The table should be the only thing on the sheet. Hide guideline as well.</li>
+	<li>Save and Close the excel workbook</li>
+    <li>Open Word</li>
+    <li>From the insert tab click on Text section click: Object..<br />
+    <img src="Excel_Image/word_TextSection_Object.jpg" width="272" height="91" /><br />
+<br />
+</li>
+    <li>Click "Create from File" > Click "Link to file" > Click Browse...<br />
+    <img src="Excel_Image/WordTable_fromExcel.jpg" width="523" height="352" /></li>
+    <li>Browse to the excel file and click OK. The table is now in word.</li>
+    <li>Go back to excel and add new data to the table. Save and close excel.</li>
+    <li>Go back to Word. <U>Right</U> click anywhere in the table and choose "Update Link" The table will be updated with the new data added in excel. </li>
+    <br /><br />
+</ol>
+<h3>Environ<br />
+  Getting Username, special folders and more using the Environ function</h3>
+<ol>
+  <a href="http://codevba.com/office/environ.htm">Web site for Environ function, with examples.</a><br />
+  <br />
+Using Environ to get user name / logon ID<br />
+menu environ to get user name The name (logon ID) of the user that is currently logged on.<br />
+<br />
+Environ("USERNAME ")<br />
+<br />
+example result: johndoe<br /><br />
+<ul>Sub owner()<br />
+
+    <dd>Dim owner As String<br />
+    owner = Environ("username")<br />
+    <br />
+     MsgBox owner<br /></dd>
+ 
+End Sub<span class="Blue_Text"> ' this will result in the computers username</span>
+</ul><br />
+<br />
+example: Dim TempFile As String<br />
+TempFile = Environ$("temp") & "/" & Format(Now, "dd-mm-yy h-mm-ss") & ".htm"
+<br />
+</ol>
+<h3>How to add a video to a Excel worksheet.</h3> <em><strong>Start on the Developer tab.</strong></em>
+<ol>
+<li>Click Design Mode</li>
+<li>Click Insert and the tool icon <img src="Excel_Image/VideoFormControl1.jpg" width="124" height="128" align="top" /><br /><br />
+
+</li>
+<li>Scroll down to Windows Media Player <img src="Excel_Image/VideoFormControl2.jpg" width="352" height="316" align="top" /><br /><br />
+</li>
+<li>This will give you the + sign to draw the size of the player in the worksheet<br />
+  <br />
+</li>
+<li>Now click properties <img src="Excel_Image/VideoFormControl3.jpg" width="184" height="125" align="top" /><br /><br /></li>
+<li>Add File or URL to play in the player. You can also set  autoplay placement and more.<br />
+  <img src="Excel_Image/VideoFormControl4.jpg" width="580" height="398" /></li>
+
+</ol>
+<h3>How to share Excel and allow others to edit file online</h3>
+<ol>
+<li>Owner of file uploads file to Microsoft OneDrive.</li>
+<li>Owner then opens file from Microsoft OneDrive.</li>
+<li>Owner then clicks share and sends email('s) to people whom he wants to share with.</li>
+<li>Email Recipiant's open file from the email they received. Then they can click edit from browser to edit file. File is auto saved, there is no save button.</li>
+<li>Once file has been completed, it can be downloaded by all to there computer if necessary.</li>
+<li>Everyone will see changes being made by others.</li>
+<li>Macro's will not work online, however all macros will be intact if a person downloads the file to there local machine. One problem with this is that the macro button will not be seen however if there is a keystroke equivalent the macro will work. After down load you can still add a button and then assign to the macro if you choose to do so.</li>
+</ol>
+<h3>Cells Speak</h3>
+<ol>
+Right click on the quick reference bar and choose &quot;More Commands&quot;. Choose &quot;Commands not in the ribbon&quot; &quot;Speak Cell on Enter&quot;.<br />
+    To make a cell talk using a macro:<br /><br />
+    Sub hello()<br />
+    <br />  
+    <dd>Range("A1").Speak 'What ever is in cell A1 will be spoken</dd><br />end sub<br />
+    <hr width="500" align="Left" />
+   
+Sub direct_speech()<br />
+<dd>Application.Speech.Speak "Hello world" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Blue_Text">' This will say what is written in quotes .... <U>Use this in a macro to make it talk</u></span><br />
+  Application.Speech.Speak (Range("B12")) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Blue_Text">' This will say what is in the specified cell address</span><br />
+
+' MsgBox "Any messsage you want to display here"</dd>
+End Sub<br />
+</ol>
+<br />
+<h3>Make Sound on Error</h3>
+<ol>
+  <a href="http://www.cpearson.com/Excel/PlaySound.aspx">Follow this link</a>
+</ol>
+<br />
+<h3>What color is the active cell? - <a href="http://www.javascripter.net/faq/hextorgb.htm">Convert Hex to RGB here</a></h3>
+<ol>
+Sub test_color()<br />
+ MsgBox ActiveCell.Interior.Color<br />
+End Sub<br /><br />
+<dd>Sub colorchange()<br />
+<br />
+If Range("A1").Interior.Color = RGB(55, 86, 35) Then ActiveCell.Offset(0, 1).Select<br />
+<br />
+End Sub<br /></dd>
+<br /></ol>
+<h3>How to add a Bullet Point </h3>
+<ol>
+Goto the insert Tab. Then Symbols or shortcut = 
+(Alt + N +U)<br />
+  <img src="Excel_Image/InsertSymbol.jpg" width="563" height="407" />
+</ol>
+<h3>Add a Comment to the Activecell using VBA</h3>
+<ol>Sub AdComment()<br />
+Dim X As String<br />
+Dim d As Date<br />
+<br />
+X = InputBox("Enter Comment")<br />
+d = Date<br />
+<br />
+    ActiveCell.AddComment<br />
+    ActiveCell.Comment.Visible = False<br />
+    ActiveCell.Comment.Text Text:=d & vbNewLine & X<br />
+    End Sub<br />
+    <img src="Excel_Image/AddComment.jpg" width="391" height="144" />
+</ol>
+<h3>Add a Comment Plus Font Color, Bold, Text Size</h3>
+<ol>
+Sub adcomment()<br />
+Dim X As String<br />
+Dim d As Variant<br />
+<br />
+X = InputBox("Enter Your Comment")<br />
+d = Date<br />
+<br />
+ActiveCell.AddComment<br />
+ActiveCell.comment.Visible = False<br />
+ActiveCell.comment.Text Text:=d & vbNewLine & X<br />
+<br />
+ With ActiveCell.comment.Shape.TextFrame.Characters.Font<br />
+    <dd>.ColorIndex = 0 <span class="Blue_Text">' This is the Text Color</span><br />
+    .Size = 8<br />
+    .Name = "Bell MT"<br />
+    <span class="Blue_Text">'.Name = "Arial Black" ' Change the font to whatever you like</span><br />
+    .Bold = True<br />
+    .Italic = True<br /></dd>
+End With<br />
+<br />
+End Sub<br />
+<h3>Here is another example from <a href="https://chandoo.org/wp/format-comment-box/">Chandoo</a></h3>
+<img src="Excel_Image/ChandooComment.jpg" width="291" height="162" /> <br />
+This will change all comments on the page. But will not affect new comments added after the macro is run.<br />
+Sub Comments_Fun()<br />
+Dim MyComments As Comment<br />
+'Dim LArea As Long <span class="Blue_Text">' This is not needed but was in Chandoo's code so I will leave it there commented out.</span><br />
+For Each MyComments In ActiveSheet.Comments<br />
+With MyComments<br />
+<dd>.Shape.AutoShapeType = msoShapeRoundedRectangle<span class="Blue_Text"> ' Change this using the Ctrl + Spacebar and choose shape.</span><br />
+.Shape.TextFrame.Characters.Font.Name = "Tahoma"<br />
+.Shape.TextFrame.Characters.Font.Size = 8<br />
+.Shape.TextFrame.Characters.Font.ColorIndex = 2<br />
+.Shape.Line.ForeColor.RGB = RGB(0, 0, 0)<br />
+.Shape.Line.BackColor.RGB = RGB(255, 255, 255)<br />
+.Shape.Fill.Visible = msoTrue<br />
+.Shape.Fill.ForeColor.RGB = RGB(58, 82, 184) <span class="Blue_Text">' Change to brown (128, 0, 0) or any RGB color</span><br />
+.Shape.Fill.OneColorGradient msoGradientDiagonalUp, 1, 0.23</dd><br />
+End With<br />
+Next 'comment<br />
+End Sub<br />
+
+</ol>
+<h3>Link to Microsoft Color Index</h3>
+  <ol>
+    <a href="https://access-excel.tips/excel-vba-color-code-list/">Link to Microsoft Color Index with examples</a><br /><br /></ol>
+<br />
+<h3>Control the Zoom on the page</h3>
+<ol>Sub zoom()<br />
+ActiveWindow.zoom = 100<br />
+End Sub</ol>
+<br />
+<h3>How to read the filenames of all the files in a directory into an array</h3>
+
+<ol>For instance, in order to populate a list box<br />
+<br />
+Article contributed by Dave Rado<br />
+<br />
+You can use the Dir$ function to do this.  (Dir and Dir$ are functionally identical, but Dir$ runs marginally faster).  <br />
+<br />
+Dir$ is a lot faster than using FileSearch, unless many subdirectories need to be searched or you need to use the advanced features of FileSearch such as the LastModified property.<br />
+<br />
+Dim MyFile As String<br />
+Dim Counter As Long<br />
+<br />
+'Create a dynamic array variable, and then declare its initial size<br />
+Dim DirectoryListArray() As String<br />
+ReDim DirectoryListArray(1000)<br />
+<br />
+'Loop through all the files in the directory by using Dir$ function<br />
+MyFile = Dir$("c:\temp\*.*")<br />
+Do While MyFile <> ""<br />
+    DirectoryListArray(Counter) = MyFile<br />
+    MyFile = Dir$<br />
+    Counter = Counter + 1<br />
+Loop<br />
+<br />
+'Reset the size of the array without losing its values by using Redim Preserve <br />
+Redim Preserve DirectoryListArray(Counter - 1)<br />
+<br />
+To prove it worked you could run the following:<br />
+<br />
+For Counter = 0 To UBound(DirectoryListArray)<br />
+    'Debug.Print writes the results to the Immediate window (press Ctrl + G to view it)'<br />
+    Debug.Print DirectoryListArray(Counter)<br />
+Next Counter<br />
+<br />
+<strong>To populate a Listbox from the array you could use:<br />
+<br />
+ListBox1.List =  DirectoryListArray<br /></strong></ol>
+<br /><br />
+<h3>Standard RGB Colors</h3>
+<ol>
+  <img src="Excel_Image/STD_RGB_Colorpalette.png" width="631" height="485" />
+</ol>
+</ul>
+<h3>Remove the Windows Login Screen</h3>
+      <ul>
+        Search for: NETPLWIZ<br />Uncheck: Users must enter a user name and password.<br />
+        Click apply and reboot system. 
+      </ul>
+        </div>
+    </body>
+</html>

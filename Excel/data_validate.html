@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Validate</title>
+    <link rel="stylesheet" href="macro.css">
+    <style>
+ 
+    </style>
+</head>
+<body>
+  <div id="header">
+      <div style="position: relative; top: 8px;"><a class="one" href="../indexOLD.html">Home</a></div>
+      <div style="font-size: 24px; float: left; width: 225px; position: relative; top: 10px; left: 40px;">Data Validation</div>
+     <!--Start Drop Down Menu-->    
+      <div style="float: left; width: 80px; position: relative; top: 10px; left: 800px;">
+        <div class="dropdown" style="float:left;">
+          <button class="dropbtn">Resources</button>
+            <div class="dropdown-content" style="left:0;">
+                <a href="AHK.html">Auto Hot Key</a>
+                <a href="Macro.html">Macro</a>
+                <a href="inputs.html">Input,Msg,Controls</a>
+                <a href="data_validate.html">Data Validation</a>
+                <a href="dropDownList.html">Drop Down List</a>
+                <a href="Formula.html">Formula's</a>
+                <a href="Tables.html">Tables</a>
+                <a href="Pivot.html">Pivot Tables</a>
+                <a href="Charts.html">Charts/Printing</a>
+                <a href="Shapes.html">Shapes</a>
+                <a href="Misc.html">Misc.</a>
+                <a href="WebStuff.html">Web Stuff</a>
+                <a href="Ubuntu.html">Ubuntu</a>
+                <a href="../RC/RC.html">RC</a>
+            </div>
+        </div>
+      </div>
+  </div>
+<!--End of header-->
+  <div id="col1"><br>
+      <a href="https://support.office.com/en-us/article/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249?NS=EXCEL&amp;Version=16&amp;SysLcid=1033&amp;UiLcid=1033&amp;AppVer=ZXL160&amp;HelpId=xlmain11.chm467148&amp;ui=en-US&amp;rs=en-US&amp;ad=US"><strong>Data Validation Microsoft</strong></a>&nbsp;...&nbsp;<a href="https://exceljet.net/excel-data-validation-guide"><strong>Data Validation (Excel Jet)</strong></a><br /><br />
+    <h3>Do not allow Middle or Last name to be entered until First Name is chosen from drop down list.</h3>
+      <ol>
+        In this example you will not be allowed to enter the Middle or Last Name before choosing the First Name from the drop down menu.<br />
+        **Note that Ignore blank is not checked.<br />
+        <img src="Excel_Image/dataValidationFirstnameFirst.jpg" width="1196" height="312" /><br />
+        <br />
+        Below we can see the error because the First name was not select before the middle name was entered.<br />
+        This will not allow data to be entered in columns B & C before Column "A"'s Dropdown has been selected.<br /><br />
+      
+        <img src="Excel_Image/DataValidateErrorFirstnamefirst.jpg" width="709" height="336" /> <br /><br />
+        <a href="../Excel_Video/ValidationFirstnameFirst/ValidationFirstNameFirst.html">Watch Video</a>
+      </ol><br />
+    
+    <h3>Validate Todays date. Date can not be less than Todays Date else error</h3>
+      <ol>
+        In this example we will not allow the date in Cell E2 to be older than the date in cell E1.<br />
+        <br />
+        <img src="Excel_Image/DataValidateDateError2.jpg" width="805" height="188" /><br />
+        <img src="Excel_Image/DataValidateDateError.jpg" width="791" height="317" />
+      </ol>
+    <h3>Using OFFSET:  Validation1 controls the content of a Second Validation list</h3>
+      <ol>
+            <li>Create a validation list of the header names. In this  example that would be cells A1, B1, C1</li>
+          <li>Create a second validation list. This validation list will be controlled with a formula. <br />
+            Note!:
+          The maximum dynamic number of entries in this example will  not  exceed 200.<br />
+          You can change the number  200 to whatever you think is needed. <br /><br />
+          <strong>The formula for the second list will be a &quot;offset&quot; formula.</strong><br />
+          =offset(Referance,rows,cols,[height],[width]) <br /><br />
+      
+          <strong>Here is the formula to use for the Second  validation list.</strong><br />
+          =OFFSET(A1,1,MATCH(E1,A1:C1,0)-1,counta(offset(A1,1,MATCH(E1,A1:C1,0)-  1,200,1)),1)</li><br />
+          <strong>Next we need to reset the second validation list when the first list changes.</strong><br />
+          <strong>Note!: Offset can be slower than using Index but Index can not use text were offset can.</strong><br />
+      
+          <img src="Excel_Image/ValidationList2_Reset_by_VBA.jpg" width="741" height="179" /> <br />
+          <img src="Excel_Image/ValidationList1_Controls_Validationlist2.jpg" width="560" height="488" /><br />
+      
+          <a href="../Excel_Video/ValidationList1controlsList2/Validation1controlsValidation2.html">Watch the Video</a>
+      </ol>
+    <h3>Using Index: Validation1 controls the content of a Second Validation list</h3>
+      <ol>
+          Using Index may be faster than "offset" but is limited to using Numbers rather than Text and <U><strong>you must use a "Named Range" containing the "Index formula&quot;</strong></U><br />
+          in the second Validation List rather than placing the offset formula directly in the second Validation list.<br />
+          <br />
+          You can see here that the index formula is named "List" We will use this name in the Validation of the second Validation List.
+          <br />
+          <table width="900" border="1" cellspacing="0" cellpadding="0">
+            <tr>
+              <td ><img src="Excel_Image/ValidList1_Cntls_ValidList2_Using_NamedRanges.jpg" width="507" height="345" />&nbsp;</td>
+              <td valign="top" ><img src="Excel_Image/ValidationList2NamedRange.jpg" width="394" height="319" /></td>
+            </tr>
+          </table>
+          
+          <br /><br />
+          The VBA will reset the second list just like Offset above.<br />
+          <img src="Excel_Image/ValidationList2_Reset_by_VBA2.jpg" width="809" height="184" /><br />
+          <img src="Excel_Image/ValidationList1_Controls_Validationlist2_2.jpg" width="396" height="475" />
+      </ol>
+
+        </div>
+    </body>
+</html>
