@@ -117,6 +117,49 @@
     </dd>
   
   </ul>
+<h3>Enter Serial numbers from a excel DB into another program</h3>
+	  <ul>
+		  #NoEnv <br>
+#SingleInstance,force<br>
+CoordMode,Window<br>
+<br>
+!P::<br>
+; Prompt the user for the number of rows to process<br>
+InputBox, RowCount, Enter Row Count, Please enter the number of rows to process:, , , , , , , , 0<br>
+<br>
+Path := "C:\Users\Dcarp\OneDrive\Documents\AutoHotkey\Excel2pick\Excel2Pick.xlsm"<br>
+;~ Path := needs to be changed to the location of the new excel file<br>
+v
+; Create an Excel object<br>
+<br>
+Excel := ComObjCreate("Excel.Application")<br>
+<br>
+; Open the Excel workbook<br>
+Excel.Workbooks.Open(path)<br>
+<br>
+; Get the active worksheet<br>
+Sheet := Excel.ActiveWorkbook.Worksheets(1)<br>
+<br>
+; Loop through the specified number of rows<br>
+Loop, %RowCount%<br>
+{<br>
+    ; Get the value from the next cell<br>
+    Value := Sheet.Cells(A_Index + 1, 1).Value<br>
+<br>
+    ; Do something with the value<br>
+    ;~ MsgBox, %Value%<br>
+	Send,%Value%<br>
+	Send, {Enter }<br>
+	Sleep,250v
+}<br>
+<br>
+; Close the Excel workbook without saving changes<br>
+Excel.ActiveWorkbook.Close(False)<br>
+<br>
+; Quit Excelv
+Excel.Quit<br>
+	  		<br>
+	  </ul>
   <h3>Math Add Subtract Multiply Divid</h3>
   <ul>^D::<br>
 
