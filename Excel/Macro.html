@@ -165,6 +165,31 @@
     <td width="34">&nbsp;</td>
   </tr>
 </table><br>
+<h3>Col B hs positive and negitive numbers. Move all positive number from B to Col C</H3>
+<ul>
+Sub movePositiveNumbersColB2ColC()<br>
+Application.ScreenUpdating = False <br>
+' this will move positive cells in column "B" to column "C" same row. <br>
+' Negitive numbers are unaffected <br>
+' Change ">0" to "<0" to to move negitive numbers <br>
+<br>
+[C1].Select<br>
+Dim r, lrow, i As Long<br>
+lrow = [A2000].End(xlUp).Row<br>
+r = 1<br>
+For i = 1 To lrow<br>
+    If ActiveCell.Offset(0, -1).Value > 0 Then<br>
+        Cells(r, 2).Cut Cells(r, 3)<br>
+    End If<br>
+    ActiveCell.Offset(1).Select<br>
+    <br>
+r = r + 1<br>
+<br>
+Next i<br>
+<br>
+End Sub
+<br>
+</ul>
 
 
  <h3>Convert PDF to Excel</h3>
