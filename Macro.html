@@ -1019,7 +1019,27 @@ tiveCell.Offset(1).Select<br />
    End Sub<br />
 
    </ul>
-
+<H3>DB search criteria with (var + wildcards). Example: *Critera*</H3>
+Sub SearchCol_A_TableDB()<br />
+<br />
+' This will search *text* from column A returning full line item<br />
+' This macro controls the Filters in the table<br />
+' It also wraps the search criteria with wildcards example: *Critera*<br />
+On Error GoTo Line1<br />
+<br />
+Dim w, x, y, z As String<br />
+Dim rng As Range<br />
+Set rng = Range("A:L")<br />
+w = InputBox("Search for ? ")<br />
+x = "*"<br />
+y = "*"<br />
+z = x & w & y<br />
+Range("Table1[[#Headers],[Column1]]").Select<br />
+ActiveSheet.ListObjects("Table1").Range.AutoFilter Field:=1, Criteria1:=z, Operator:=xlAnd<br />
+Line1:<br />
+End Sub<br />
+<BR/>
+       <br />
    <h3>Advanced Filters in a macro 1</h3>
 
    
